@@ -1,5 +1,6 @@
 .button {
   --gradient-button: hsla(221, 97%, 52%, 1), hsla(234, 100%, 66%, 1);
+  font-family: var(--secondary-font);
 
   cursor: pointer;
   background: linear-gradient(90deg, var(--gradient-button));
