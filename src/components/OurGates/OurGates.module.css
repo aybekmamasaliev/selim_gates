@@ -11,14 +11,6 @@
   position: relative;
 }
 
-.outer_service{
-  background-image: url("../../media/bg_service.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: auto;
-}
-
 .grid {
   display: grid;
   grid-template-columns: 452px 360px 375px;
@@ -43,4 +35,3 @@
   width: 100%;
   border-radius: 19px;
 }
-
