@@ -1,5 +1,5 @@
 .any_questions {
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
@@ -29,7 +29,7 @@
   border-radius: 20px;
   box-sizing: border-box;
   margin-right: 40px;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
@@ -45,7 +45,7 @@
   border-radius: 20px;
   box-sizing: border-box;
   margin-right: 40px;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
@@ -64,25 +64,9 @@
   margin-bottom: 15px;
   padding: 15px 125px 15px 10px;
   text-transform: lowercase;
-  font-family: "Montserrat";
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
-}
-
-.btn {
-  width: 373px;
-  height: 57px;
-  background: linear-gradient(90.13deg, #105bfb 0.1%, #5061ff 134.04%);
-  border-radius: 20px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 900;
-  font-size: 25px;
-  line-height: 120%;
-  align-items: center;
-  text-transform: lowercase;
-  color: #f8f8f8;
-  cursor: pointer;
 }

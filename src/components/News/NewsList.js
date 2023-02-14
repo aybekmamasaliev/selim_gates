@@ -1,9 +1,9 @@
-import React from "react";
-// import Btn from "../Btn/Btn";
-import s from "./NewsList.module.css";
-import Btn from "../Btn/Btn";
-import NewsItem from "../NewsItem/NewsItem";
-import Title from "../Title/Title"
+import React from 'react';
+
+import s from './NewsList.module.css';
+import Button from '../Button/Button';
+import NewsItem from '../NewsItem/NewsItem';
+import Title from '../Title/Title';
 
 const NewsList = () => {
   return (
@@ -12,11 +12,11 @@ const NewsList = () => {
         {/* <p className={s.news_title}>Последние новости</p> */}
         <Title>Последние новости</Title>
         <div className={s.news_list}>
-            <NewsItem />
-            <NewsItem />
-            <NewsItem />
+          <NewsItem />
+          <NewsItem />
+          <NewsItem />
         </div>
-        <Btn children={"ВСЕ НОВОСТИ"}/>
+        <Button isSecondary>Все новости</Button>
       </div>
     </>
   );

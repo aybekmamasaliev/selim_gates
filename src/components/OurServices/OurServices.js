@@ -1,13 +1,13 @@
-import React from "react";
-import s from "./OurServices.module.css";
-import Title from "../Title/Title";
-import Btn from "../Btn/Btn";
-import item1 from "../../media/item1.svg";
-import item2 from "../../media/item2.svg";
-import item3 from "../../media/item3.svg";
-import item4 from "../../media/item4.svg";
-import item5 from "../../media/item5.svg";
-import DoorName from "../DoorName/DoorName";
+import React from 'react';
+import s from './OurServices.module.css';
+import Title from '../Title/Title';
+import Button from '../Button/Button';
+import item1 from '../../media/item1.svg';
+import item2 from '../../media/item2.svg';
+import item3 from '../../media/item3.svg';
+import item4 from '../../media/item4.svg';
+import item5 from '../../media/item5.svg';
+import DoorName from '../DoorName/DoorName';
 
 const OurServices = () => {
   return (
@@ -37,7 +37,7 @@ const OurServices = () => {
               <DoorName>Секционные</DoorName>
             </div>
           </div>
-          <Btn>смотреть все</Btn>
+          <Button isSecondary>смотреть все</Button>
         </div>
       </div>
     </>
