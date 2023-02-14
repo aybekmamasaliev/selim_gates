@@ -1,0 +1,88 @@
+.any_questions {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 150%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #414141;
+  backdrop-filter: blur(2px);
+  margin-bottom: 20px;
+}
+
+.form_border {
+  width: max-content;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.form {
+  display: flex;
+}
+
+.name_input {
+  width: 320px;
+  height: 54px;
+  padding: 15px 125px 15px 10px;
+  border: 0.5px solid #414141;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin-right: 40px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0.5px;
+  text-transform: lowercase;
+}
+
+.phone_num_input {
+  width: 434px;
+  height: 54px;
+  padding: 15px 125px 15px 10px;
+  border: 0.5px solid #414141;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin-right: 40px;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0.5px;
+  text-transform: lowercase;
+}
+
+.textarea {
+  width: 1207px;
+  height: 125px;
+  background: rgba(249, 249, 249, 0.2);
+  /* черный */
+  border: 0.5px solid #414141;
+  border-radius: 20px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding: 15px 125px 15px 10px;
+  text-transform: lowercase;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+}
+
+.btn {
+  width: 373px;
+  height: 57px;
+  background: linear-gradient(90.13deg, #105bfb 0.1%, #5061ff 134.04%);
+  border-radius: 20px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 120%;
+  align-items: center;
+  text-transform: lowercase;
+  color: #f8f8f8;
+  cursor: pointer;
+}

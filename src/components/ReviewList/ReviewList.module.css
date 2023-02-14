@@ -1,0 +1,36 @@
+.list_of_revs {
+  height: 410px;
+  width: 100%;
+  position: relative;
+}
+
+
+
+
+.dis_f{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.circle_btn{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(65, 65, 65, 0.15);
+  border: 5px solid #F1F6FF;
+  cursor: pointer;
+}
+
+.swipe_revs{
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+}
+
+.center{
+  margin: 0 auto;
+}
