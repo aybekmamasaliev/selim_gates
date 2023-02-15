@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import s from './Form.module.css';
-import Modal from '../Modal/Modal';
-import Button from '../Button/Button';
+
+import React, { useState } from "react";
+import s from "./Form.module.css";
+import Modal from "../Modal/Modal";
+import btn_top from "../../media/to_the_top_swipe.svg"
+
 
 const Form = () => {
   const [name, setName] = useState('');
@@ -19,41 +21,46 @@ const Form = () => {
   };
 
   return (
-    <div className={s.form_border}>
-      <Modal vis={vis} onClick={fixVis} />
-      <p className={s.any_questions}>Остались вопросы?</p>
-      <form>
-        <div className={s.form}>
-          <div>
-            <input
-              className={s.name_input}
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="имя"
-            />
-          </div>
-          <div>
-            <input
-              className={s.phone_num_input}
-              type="tel"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              placeholder="телефон"
-            />
-          </div>
-          <Button className={s.btn} onClick={changeVis}>
-            Оставить заявку
-          </Button>
-        </div>
+    <div className={s.form_block}>
+      <img src={btn_top} alt="" className={s.btn_top}/>
+      <div className={s.form_border}>
+        <Modal vis={vis} onClick={fixVis} />
+        <p className={s.any_questions}>Остались вопросы?</p>
+        <form>
+          <div className={s.form}>
+            <div>
+              <input
+                className={s.name_input}
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="имя"
+              />
+            </div>
+            <div>
+              <input
+                className={s.phone_num_input}
+                type="tel"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                placeholder="телефон"
+              />
+            </div>
+            <button className={s.btn} onClick={changeVis}>
+              Оставить заявку
+            </button>
 
-        <div>
-          <textarea placeholder="СООБЩЕНИЕ" className={s.textarea}></textarea>
-        </div>
-        <button className={s.btn} style={{ display: 'none' }}>
-          Оставить заявку
-        </button>
-      </form>
+          </div>
+
+          <div>
+            <textarea placeholder="СООБЩЕНИЕ" className={s.textarea}></textarea>
+          </div>
+          <button className={s.btn} style={{ display: "none" }}>
+            Оставить заявку
+          </button>
+        </form>
+      </div>
+
     </div>
   );
 };
