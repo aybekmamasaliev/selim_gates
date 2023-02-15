@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 78px;
+  padding-block: 11.5px;
+  max-width: calc(1220rem / 16);
+  width: 100%;
+  border-radius: 10px;
+  background-color: hsla(0, 0%, 0%, 0.4);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: calc(25rem / 16);
+  }
+
+  .nav__link {
+    &:link,
+    &:visited {
+      color: hsla(0, 60%, 99%, 1);
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+
+  .contacts {
+    color: hsla(0, 60%, 99%, 1);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        width: 15px;
+        height: 15px;
+        overflow: hidden;
+      }
+    }
+  }
+}

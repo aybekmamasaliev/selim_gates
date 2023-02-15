@@ -1,17 +1,19 @@
+
 import React, { useState } from "react";
 import s from "./Form.module.css";
 import Modal from "../Modal/Modal";
 import btn_top from "../../media/to_the_top_swipe.svg"
 
-const Form = () => {
-  const [name, setName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
 
-  const [vis, setVis] = useState("hidden");
+const Form = () => {
+  const [name, setName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+
+  const [vis, setVis] = useState('hidden');
 
   const changeVis = (e) => {
     e.preventDefault();
-    vis === "hidden" ? setVis("visible") : setVis("hidden");
+    vis === 'hidden' ? setVis('visible') : setVis('hidden');
   };
 
   const fixVis = (x) => {
@@ -47,6 +49,7 @@ const Form = () => {
             <button className={s.btn} onClick={changeVis}>
               Оставить заявку
             </button>
+
           </div>
 
           <div>
@@ -57,6 +60,7 @@ const Form = () => {
           </button>
         </form>
       </div>
+
     </div>
   );
 };

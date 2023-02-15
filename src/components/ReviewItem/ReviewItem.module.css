@@ -1,76 +1,75 @@
 .review_card {
-    width: 325px;
-    height: 203px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 0 auto;
-    position: relative;
-  }
-  
-  .user_icon_rectangle {
-    position: absolute;
-    left: -15px;
-    top: -15px;
-  }
-  
-  .pos_r {
-    position: relative;
-  }
-  
-  .user_icon {
-    position: absolute;
-    left: 19px;
-    top: -11px;
-  }
-  
-  .info_customer {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    max-width: 200px;
-  }
-  
-  .name_customer {
-    height: 25px;
-    font-family: "Montserrat";
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 140%;
-    color: #414141;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  
-  .bought_good {
-    height: 22px;
-    font-family: "Montserrat";
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 140%;
-    color: #414141;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  
-  
-  .review_text {
-    width: 297px;
-    height: 96px;
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 140%;
-    color: #414141;
-    position: absolute;
-    bottom: 22px;
-    left: 8px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp:3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-  }
-  
+  width: 325px;
+  height: 203px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+  position: relative;
+  background-color: white;
+}
+
+.user_icon_rectangle {
+  position: absolute;
+  left: -15px;
+  top: -15px;
+}
+
+.pos_r {
+  position: relative;
+}
+
+.user_icon {
+  position: absolute;
+  left: 19px;
+  top: -11px;
+}
+
+.info_customer {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  max-width: 200px;
+}
+
+.name_customer {
+  height: 25px;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  color: #414141;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.bought_good {
+  height: 22px;
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 140%;
+  color: #414141;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.review_text {
+  width: 297px;
+  height: 96px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 140%;
+  color: #414141;
+  position: absolute;
+  bottom: 22px;
+  left: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
