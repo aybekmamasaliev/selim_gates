@@ -1,14 +1,15 @@
-import HomeSvg from './HomeSvg.svg';
-import Button from '../../components/Button/Button';
-import Header from '../../components/Header/Header';
-import Advantages from '../../components/Advantages/Advantages';
-import OurGates from '../../components/OurGates/OurGates';
-import NewsList from '../../components/News/NewsList';
-import Services from '../../components/Services/Services';
-import ReviewList from '../../components/ReviewList/ReviewList';
-import Form from '../../components/Form/Form';
-import Footer from '../../components/Footer/Footer';
-import './MainPage.scss';
+import HomeSvg from "./HomeSvg.svg";
+import Button from "../../components/Button/Button";
+import Header from "../../components/Header/Header";
+import Advantages from "../../components/Advantages/Advantages";
+import OurGates from "../../components/OurGates/OurGates";
+import NewsList from "../../components/News/NewsList";
+import Services from "../../components/Services/Services";
+import ReviewList from "../../components/ReviewList/ReviewList";
+import Form from "../../components/Form/Form";
+import Footer from "../../components/Footer/Footer";
+import OurWorks from "../../components/OurWorks/OurWorks";
+import "./MainPage.scss";
 
 function MainPage() {
   return (
@@ -67,6 +68,9 @@ function MainPage() {
         <NewsList />
         <Button isSecondary>все новости</Button>
       </section>
+      <section>
+        <OurWorks />
+      </section>
 
       {/* <section aria-labelledby="works__title" className="works">
         <h2 id="works__title" className="works__title title--secondary">
@@ -80,7 +84,6 @@ function MainPage() {
         </h2>
         <Services />
       </section>
-
       <div className="background__bottom">
         <section aria-labelledby="reviews__title" className="reviews">
           <h2 id="reviews__title" className="reviews__title title--secondary">
@@ -88,10 +91,9 @@ function MainPage() {
           </h2>
           <ReviewList />
         </section>
-
+        <section></section>
         <Form />
       </div>
-
       <Footer />
     </div>
   );
