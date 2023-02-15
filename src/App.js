@@ -4,6 +4,7 @@ import Form from './components/Form/Form';
 import NewsList from './components/News/NewsList';
 import OurServices from './components/OurServices/OurServices';
 import ReviewList from './components/ReviewList/ReviewList';
+import OurWorks from "./components/OurWorks/OurWorks"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <OurServices />
       <NewsList/>
       <ReviewList />
+      <OurWorks/>
     </div>
   );
 }

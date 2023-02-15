@@ -11,6 +11,17 @@
   margin-bottom: 20px;
 }
 
+.form_block{
+  position: relative;
+}
+
+.btn_top{
+  position: absolute;
+  right:12px;
+  bottom: -40px;
+
+}
+
 .form_border {
   width: max-content;
   margin: 0 auto;
