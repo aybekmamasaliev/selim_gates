@@ -1,0 +1,10 @@
+.services {
+  list-style: none;
+  display: flex;
+  gap: calc(20rem / 16);
+
+  &__item {
+    flex: 1;
+    max-width: 325px;
+  }
+}
