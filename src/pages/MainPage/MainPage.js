@@ -50,9 +50,6 @@ function MainPage() {
         </h2>
         <OurGates />
       </section>
-      <section>
-        <OurWorks />
-      </section>
 
       <section aria-labelledby="advantages__title" className="advantages">
         <h2
@@ -70,6 +67,9 @@ function MainPage() {
         </h2>
         <NewsList />
         <Button isSecondary>все новости</Button>
+      </section>
+      <section>
+        <OurWorks />
       </section>
 
       {/* <section aria-labelledby="works__title" className="works">
