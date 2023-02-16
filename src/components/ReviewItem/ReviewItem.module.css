@@ -32,7 +32,6 @@
 
 .name_customer {
   height: 25px;
-  font-family: 'Montserrat';
   font-weight: 600;
   font-size: 18px;
   line-height: 140%;
@@ -44,7 +43,6 @@
 
 .bought_good {
   height: 22px;
-  font-family: 'Montserrat';
   font-weight: 300;
   font-size: 16px;
   line-height: 140%;
@@ -57,8 +55,6 @@
 .review_text {
   width: 297px;
   height: 96px;
-  font-family: 'Montserrat';
-  font-style: normal;
   font-weight: 400;
   font-size: 17px;
   line-height: 140%;

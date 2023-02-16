@@ -2,6 +2,7 @@ import Logo from '../Logo/Logo';
 import './Footer.scss';
 import InstagramSvg from './InstagramSvg.svg';
 import WhatsAppSvg from './WhatsAppSvg.svg';
+import Map from '../Map/Map';
 
 function Footer() {
   return (
@@ -60,7 +61,9 @@ function Footer() {
         </ul>
       </div>
 
-      <div className="footer__map">Карта</div>
+      <div className="footer__map">
+        <Map />
+      </div>
     </footer>
   );
 }

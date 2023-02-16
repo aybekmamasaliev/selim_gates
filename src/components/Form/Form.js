@@ -20,9 +20,13 @@ const Form = () => {
     setVis(x);
   };
 
+  const goToTop=()=>{
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }
+
   return (
     <div className={s.form_block}>
-      <img src={btn_top} alt="" className={s.btn_top}/>
+      <img src={btn_top} alt="" className={s.btn_top} onClick={goToTop}/>
       <div className={s.form_border}>
         <Modal vis={vis} onClick={fixVis} />
         <p className={s.any_questions}>Остались вопросы?</p>

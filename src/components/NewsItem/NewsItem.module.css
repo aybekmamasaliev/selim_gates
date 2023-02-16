@@ -1,5 +1,4 @@
 .news_item {
-  /* background-color: red; */
   width: 440px;
   height: 300px;
   position: relative;
@@ -17,7 +16,6 @@
   right: 6.14%;
   top: 32.67%;
   bottom: 27.33%;
-  font-family: "Montserrat";
   font-weight: 800;
   font-size: 20px;
   line-height: 150%;
@@ -36,7 +34,6 @@
   right: 6.14%;
   top: 16.33%;
   bottom: 29.67%;
-  font-family: "Montserrat";
   font-weight: 300;
   font-size: 18px;
   line-height: 150%;
@@ -67,8 +64,7 @@
   color: #DEE8F5;
   text-transform: lowercase;
   align-items: center;
-  font-family: 'Inter';
-  font-style: normal;
+  font-family: var(--secondary-font);
   font-weight: 400;
   font-size: 20px;
   line-height: 120%;

@@ -13,12 +13,11 @@
   width: 654px;
   height: 432px;
   background-color: white;
-  border-radius: 0px;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 1;
   border-radius: 20px;
   background-image: url(../../media/modal_bg.svg);
   background-size: cover;
@@ -40,8 +39,6 @@
 }
 
 .text_success {
-  width: 266px;
-  font-family: "Montserrat";
   font-weight: 700;
   font-size: 30px;
   line-height: 150%;
@@ -60,7 +57,6 @@
   left: 50%;
   transform: translate(-50%);
   width: 532px;
-  font-family: "Montserrat";
   font-weight: 400;
   font-size: 17px;
   line-height: 140%;
