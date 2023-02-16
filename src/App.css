@@ -83,6 +83,7 @@ h6 {
 :root {
   --primary-font: 'Montserrat', sans-serif;
   --secondary-font: 'Inter', sans-serif;
+  --color-white: hsla(219, 100, 97, 1);
 }
 
 body {
