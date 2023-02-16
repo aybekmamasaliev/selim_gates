@@ -68,6 +68,9 @@ function MainPage() {
         <NewsList />
         <Button isSecondary>все новости</Button>
       </section>
+      <section>
+        <OurWorks />
+      </section>
 
       <section aria-labelledby="works__title" className="works">
         <h2 id="works__title" className="works__title title--secondary">
@@ -82,7 +85,6 @@ function MainPage() {
         </h2>
         <Services />
       </section>
-
       <section aria-labelledby="reviews__title" className="reviews">
         <h2 id="reviews__title" className="reviews__title title--secondary">
           Отзывы наших клиентов
