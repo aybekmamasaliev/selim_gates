@@ -17,7 +17,7 @@
   position: absolute;
   right:12px;
   bottom: -40px;
-
+  cursor: pointer;
 }
 .btn{
   width: 10vw;
