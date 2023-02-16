@@ -33,14 +33,12 @@
 .right_btn {
   position: absolute;
   top: 50%;
-  z-index: 90;
   transform: translate(-60px, -50%);
 }
 
 .left_btn{
   position: absolute;
   top: 50%;
-  z-index: 90;
   right: 0;
   transform: translate(60px, -50%);
 }
