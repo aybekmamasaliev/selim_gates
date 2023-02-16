@@ -68,9 +68,6 @@ function MainPage() {
         <NewsList />
         <Button isSecondary>все новости</Button>
       </section>
-      <section>
-        <OurWorks />
-      </section>
 
       <section aria-labelledby="works__title" className="works">
         <h2 id="works__title" className="works__title title--secondary">
