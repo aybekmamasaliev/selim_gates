@@ -1,15 +1,15 @@
-import HomeSvg from './HomeSvg.svg';
-import Button from '../../components/Button/Button';
-import Header from '../../components/Header/Header';
-import Advantages from '../../components/Advantages/Advantages';
-import OurGates from '../../components/OurGates/OurGates';
-import NewsList from '../../components/News/NewsList';
-import Services from '../../components/Services/Services';
-import ReviewList from '../../components/ReviewList/ReviewList';
-import Form from '../../components/Form/Form';
-import Footer from '../../components/Footer/Footer';
-import './MainPage.scss';
-import OurWorks from '../../components/OurWorks/OurWorks';
+import HomeSvg from "./HomeSvg.svg";
+import Button from "../../components/Button/Button";
+import Header from "../../components/Header/Header";
+import Advantages from "../../components/Advantages/Advantages";
+import OurGates from "../../components/OurGates/OurGates";
+import NewsList from "../../components/News/NewsList";
+import Services from "../../components/Services/Services";
+import ReviewList from "../../components/ReviewList/ReviewList";
+import Form from "../../components/Form/Form";
+import Footer from "../../components/Footer/Footer";
+import "./MainPage.scss";
+import OurWorks from "../../components/OurWorks/OurWorks";
 
 function MainPage() {
   return (
@@ -89,10 +89,11 @@ function MainPage() {
         </h2>
         <ReviewList />
       </section>
-
-      <div className="background__bottom">
-        <Form />
-      </div>
+      <section>
+        <div className="background__bottom">
+          <Form />
+        </div>
+      </section>
 
       <Footer />
     </div>

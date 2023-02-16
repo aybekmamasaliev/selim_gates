@@ -1,6 +1,4 @@
 .any_questions {
-  font-family: 'Montserrat';
-  font-style: normal;
   font-weight: 700;
   font-size: 40px;
   line-height: 150%;
@@ -21,6 +19,9 @@
   bottom: -40px;
 
 }
+.btn{
+  width: 10vw;
+}
 
 .form_border {
   width: max-content;
@@ -33,14 +34,13 @@
 }
 
 .name_input {
-  width: 320px;
+  width: 26vw;
   height: 54px;
-  padding: 15px 125px 15px 10px;
+  padding: 15px 15px 15px 10px;
   border: 0.5px solid #414141;
   border-radius: 20px;
   box-sizing: border-box;
   margin-right: 40px;
-  font-family: 'Montserrat';
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
@@ -49,14 +49,12 @@
 }
 
 .phone_num_input {
-  width: 434px;
+  width: 36vw;
   height: 54px;
-  padding: 15px 125px 15px 10px;
+  padding: 15px 15px 15px 10px;
   border: 0.5px solid #414141;
   border-radius: 20px;
-  box-sizing: border-box;
   margin-right: 40px;
-  font-family: 'Montserrat';
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
@@ -65,19 +63,15 @@
 }
 
 .textarea {
-  width: 1207px;
+  width: 80vw ;
   height: 125px;
   background: rgba(249, 249, 249, 0.2);
-  /* черный */
   border: 0.5px solid #414141;
   border-radius: 20px;
   margin-top: 30px;
   margin-bottom: 15px;
-  padding: 15px 125px 15px 10px;
+  padding: 15px 15px 15px 10px;
   text-transform: lowercase;
-  font-family: 'Montserrat';
-  font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 120%;
 }
