@@ -25,7 +25,7 @@ const Form = () => {
       <img src={btn_top} alt="" className={s.btn_top}/>
       <div className={s.form_border}>
         <Modal vis={vis} onClick={fixVis} />
-        <p className={s.any_questions}>Остались вопросы?</p>
+        <h2 className={s.any_questions}>Остались вопросы?</h2>
         <form>
           <div className={s.form}>
             <div>

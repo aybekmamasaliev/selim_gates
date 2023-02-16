@@ -65,7 +65,7 @@ function MainPage() {
         <h2 id="news__title" className="news__title title--secondary">
           Последние новости
         </h2>
-        <NewsList />
+        <NewsList/>
         <Button isSecondary>все новости</Button>
       </section>
       <section>
@@ -76,6 +76,7 @@ function MainPage() {
         <h2 id="works__title" className="works__title title--secondary">
           Наши работы
         </h2>
+        <OurWorks />
       </section> */}
 
       <section aria-labelledby="services__title" className="services">
@@ -91,8 +92,12 @@ function MainPage() {
           </h2>
           <ReviewList />
         </section>
-        <section></section>
-        <Form />
+        <section aria-labelledby="reviews__title" className="reviews">
+          {/* <h2 id="reviews__title" className="reviews__title title--secondary">
+          ОСТАЛИСЬ ВОПРОСЫ?
+          </h2> */}
+          <Form />
+        </section>
       </div>
       <Footer />
     </div>
