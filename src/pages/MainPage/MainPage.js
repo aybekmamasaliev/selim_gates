@@ -1,15 +1,17 @@
-import HomeSvg from './HomeSvg.svg';
-import Button from '../../components/Button/Button';
-import Header from '../../components/Header/Header';
-import Advantages from '../../components/Advantages/Advantages';
-import OurGates from '../../components/OurGates/OurGates';
-import NewsList from '../../components/News/NewsList';
-import Services from '../../components/Services/Services';
-import ReviewList from '../../components/ReviewList/ReviewList';
-import Form from '../../components/Form/Form';
-import Footer from '../../components/Footer/Footer';
-import './MainPage.scss';
-import OurWorks from '../../components/OurWorks/OurWorks';
+
+import HomeSvg from "./HomeSvg.svg";
+import Button from "../../components/Button/Button";
+import Header from "../../components/Header/Header";
+import Advantages from "../../components/Advantages/Advantages";
+import OurGates from "../../components/OurGates/OurGates";
+import NewsList from "../../components/News/NewsList";
+import Services from "../../components/Services/Services";
+import ReviewList from "../../components/ReviewList/ReviewList";
+import Form from "../../components/Form/Form";
+import Footer from "../../components/Footer/Footer";
+import OurWorks from "../../components/OurWorks/OurWorks";
+import "./MainPage.scss";
+
 
 function MainPage() {
   return (
@@ -65,8 +67,11 @@ function MainPage() {
         <h2 id="news__title" className="news__title title--secondary">
           Последние новости
         </h2>
-        <NewsList />
+        <NewsList/>
         <Button isSecondary>все новости</Button>
+      </section>
+      <section>
+        <OurWorks />
       </section>
 
       <section aria-labelledby="works__title" className="works">
@@ -76,12 +81,14 @@ function MainPage() {
         <OurWorks />
       </section>
 
+
       <section aria-labelledby="services__title" className="services">
         <h2 id="services__title" className="services__title title--secondary">
           Сервис
         </h2>
         <Services />
       </section>
+
 
       <section aria-labelledby="reviews__title" className="reviews">
         <h2 id="reviews__title" className="reviews__title title--secondary">
@@ -93,7 +100,6 @@ function MainPage() {
       <div className="background__bottom">
         <Form />
       </div>
-
       <Footer />
     </div>
   );
