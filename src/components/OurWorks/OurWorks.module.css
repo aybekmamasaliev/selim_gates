@@ -1,6 +1,9 @@
 .works {
   width: 100%;
+
+
   margin-top: 25px;
+
 }
 
 .scroll_div {
@@ -9,7 +12,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 50px;
 }
 
 .left_img {
@@ -19,8 +21,8 @@
   border-radius: 20px;
 }
 
-.full_img{
-    width:100%;
+.full_img {
+  width: 100%;
 }
 
 .central_img {
@@ -34,15 +36,15 @@
   position: relative;
 }
 
-.right_btn{
-    position: absolute;
-    top:50%;
-    transform: translate(-60px, -50%);
+.right_btn {
+  position: absolute;
+  top: 50%;
+  transform: translate(-60px, -50%);
 }
 
-.left_btn{
-    position: absolute;
-    top:50%;
-    right:0;
-    transform: translate(60px, -50%);
+.left_btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(60px, -50%);
 }
