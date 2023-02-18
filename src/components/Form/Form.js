@@ -51,15 +51,17 @@ const Form = () => {
             {/* <button className={s.btn} onClick={changeVis}>
               Оставить заявку
             </button> */}
-            <Button onClick={changeVis} className={s.btn}>Оставить заявку</Button>
+            <Button onClick={changeVis} className={s.btn}>
+              Оставить заявку
+            </Button>
           </div>
 
           <div>
             <textarea placeholder="СООБЩЕНИЕ" className={s.textarea}></textarea>
           </div>
-          <button className={s.btn} style={{ display: "none" }}>
+          <Button className={s.btn} style={{ display: "none" }}>
             Оставить заявку
-          </button>
+          </Button>
         </form>
       </div>
     </div>
