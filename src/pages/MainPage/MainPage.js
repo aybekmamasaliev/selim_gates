@@ -88,11 +88,12 @@ function MainPage() {
         </h2>
         <ReviewList />
       </section>
-      <section>
         <div className="background__bottom">
+      <section aria-labelledby="form__title" className="form">
+          <h2 id="form__title" className="form__title">ОСТАЛИСЬ ВОПРОСЫ?</h2>
           <Form />
-        </div>
       </section>
+        </div>
 
       <Footer />
     </div>
