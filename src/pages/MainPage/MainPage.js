@@ -10,11 +10,12 @@ import Form from "../../components/Form/Form";
 import Footer from "../../components/Footer/Footer";
 import "./MainPage.scss";
 import OurWorks from "../../components/OurWorks/OurWorks";
+import ServicesImg from "../../components/Services_img/ServicesImg";
 
 function MainPage() {
   return (
     <div className="homepage">
-      <Header />
+      <Header/>
       <section className="hero" aria-labelledby="hero__title">
         <h1 id="hero__title" className="hero__title">
           Современная и&nbsp;надёжная&nbsp;защита
