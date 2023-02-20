@@ -1,3 +1,4 @@
+
 import HomeSvg from "./HomeSvg.svg";
 import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
@@ -11,6 +12,7 @@ import Footer from "../../components/Footer/Footer";
 import "./MainPage.scss";
 import OurWorks from "../../components/OurWorks/OurWorks";
 import ServicesImg from "../../components/Services_img/ServicesImg";
+
 
 function MainPage() {
   return (
@@ -66,7 +68,7 @@ function MainPage() {
         <h2 id="news__title" className="news__title title--secondary">
           Последние новости
         </h2>
-        <NewsList />
+        <NewsList/>
         <Button isSecondary>все новости</Button>
       </section>
 
@@ -89,13 +91,13 @@ function MainPage() {
         </h2>
         <ReviewList />
       </section>
+
         <div className="background__bottom">
       <section aria-labelledby="form__title" className="form">
           <h2 id="form__title" className="form__title">ОСТАЛИСЬ ВОПРОСЫ?</h2>
           <Form />
       </section>
         </div>
-
       <Footer />
     </div>
   );

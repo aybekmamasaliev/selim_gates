@@ -1,0 +1,90 @@
+.banner {
+  display: grid;
+  place-content: center;
+  padding-block-start: 180px;
+  padding-block-end: 155px;
+  background-image: url('./GatesPageBg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-bottom-right-radius: 300px 200px;
+
+  &__title {
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 110%;
+    text-transform: uppercase;
+    max-width: calc(1070rem / 16);
+    text-align: center;
+    color: var(--color-white);
+    color: hsla(219, 100, 97, 1);
+  }
+}
+
+.description {
+  padding-inline: 75px;
+  padding-block-start: 50px;
+  padding-block-end: 90px;
+  font-size: 20px;
+  line-height: 140%;
+  text-align: justify;
+  color: var(--color-black);
+  color: hsla(0, 0, 25, 1);
+}
+
+.types {
+  padding-inline: 40px;
+  padding-block-end: 130px;
+
+  &__title {
+    font-size: calc(40rem / 16);
+    font-weight: 700;
+    line-height: 120%;
+    color: hsla(0, 0, 25, 1);
+    margin-block-end: calc(40rem / 16);
+  }
+
+  &__list {
+    --gap: calc(25rem / 16);
+    list-style: none;
+    display: flex;
+    gap: var(--gap);
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+
+  &__item {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    flex-basis: calc(20% - var(--gap));
+    min-width: 250px;
+
+    & > p {
+      position: absolute;
+      left: 5px;
+      bottom: 10px;
+
+      font-size: calc(20rem / 16);
+      font-weight: 800;
+      color: hsla(0, 0%, 100%, 1);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.visually-hidden {
+  display: inline-block;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1;
+  width: 1;
+  margin: -1;
+  padding: 0;
+  border: 0;
+}
