@@ -1,3 +1,4 @@
+
 import HomeSvg from "./HomeSvg.svg";
 import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
@@ -10,6 +11,7 @@ import Form from "../../components/Form/Form";
 import Footer from "../../components/Footer/Footer";
 import OurWorks from "../../components/OurWorks/OurWorks";
 import "./MainPage.scss";
+
 
 function MainPage() {
   return (
@@ -65,18 +67,20 @@ function MainPage() {
         <h2 id="news__title" className="news__title title--secondary">
           Последние новости
         </h2>
-        <NewsList />
+        <NewsList/>
         <Button isSecondary>все новости</Button>
       </section>
       <section>
         <OurWorks />
       </section>
 
-      {/* <section aria-labelledby="works__title" className="works">
+      <section aria-labelledby="works__title" className="works">
         <h2 id="works__title" className="works__title title--secondary">
           Наши работы
         </h2>
-      </section> */}
+        <OurWorks />
+      </section>
+
 
       <section aria-labelledby="services__title" className="services">
         <h2 id="services__title" className="services__title title--secondary">
@@ -84,14 +88,16 @@ function MainPage() {
         </h2>
         <Services />
       </section>
+
+
+      <section aria-labelledby="reviews__title" className="reviews">
+        <h2 id="reviews__title" className="reviews__title title--secondary">
+          Отзывы наших клиентов
+        </h2>
+        <ReviewList />
+      </section>
+
       <div className="background__bottom">
-        <section aria-labelledby="reviews__title" className="reviews">
-          <h2 id="reviews__title" className="reviews__title title--secondary">
-            Отзывы наших клиентов
-          </h2>
-          <ReviewList />
-        </section>
-        <section></section>
         <Form />
       </div>
       <Footer />

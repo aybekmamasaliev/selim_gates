@@ -106,6 +106,13 @@
   }
 }
 
+.works {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(50rem / 16);
+}
+
 .advantages {
   display: flex;
   flex-direction: column;
@@ -125,9 +132,14 @@
   display: flex;
   flex-direction: column;
   gap: calc(30rem / 16);
-  padding-block-start: 170px;
-  padding-block-end: 120px;
+  margin-block-start: -200px;
+  padding-block-start: 340px;
+  padding-block-end: 340px;
   align-items: center;
+  background-image: url('./ServiceBg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
   & > ul {
     width: 100%;
@@ -136,6 +148,7 @@
 }
 
 .reviews {
+  margin-block-start: -140px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -152,7 +165,9 @@
 }
 
 .background__bottom {
-  padding-block-end: 200px;
+  margin-block-start: -470px;
+  padding-block-start: 480px;
+  padding-block-end: 280px;
   background-image: url('./BottomBg.png');
   background-repeat: no-repeat;
   background-size: cover;
