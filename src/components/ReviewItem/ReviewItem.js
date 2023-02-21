@@ -2,11 +2,11 @@ import React from "react";
 import s from "../ReviewItem/ReviewItem.module.css";
 import user from "../../media/user.svg";
 
-const ReviewItem = () => {
+const ReviewItem = (props) => {
   return (
     <>
       <div className={s.review_card}>
-        <img src={user} alt="" className={s.user_icon} />
+        <img src={props.img} alt="" className={s.user_icon} />
 
         <div className={s.info_customer}>
           <p className={s.name_customer}>Тилек Уларбеков </p>

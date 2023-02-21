@@ -21,6 +21,8 @@
   position: absolute;
   left: 19px;
   top: -11px;
+  width: 90px;
+  max-height: 90px;
 }
 
 .info_customer {
