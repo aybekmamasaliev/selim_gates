@@ -65,6 +65,60 @@ function GatesPage() {
         <ul className="types__list">{renderedTypes}</ul>
       </section>
 
+      <section
+        className="main-advantages"
+        aria-labelledby="main-advantages__title"
+      >
+        <h2 id="main-advantages__title" className="main-advantages__title">
+          Основные преимущества
+        </h2>
+        <ol className="main-advantages__list">
+          <li className="main-advantages__item">
+            <h3>Промышленный масштаб</h3>
+            <p>
+              данная серия ворот спроектирована специально для перекрытия
+              больших проёмов на промышленных объектах.
+            </p>
+          </li>
+          <li className="main-advantages__item">
+            <h3>Высокий уровень термоизоляции</h3>
+            <p>
+              промышленные ворота isd01 применяются для термоизоляции помещений
+              с высокой интенсивностью использования.
+            </p>
+          </li>
+          <li className="main-advantages__item">
+            <h3>Оптимальное решение</h3>
+            <p>
+              благодаря высокий эксплуатационным качествам ворота doorhan
+              являются оптимальным решением для любых объектов.
+            </p>
+          </li>
+          <li className="main-advantages__item">
+            <h3>Элегантный внешний вид</h3>
+            <p>
+              несомтря на то, что серия предназначена для промышленного
+              применения, она обладает широким выбором дизайна.
+            </p>
+          </li>
+          <li className="main-advantages__item">
+            <h3>Безопасность</h3>
+            <p>
+              многоуровневая система безопасности включает: устройства защиты от
+              обрыва пружины и от разрыва троса, которые защищают полотно от
+              непреднамеренного падения.
+            </p>
+          </li>
+          <li className="main-advantages__item">
+            <h3>Надежность</h3>
+            <p>
+              использование усиленных комплекутющих обеспечивает повышенную в
+              конструкции в процессе эксплуатации.
+            </p>
+          </li>
+        </ol>
+      </section>
+
       <Form />
       <Footer />
     </div>
