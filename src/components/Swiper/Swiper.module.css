@@ -1,5 +1,4 @@
 .slide {
-  /* background-color: aqua; */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -11,13 +10,13 @@
 }
 
 .slider_cover{
-  padding-top: 50px;
+  width: 99%;
   z-index: 0;
+  margin: 0 auto;
+  
 }
 
 .div_cover_btns {
-  /* background: red; */
-  margin-top: 50px;
   position: relative;
 }
 
@@ -27,6 +26,17 @@
   justify-content: space-between;
   margin-left: 87%;
 }
+
+/* .swiper{
+  background-color: aqua;
+  display: flex;
+  padding-top: 30px;
+  height: 600px;
+  align-items: center;
+  position: absolute;
+  top:300px;
+  flex-direction: column;
+} */
 
 @media (max-width:1200px) {
   .upper_btn_div{
@@ -56,5 +66,8 @@
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    /* border: none; */
+  }
+
+  .center{
+    text-align: center;
   }

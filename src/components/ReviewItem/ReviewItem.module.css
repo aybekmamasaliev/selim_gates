@@ -11,6 +11,7 @@
   position: absolute;
   left: -15px;
   top: -15px;
+  border-radius: 50%;
 }
 
 .pos_r {
@@ -71,3 +72,17 @@
   line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+
+.test_fix{
+  height: 300px;
+  display: flex;    
+  justify-content: center;
+  align-items: center;
+}
+
+/* @media (max-width:1200px) {
+  .review_card {
+    width: 300px;
+  }
+} */

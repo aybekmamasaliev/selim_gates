@@ -9,7 +9,7 @@ import SwiperButtonPrev from "../PrevBtn/PrevBtn";
 import left from "../../media/left.svg";
 import right from "../../media/right.svg";
 import ReviewItem from "../ReviewItem/ReviewItem";
-
+import "swiper/css/pagination";
 
 const Slider = (props) => {
   const swiper = useSwiper();
@@ -25,16 +25,55 @@ const Slider = (props) => {
       .finally(() => setIsloading(false));
   }, []);
 
+  const [windowwidth, setWindowWidth] = useState(window.innerWidth);
+
+  const setSize = () => {
+    setWindowWidth(window.innerWidth);
+    console.log(windowwidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", setSize);
+    return () => {
+      window.removeEventListener("resize", setSize);
+    };
+  }, []);
+
+  // console.log(num);
+
   return (
     <div className={s.slider_cover}>
+      <p>{windowwidth}</p>
       {isloading ? (
-        <p>loading</p>
+        <p className={s.center}>loading</p>
       ) : (
-        <Swiper spaceBetween={10} slidesPerView={3} className={s.swiper}>
+        <Swiper
+          spaceBetween={10}
+          slidesPerView={1}
+          className={s.swiper}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+            1260: {
+              slidesPerView: 4,
+              spaceBetween: 10,
+            },
+          }}
+        >
           {a.map((item) => {
             return (
               <SwiperSlide key={item._id} className={s.slide}>
-                <ReviewItem key={item._id} img={item.img}/>
+                <ReviewItem key={item._id} img={item.img} />
               </SwiperSlide>
             );
           })}
@@ -42,7 +81,6 @@ const Slider = (props) => {
           <div className={s.div_cover_btns}>
             <div className={s.upper_btn_div}>
               <SwiperButtonPrev>
-                
                 <button className={s.circle_btn}>
                   <img src={left} alt="" />
                 </button>
