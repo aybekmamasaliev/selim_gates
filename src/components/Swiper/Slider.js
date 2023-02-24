@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import s from "./Swiper.module.css";
+import s from "./Slider.module.css";
 import SwiperButtonNext from "../NextBtn/NextBtn";
 import SwiperButtonPrev from "../PrevBtn/PrevBtn";
 import left from "../../media/left.svg";

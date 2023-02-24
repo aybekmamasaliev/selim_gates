@@ -1,5 +1,5 @@
 import React from 'react';
-import Slider from "../Swiper/Swiper";
+import Slider from "../Swiper/Slider";
 // import s from './ReviewList.module.css';
 // import ReviewItem from '../ReviewItem/ReviewItem';
 // import right from '../../media/right.svg';
