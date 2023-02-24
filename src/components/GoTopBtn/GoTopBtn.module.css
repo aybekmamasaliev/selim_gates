@@ -1,0 +1,10 @@
+.btn_top {
+    position: absolute;
+    right: 15px;
+    top: 250px;
+    cursor: pointer;
+  }
+
+  .pos_ab{
+    position: absolute;
+  }

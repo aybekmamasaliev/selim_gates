@@ -9,14 +9,17 @@ import Services from "../../components/Services/Services";
 import ReviewList from "../../components/ReviewList/ReviewList";
 import Form from "../../components/Form/Form";
 import Footer from "../../components/Footer/Footer";
-import OurWorks from "../../components/OurWorks/OurWorks";
 import "./MainPage.scss";
+import OurWorks from "../../components/OurWorks/OurWorks";
+import ServicesImg from "../../components/Services_img/ServicesImg";
+import GoTopBtn from "../../components/GoTopBtn/GoTopBtn";
 
 
 function MainPage() {
   return (
     <div className="homepage">
-      <Header />
+           
+      <Header/>
       <section className="hero" aria-labelledby="hero__title">
         <h1 id="hero__title" className="hero__title">
           Современная и&nbsp;надёжная&nbsp;защита
@@ -70,9 +73,6 @@ function MainPage() {
         <NewsList/>
         <Button isSecondary>все новости</Button>
       </section>
-      <section>
-        <OurWorks />
-      </section>
 
       <section aria-labelledby="works__title" className="works">
         <h2 id="works__title" className="works__title title--secondary">
@@ -81,15 +81,12 @@ function MainPage() {
         <OurWorks />
       </section>
 
-
       <section aria-labelledby="services__title" className="services">
         <h2 id="services__title" className="services__title title--secondary">
           Сервис
         </h2>
         <Services />
       </section>
-
-
       <section aria-labelledby="reviews__title" className="reviews">
         <h2 id="reviews__title" className="reviews__title title--secondary">
           Отзывы наших клиентов
@@ -97,9 +94,13 @@ function MainPage() {
         <ReviewList />
       </section>
 
-      <div className="background__bottom">
-        <Form />
-      </div>
+        <div className="background__bottom">
+      <section aria-labelledby="form__title" className="form">
+          <h2 id="form__title" className="form__title">ОСТАЛИСЬ ВОПРОСЫ?</h2>
+          <Form />
+          <GoTopBtn/>
+      </section>
+        </div>
       <Footer />
     </div>
   );

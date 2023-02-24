@@ -11,6 +11,7 @@
   position: absolute;
   left: -15px;
   top: -15px;
+  border-radius: 50%;
 }
 
 .pos_r {
@@ -21,6 +22,8 @@
   position: absolute;
   left: 19px;
   top: -11px;
+  width: 90px;
+  max-height: 90px;
 }
 
 .info_customer {
@@ -32,7 +35,6 @@
 
 .name_customer {
   height: 25px;
-  font-family: 'Montserrat';
   font-weight: 600;
   font-size: 18px;
   line-height: 140%;
@@ -44,7 +46,6 @@
 
 .bought_good {
   height: 22px;
-  font-family: 'Montserrat';
   font-weight: 300;
   font-size: 16px;
   line-height: 140%;
@@ -57,8 +58,6 @@
 .review_text {
   width: 297px;
   height: 96px;
-  font-family: 'Montserrat';
-  font-style: normal;
   font-weight: 400;
   font-size: 17px;
   line-height: 140%;
@@ -73,3 +72,17 @@
   line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+
+.test_fix{
+  height: 300px;
+  display: flex;    
+  justify-content: center;
+  align-items: center;
+}
+
+/* @media (max-width:1200px) {
+  .review_card {
+    width: 300px;
+  }
+} */

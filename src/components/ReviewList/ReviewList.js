@@ -1,14 +1,16 @@
 import React from 'react';
-import s from './ReviewList.module.css';
-import ReviewItem from '../ReviewItem/ReviewItem';
-import right from '../../media/right.svg';
-import left from '../../media/left.svg';
+import Slider from "../Swiper/Swiper";
+// import s from './ReviewList.module.css';
+// import ReviewItem from '../ReviewItem/ReviewItem';
+// import right from '../../media/right.svg';
+// import left from '../../media/left.svg';
 
 const ReviewList = () => {
+  let url="https://sms-h9zb.onrender.com/user"
   return (
     <>
-      <div className={s.list_of_revs}>
-        <div className={s.dis_f}>
+      <div>
+        {/* <div className={s.dis_f}>
           <ReviewItem />
           <ReviewItem />
           <ReviewItem />
@@ -21,8 +23,10 @@ const ReviewList = () => {
           <button className={s.circle_btn}>
             <img src={right} alt="" className={s.center} />
           </button>
-        </div>
+        </div> */}
+        <Slider url={url}/>
       </div>
+      
     </>
   );
 };
