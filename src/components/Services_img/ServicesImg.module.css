@@ -33,3 +33,7 @@
 .imgs_section > div {
   position: relative;
 }
+
+.imgs_section>a{
+  position: relative;
+}

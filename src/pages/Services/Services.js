@@ -24,10 +24,12 @@ const Services = () => {
           <SectionImg />
         </section>
         <section aria-labelledby="form__title" className={s.form}>
-          <h2 id="form__title" className={s.form__title}>ОСТАЛИСЬ ВОПРОСЫ?</h2>
-          <Form/>
+          <h2 id="form__title" className={s.form__title}>
+            ОСТАЛИСЬ ВОПРОСЫ?
+          </h2>
+          <Form />
         </section>
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );

@@ -1,0 +1,56 @@
+import React, { useState, useEffect } from "react";
+import s from "./AllNews.module.css";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import Form from "../../components/Form/Form";
+import NewsItem from "../../components/NewsItem/NewsItem";
+import Button from "../../components/Button/Button";
+
+const AllNews = () => {
+  const [a, setA] = useState([]);
+  const [isloading, setIsloading] = useState(true);
+  useEffect(() => {
+    fetch("https://sms-h9zb.onrender.com/user")
+      .then((res) => {
+        setIsloading(true);
+        return res.json();
+      })
+      .then((data) => setA(data))
+      .finally(() => setIsloading(false));
+  }, []);
+  return (
+    <div className={s.newspage}>
+      <Header />
+      <div>
+        <section className={s.disg} aria-labelledby="hero__title">
+          <h1 id="disg">Новости компании</h1>
+          <p>
+            К вашему вниманию Здесь мы собрали все актуальные новости нашей
+            компании
+          </p>
+          <div className={s.section__img}>
+            {
+              isloading? <p>loading...</p>
+              :
+              a.map((item) => {
+                return <NewsItem key={item._id} url={item.description}/>;
+              })
+            }
+          </div>
+        </section>
+        <Button isSecondary className={s.isSecondary_btn}>
+          загрузить ещё
+        </Button>
+      </div>
+      <section aria-labelledby="form__title" className={s.form}>
+        <h2 id="form__title" className={s.form__title}>
+          ОСТАЛИСЬ ВОПРОСЫ?
+        </h2>
+        <Form />
+      </section>
+      <Footer />
+    </div>
+  );
+};
+
+export default AllNews;

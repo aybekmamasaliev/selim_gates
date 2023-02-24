@@ -1,4 +1,4 @@
-/* .list_of_revs {
+.list_of_revs {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -28,4 +28,4 @@
 
 .center {
   margin: 0 auto;
-} */
+}

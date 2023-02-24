@@ -12,11 +12,13 @@ import Footer from "../../components/Footer/Footer";
 import "./MainPage.scss";
 import OurWorks from "../../components/OurWorks/OurWorks";
 import ServicesImg from "../../components/Services_img/ServicesImg";
+import GoTopBtn from "../../components/GoTopBtn/GoTopBtn";
 
 
 function MainPage() {
   return (
     <div className="homepage">
+           
       <Header/>
       <section className="hero" aria-labelledby="hero__title">
         <h1 id="hero__title" className="hero__title">
@@ -96,6 +98,7 @@ function MainPage() {
       <section aria-labelledby="form__title" className="form">
           <h2 id="form__title" className="form__title">ОСТАЛИСЬ ВОПРОСЫ?</h2>
           <Form />
+          <GoTopBtn/>
       </section>
         </div>
       <Footer />

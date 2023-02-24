@@ -1,14 +1,14 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import s from "./Swiper.module.css";
-import "swiper/css";
+
 import React, { useEffect, useState } from "react";
-import "swiper/css/navigation";
-import { useSwiper } from "swiper/react";
+import s from "./Swiper.module.css";
 import SwiperButtonNext from "../NextBtn/NextBtn";
 import SwiperButtonPrev from "../PrevBtn/PrevBtn";
 import left from "../../media/left.svg";
 import right from "../../media/right.svg";
 import ReviewItem from "../ReviewItem/ReviewItem";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const Slider = (props) => {

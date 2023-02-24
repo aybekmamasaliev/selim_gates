@@ -19,13 +19,9 @@ const Form = () => {
     setVis(x);
   };
 
-  const goToTop = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  };
 
   return (
     <div className={s.form_block}>
-      <img src={btn_top} alt="" className={s.btn_top} onClick={goToTop} />
       <div className={s.form_border}>
         <Modal vis={vis} onClick={fixVis} />
         <form>
@@ -48,9 +44,6 @@ const Form = () => {
                 placeholder="телефон"
               />
             </div>
-            {/* <button className={s.btn} onClick={changeVis}>
-              Оставить заявку
-            </button> */}
             <Button onClick={changeVis} className={s.btn}>
               Оставить заявку
             </Button>

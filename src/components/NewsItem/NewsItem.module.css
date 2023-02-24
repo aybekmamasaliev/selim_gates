@@ -1,5 +1,5 @@
 .news_item {
-  width: 440px;
+  max-width: 440px;
   height: 300px;
   position: relative;
   border-radius: 20px;

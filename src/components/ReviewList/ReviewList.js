@@ -1,5 +1,9 @@
 import React from 'react';
 import Slider from "../Swiper/Swiper";
+// import s from './ReviewList.module.css';
+// import ReviewItem from '../ReviewItem/ReviewItem';
+// import right from '../../media/right.svg';
+// import left from '../../media/left.svg';
 
 const ReviewList = () => {
   let url="https://sms-h9zb.onrender.com/user"
