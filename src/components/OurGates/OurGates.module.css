@@ -9,6 +9,10 @@
   position: relative;
 }
 
+.services>a{
+  text-decoration: none;
+}
+
 .grid {
   display: grid;
   grid-template-columns: auto auto auto;
