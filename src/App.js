@@ -5,6 +5,7 @@ import MainPage from './pages/MainPage/MainPage';
 import Services from './pages/Services/Services';
 import GatesPage from './pages/GatesPage/GatesPage';
 import AllNews from './pages/AllNews/AllNews';
+import GalleryPage from './pages/GalleryPage/GalleryPage.js';
 // import Slider from './components/Slider/Slider';
 
 function App(){
@@ -16,6 +17,7 @@ function App(){
           <Route path="/home" element={<MainPage />} />
           <Route path="/services" element={<Services />} />
           <Route path="/news" element={<AllNews />} />
+           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/services/1" element={<GatesPage />} />
           {/* <Route path='/swiper' element={<Slider />} /> */}
         </Routes>
