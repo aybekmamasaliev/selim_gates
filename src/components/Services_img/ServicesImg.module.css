@@ -34,6 +34,8 @@
   position: relative;
 }
 
-.imgs_section>a{
+.imgs_section > a {
   position: relative;
+  border-radius: 20px;
+  overflow: hidden;
 }
