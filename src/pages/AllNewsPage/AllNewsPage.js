@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
-import s from "./AllNews.module.css";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
-import Form from "../../components/Form/Form";
-import NewsItem from "../../components/NewsItem/NewsItem";
-import Button from "../../components/Button/Button";
+import React, { useState, useEffect } from 'react';
+import s from './AllNewsPage.module.css';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import Form from '../../components/Form/Form';
+import NewsItem from '../../components/NewsItem/NewsItem';
+import Button from '../../components/Button/Button';
 
-const AllNews = () => {
+const AllNewsPage = () => {
   const [a, setA] = useState([]);
   const [isloading, setIsloading] = useState(true);
   useEffect(() => {
-    fetch("https://sms-h9zb.onrender.com/user")
+    fetch('https://sms-h9zb.onrender.com/user')
       .then((res) => {
         setIsloading(true);
         return res.json();
@@ -29,13 +29,13 @@ const AllNews = () => {
             компании
           </p>
           <div className={s.section__img}>
-            {
-              isloading? <p>loading...</p>
-              :
+            {isloading ? (
+              <p>loading...</p>
+            ) : (
               a.map((item) => {
-                return <NewsItem key={item._id} url={item.description}/>;
+                return <NewsItem key={item._id} url={item.description} />;
               })
-            }
+            )}
           </div>
         </section>
         <Button isSecondary className={s.isSecondary_btn}>
@@ -53,4 +53,4 @@ const AllNews = () => {
   );
 };
 
-export default AllNews;
+export default AllNewsPage;
