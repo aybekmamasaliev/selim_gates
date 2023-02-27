@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
-import s from './Services.module.css';
+import s from './ServicesPage.module.css';
 import SectionImg from '../../components/Services_img/ServicesImg';
 import Form from '../../components/Form/Form';
 import Footer from '../../components/Footer/Footer';
 
-const Services = () => {
+const ServicesPage = () => {
   return (
     <div className={s.services}>
       <div className={s.bg_top}></div>
@@ -37,4 +37,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ServicesPage;
