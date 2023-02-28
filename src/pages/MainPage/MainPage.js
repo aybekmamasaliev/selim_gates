@@ -13,6 +13,7 @@ import OurWorks from "../../components/OurWorks/OurWorks";
 import ServicesImg from "../../components/Services_img/ServicesImg";
 import GoTopBtn from "../../components/GoTopBtn/GoTopBtn";
 import { NavLink } from "react-router-dom";
+import NextSlide from "../../components/nextSlide/NextSlide";
 
 function MainPage() {
   return (
@@ -78,7 +79,8 @@ function MainPage() {
         <h2 id="works__title" className="works__title title--secondary">
           Наши работы
         </h2>
-        <OurWorks />
+        {/* <OurWorks /> */}
+        <NextSlide url="https://sms-h9zb.onrender.com/user"/>
       </section>
 
       <section aria-labelledby="services__title" className="services">

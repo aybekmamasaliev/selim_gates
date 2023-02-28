@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import s from "./Slider.module.css";
 import SwiperButtonNext from "../NextBtn/NextBtn";
@@ -39,8 +38,6 @@ const Slider = (props) => {
     };
   }, []);
 
-  // console.log(num);
-
   return (
     <div className={s.slider_cover}>
       <p>{windowwidth}</p>
@@ -50,7 +47,11 @@ const Slider = (props) => {
         <Swiper
           spaceBetween={10}
           slidesPerView={1}
+          // centeredSlides={true}
           className={s.swiper}
+          // renderBullet={function(index,className){
+          //   return '<span class="' + className + '">' + (index + 1) + '</span>'
+          // }} 
           breakpoints={{
             640: {
               slidesPerView: 1,
@@ -73,7 +74,12 @@ const Slider = (props) => {
           {a.map((item) => {
             return (
               <SwiperSlide key={item._id} className={s.slide}>
-                <ReviewItem key={item._id} img={item.img} />
+                {/* {(isActive) => (
+                  <div>
+                     {isActive ? "ACTIVE" : "NOT ACTIVE"}
+                  </div>
+                )} */}
+               <ReviewItem key={item._id} img={item.img} />
               </SwiperSlide>
             );
           })}
