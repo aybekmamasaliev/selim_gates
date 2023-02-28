@@ -5,7 +5,14 @@
   margin: 0 auto;
   position: relative;
   background-color: white;
+  transition: all .3s ease;
 }
+
+.review_card:hover {
+  transform: scale(1.2);
+  z-index: 3;
+}
+
 
 .user_icon_rectangle {
   position: absolute;

@@ -8,9 +8,9 @@ const NewsList = () => {
     <>
       <div className={s.news_block}>
         <div className={s.news_list}>
-          <NewsItem />
-          <NewsItem />
-          <NewsItem />
+          <NewsItem url="hello world"/>
+          <NewsItem url="hello world" />
+          <NewsItem url="hello world"/>
         </div>
       </div>
     </>
