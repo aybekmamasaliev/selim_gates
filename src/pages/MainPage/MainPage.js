@@ -1,4 +1,3 @@
-
 import HomeSvg from "./HomeSvg.svg";
 import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
@@ -9,9 +8,12 @@ import Services from "../../components/Services/Services";
 import ReviewList from "../../components/ReviewList/ReviewList";
 import Form from "../../components/Form/Form";
 import Footer from "../../components/Footer/Footer";
-import OurWorks from "../../components/OurWorks/OurWorks";
 import "./MainPage.scss";
-
+import OurWorks from "../../components/OurWorks/OurWorks";
+import ServicesImg from "../../components/Services_img/ServicesImg";
+import GoTopBtn from "../../components/GoTopBtn/GoTopBtn";
+import { NavLink } from "react-router-dom";
+import NextSlide from "../../components/nextSlide/NextSlide";
 
 function MainPage() {
   return (
@@ -67,20 +69,19 @@ function MainPage() {
         <h2 id="news__title" className="news__title title--secondary">
           Последние новости
         </h2>
-        <NewsList/>
-        <Button isSecondary>все новости</Button>
-      </section>
-      <section>
-        <OurWorks />
+        <NewsList />
+        <NavLink to={"/news"}>
+          <Button isSecondary>все новости</Button>
+        </NavLink>
       </section>
 
       <section aria-labelledby="works__title" className="works">
         <h2 id="works__title" className="works__title title--secondary">
           Наши работы
         </h2>
-        <OurWorks />
+        {/* <OurWorks /> */}
+        <NextSlide url="https://sms-h9zb.onrender.com/user"/>
       </section>
-
 
       <section aria-labelledby="services__title" className="services">
         <h2 id="services__title" className="services__title title--secondary">
@@ -88,8 +89,6 @@ function MainPage() {
         </h2>
         <Services />
       </section>
-
-
       <section aria-labelledby="reviews__title" className="reviews">
         <h2 id="reviews__title" className="reviews__title title--secondary">
           Отзывы наших клиентов
@@ -98,7 +97,13 @@ function MainPage() {
       </section>
 
       <div className="background__bottom">
-        <Form />
+        <section aria-labelledby="form__title" className="form">
+          <h2 id="form__title" className="form__title">
+            ОСТАЛИСЬ ВОПРОСЫ?
+          </h2>
+          <Form />
+          <GoTopBtn />
+        </section>
       </div>
       <Footer />
     </div>
