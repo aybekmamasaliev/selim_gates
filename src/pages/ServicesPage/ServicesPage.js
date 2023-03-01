@@ -8,9 +8,9 @@ import Footer from '../../components/Footer/Footer';
 const ServicesPage = () => {
   return (
     <div className={s.services}>
-      <div className={s.bg_top}></div>
+      {/* <div className={s.bg_top}></div>
       <div className={s.center_bg}></div>
-      <div className={s.bottom_bg}></div>
+      <div className={s.bottom_bg}></div> */}
       <Header />
       <div className={s.center_x}>
         <section className={s.disg} aria-labelledby="hero__title">
