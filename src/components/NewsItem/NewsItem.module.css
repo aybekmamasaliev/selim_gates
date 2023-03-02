@@ -47,22 +47,16 @@
 
 .btn {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
-  padding: 20px 30px;
   position: absolute;
-  left: 22.5%;
-  right: 29.77%;
-  top: 78%;
+  left: 50%;
+  transform: translate(-50%);
   bottom: 8.33%;
   background-color: rgba(28, 28, 28, 0);
   border-radius: 20px;
   border: 1px solid #105bfb;
-  color: white;
   color: #dee8f5;
   text-transform: lowercase;
-  align-items: center;
   font-family: var(--secondary-font);
   font-weight: 400;
   font-size: 20px;
@@ -89,9 +83,6 @@
     line-clamp: 4;
     -webkit-box-orient: vertical;
   }
-  .btn {
-    padding: 10px 20px;
-  }
 }
 
 @media (max-width: 920px) {
@@ -101,6 +92,8 @@
     padding: 1px 3px;
   }
 }
+
+
 
 
 
