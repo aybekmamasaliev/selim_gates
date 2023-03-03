@@ -40,3 +40,20 @@
     padding-inline: 30px;
   }
 }
+
+@media (max-width: 56.25rem) {
+  .button {
+    padding-inline: 17px;
+    padding-block: 8px;
+    gap: calc(15rem / 16);
+    font-size: calc(15rem / 16);
+
+    span {
+      width: calc(25rem / 16);
+    }
+
+    &:has(span) {
+      padding-inline: 25px;
+    }
+  }
+}

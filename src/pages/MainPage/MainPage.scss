@@ -1,5 +1,4 @@
 .homepage {
-
   header {
     position: fixed;
     top: 30px;
@@ -13,8 +12,6 @@
   }
 }
 
-
-
 .hero {
   position: relative;
   isolation: isolate;
@@ -22,7 +19,7 @@
   padding-block-start: 220px;
   padding-block-end: 240px;
   color: hsla(0, 0%, 99%, 1);
-  height: 90vh;
+  min-height: 90vh;
   background-image: linear-gradient(
       105.93deg,
       rgba(0, 0, 0, 0.475) 41.91%,
@@ -36,15 +33,16 @@
   border-bottom-right-radius: 2000px 100px;
 
   &__title {
-    font-size: calc(80rem / 16);
+    font-size: clamp(1.5625rem, 7.7vw - 1rem, 5rem);
     max-width: min-content;
     text-transform: uppercase;
+    overflow-wrap: normal;
     font-weight: 700;
     line-height: 110%;
   }
 
   &__description {
-    font-size: calc(25rem / 16);
+    font-size: clamp(0.875rem, 3.5vw - 0.25rem, 1.5625rem);
     max-width: calc(470rem / 16);
     margin-block-end: calc(40rem / 16);
   }
@@ -61,13 +59,12 @@
 
   &__title {
     margin-block-end: calc(20rem / 16);
-  
   }
 
   &__description {
     max-width: 45ch;
     font-weight: 300;
-    font-size: calc(20rem / 16);
+    font-size: clamp(0.875rem, 3.5vw - 0.25rem, 1.25rem);
     padding: 10px 17px;
     display: flex;
     flex-direction: column;
@@ -108,7 +105,7 @@
     width: 100%;
   }
 
-  a{
+  a {
     text-decoration: none;
   }
 }
@@ -161,12 +158,12 @@
   align-items: center;
   padding-block-end: 100px;
 
-& > div {
+  & > div {
     width: 100%;
   }
 }
 
-.form{
+.form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -175,9 +172,9 @@
     width: 100%;
   }
 
-  &__title{
+  &__title {
     font-weight: 700;
-    font-size: 40px;
+    font-size: clamp(1rem, 4.5vw - 0.25rem, 2.5rem);
     line-height: 150%;
     text-transform: uppercase;
     color: #414141;
@@ -186,7 +183,7 @@
 }
 
 .title--secondary {
-  font-size: calc(40rem / 16);
+  font-size: clamp(1rem, 4.5vw - 0.25rem, 2.5rem);
   font-weight: 700;
 }
 
@@ -198,4 +195,74 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+@media (max-width: 56.25rem) {
+  .homepage footer {
+    margin: 0;
+  }
+
+  .homepage > * {
+    margin-block: 0;
+  }
+
+  .hero {
+    padding-block-start: 118px;
+    padding-block-end: 82.5px;
+    min-height: revert;
+    padding-inline: 16px;
+
+    &__description {
+      margin-block-end: calc(25rem / 16);
+    }
+  }
+
+  .about {
+    padding-inline: 16px;
+    padding-block-start: 27px;
+    padding-block-end: 10px;
+
+    &__title {
+      margin-block-end: calc(14rem / 16);
+    }
+  }
+
+  .gates {
+    gap: calc(15rem / 16);
+
+    &__title {
+      margin-block-start: 0;
+    }
+  }
+
+  .advantages {
+    gap: calc(19rem / 16);
+    padding-block: 60px;
+  }
+
+  .news {
+    gap: calc(15rem / 16);
+    padding-block-end: calc(60rem / 16);
+  }
+
+  .works {
+    gap: calc(19rem / 16);
+    padding-block-end: calc(60rem / 16);
+  }
+
+  .services {
+    gap: calc(30rem / 16);
+    padding-block-start: 0;
+    padding-block-end: 60px;
+  }
+
+  .reviews {
+    padding-block-end: 60px;
+  }
+
+  .background__bottom {
+    padding-block-start: 0;
+    padding-block-end: 60px;
+    background: none;
+  }
 }
