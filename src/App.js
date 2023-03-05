@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './pages/MainPage/MainPage';
 import ServicesPage from './pages/ServicesPage/ServicesPage';
@@ -21,7 +21,6 @@ function App() {
           <Route path="/news/1" element={<SingleNewsPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/services/1" element={<GatesPage />} />
-
           {/* <Route path='/swiper' element={<Slider />} /> */}
         </Routes>
       </BrowserRouter>

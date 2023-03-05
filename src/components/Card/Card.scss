@@ -26,3 +26,15 @@
     max-width: 25ch;
   }
 }
+
+@media (max-width: 56.25rem) {
+  .card {
+    font-size: calc(14rem / 16);
+    padding-inline: 8px;
+
+    &__image {
+      width: calc(50rem / 16);
+      height: calc(50rem / 16);
+    }
+  }
+}

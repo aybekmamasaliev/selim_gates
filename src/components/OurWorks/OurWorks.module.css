@@ -1,10 +1,8 @@
 .works {
   width: 100%;
-  margin-top: 25px;
 }
 
 .scroll_div {
-  height: 432px;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
@@ -36,7 +34,7 @@
   transform: translate(-60px, -50%);
 }
 
-.left_btn{
+.left_btn {
   position: absolute;
   top: 50%;
   right: 0;

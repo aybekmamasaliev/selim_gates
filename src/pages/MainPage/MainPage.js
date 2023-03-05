@@ -1,16 +1,19 @@
-import HomeSvg from "./HomeSvg.svg";
-import Button from "../../components/Button/Button";
-import Header from "../../components/Header/Header";
-import Advantages from "../../components/Advantages/Advantages";
-import OurGates from "../../components/OurGates/OurGates";
-import NewsList from "../../components/News/NewsList";
-import Services from "../../components/Services/Services";
-import ReviewList from "../../components/ReviewList/ReviewList";
-import Form from "../../components/Form/Form";
-import Footer from "../../components/Footer/Footer";
-import "./MainPage.scss";
-import GoTopBtn from "../../components/GoTopBtn/GoTopBtn";
-import { NavLink } from "react-router-dom";
+
+import HomeSvg from './HomeSvg.svg';
+import Button from '../../components/Button/Button';
+import Header from '../../components/Header/Header';
+import Advantages from '../../components/Advantages/Advantages';
+import OurGates from '../../components/OurGates/OurGates';
+import NewsList from '../../components/News/NewsList';
+import Services from '../../components/Services/Services';
+import ReviewList from '../../components/ReviewList/ReviewList';
+import Form from '../../components/Form/Form';
+import Footer from '../../components/Footer/Footer';
+import './MainPage.scss';
+import OurWorks from '../../components/OurWorks/OurWorks';
+import ServicesImg from '../../components/Services_img/ServicesImg';
+import GoTopBtn from '../../components/GoTopBtn/GoTopBtn';
+import { NavLink } from 'react-router-dom';
 import SliderCentered from "../../components/SliderCentered/SliderCentered"
 
 function MainPage() {
@@ -68,8 +71,7 @@ function MainPage() {
           Последние новости
         </h2>
         <NewsList />
-        
-        <NavLink to={"/news"}>
+        <NavLink to={'/news'}>
           <Button isSecondary>все новости</Button>
         </NavLink>
       </section>
