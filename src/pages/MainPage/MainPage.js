@@ -68,6 +68,7 @@ function MainPage() {
           Последние новости
         </h2>
         <NewsList />
+        
         <NavLink to={"/news"}>
           <Button isSecondary>все новости</Button>
         </NavLink>
