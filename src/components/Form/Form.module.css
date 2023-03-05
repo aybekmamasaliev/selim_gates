@@ -1,29 +1,14 @@
-.any_questions {
-  font-weight: 700;
-  font-size: 40px;
-  text-transform: uppercase;
-  text-align: center;
-  color: #414141;
-  backdrop-filter: blur(2px);
-  margin-bottom: 20px;
-}
+
 
 .form_block {
   position: relative;
   margin-bottom: 50px;
 }
 
-.btn_top {
-  position: absolute;
-  right: 12px;
-  bottom: -40px;
-  cursor: pointer;
+.btn_second{
+  display: none;
 }
-/* .btn {
-  width: calc(31vw * 0.8);
-  display: flex;
-  justify-content: center;
-} */
+
 
 @media (max-width: 1300px) {
   .btn {
@@ -34,6 +19,8 @@
     justify-content: center;
   }
 }
+
+
 
 .form_border {
   width: max-content;
@@ -52,7 +39,6 @@
   padding: 15px 15px 15px 10px;
   border: 0.5px solid #414141;
   border-radius: 20px;
-  box-sizing: border-box;
   margin-right: 40px;
   font-weight: 500;
   font-size: 20px;
@@ -76,8 +62,9 @@
 }
 
 .textarea {
-  width: 80vw;
-  height: 125px;
+  max-width: 80vw;
+  min-width: 80vw;
+  min-height: 125px;
   background: rgba(249, 249, 249, 0.2);
   border: 0.5px solid #414141;
   border-radius: 20px;
@@ -87,4 +74,43 @@
   text-transform: lowercase;
   font-weight: 500;
   font-size: 20px;
+}
+
+@media (max-width:825px) {
+  .textarea{
+    width:100px;
+    margin-top: 15px;
+  }
+
+  .form {
+    flex-direction: column;
+    height: 110px;
+  }
+
+  .name_input {
+    width: 80vw;
+    height: 47px;
+  }
+  
+  .phone_num_input {
+    width: 80vw;
+    height: 47px;
+  }
+
+  .btn_second{
+    display: block;
+    width: calc(80vw*.85);
+    margin-top: -8px;
+    margin: 0 auto;
+  }
+
+  .form_block {
+    position: relative;
+    margin-bottom: 50px;
+  }
+  
+
+  .btn {
+    display: none;
+  }
 }

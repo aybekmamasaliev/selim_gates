@@ -1,8 +1,6 @@
 .imgs_section {
   width: 100%;
   margin: 0 auto;
-  /* height: 50vh; */
-  /* background-color: blueviolet; */
   grid-column: 1/3;
   display: grid;
   grid-template-columns: minmax(330px, 670px) minmax(330px, 670px);
@@ -32,4 +30,39 @@
 
 .imgs_section > div {
   position: relative;
+}
+
+.imgs_section > a {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+@media (max-width:900px) {
+  .imgs_section {
+    gap: 20px 10px;
+  }
+  .left_b{
+    font-size: 18px;
+  }
+}
+
+@media (max-width:750px) {
+  .imgs_section{
+    padding-top: 30px;
+  }
+}
+
+@media (max-width:690px) {
+  .imgs_section {
+    grid-template-columns: minmax(330px, 670px) ;
+    justify-content: center;
+    gap: 20px 10px;
+  }
+}
+
+@media (max-width:500px) {
+  .left_b{
+    font-size: 14px;
+  }
 }

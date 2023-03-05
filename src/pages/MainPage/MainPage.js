@@ -1,4 +1,3 @@
-
 import HomeSvg from "./HomeSvg.svg";
 import Button from "../../components/Button/Button";
 import Header from "../../components/Header/Header";
@@ -10,14 +9,14 @@ import ReviewList from "../../components/ReviewList/ReviewList";
 import Form from "../../components/Form/Form";
 import Footer from "../../components/Footer/Footer";
 import "./MainPage.scss";
-import OurWorks from "../../components/OurWorks/OurWorks";
-import ServicesImg from "../../components/Services_img/ServicesImg";
-
+import GoTopBtn from "../../components/GoTopBtn/GoTopBtn";
+import { NavLink } from "react-router-dom";
+import SliderCentered from "../../components/SliderCentered/SliderCentered"
 
 function MainPage() {
   return (
     <div className="homepage">
-      <Header/>
+      <Header />
       <section className="hero" aria-labelledby="hero__title">
         <h1 id="hero__title" className="hero__title">
           Современная и&nbsp;надёжная&nbsp;защита
@@ -68,15 +67,18 @@ function MainPage() {
         <h2 id="news__title" className="news__title title--secondary">
           Последние новости
         </h2>
-        <NewsList/>
-        <Button isSecondary>все новости</Button>
+        <NewsList />
+        
+        <NavLink to={"/news"}>
+          <Button isSecondary>все новости</Button>
+        </NavLink>
       </section>
 
       <section aria-labelledby="works__title" className="works">
         <h2 id="works__title" className="works__title title--secondary">
           Наши работы
         </h2>
-        <OurWorks />
+        <SliderCentered url="https://sms-h9zb.onrender.com/user"/>
       </section>
 
       <section aria-labelledby="services__title" className="services">
@@ -92,12 +94,15 @@ function MainPage() {
         <ReviewList />
       </section>
 
-        <div className="background__bottom">
-      <section aria-labelledby="form__title" className="form">
-          <h2 id="form__title" className="form__title">ОСТАЛИСЬ ВОПРОСЫ?</h2>
+      <div className="background__bottom">
+        <section aria-labelledby="form__title" className="form">
+          <h2 id="form__title" className="form__title">
+            ОСТАЛИСЬ ВОПРОСЫ?
+          </h2>
           <Form />
-      </section>
-        </div>
+          <GoTopBtn />
+        </section>
+      </div>
       <Footer />
     </div>
   );

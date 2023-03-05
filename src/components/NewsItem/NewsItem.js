@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import s from "./NewsItem.module.css";
 import bg_img1 from "../../media/bgimg.svg";
 
-const NewsItem = () => {
+const NewsItem = (props) => {
   const [vis, setVis]=useState("visible")
   const [vis2, setVis2]=useState("hidden")
 
@@ -16,8 +16,9 @@ const NewsItem = () => {
       <div className={s.news_item} onMouseEnter={changeText} onMouseLeave={changeText}>
         <img src={bg_img1} alt="" />
         <p className={s.news_item_title} style={{ visibility: vis }}>
-          РЕАЛИЗОВАНА ВОЗМОЖНОСТЬ ПОДКЛЮЧЕНИЯ СИГНАЛЬНОЙ ЛАМПЫ К БЛОКАМ
-          УПРАВЛЕНИЯ PCB-SH
+          {/* РЕАЛИЗОВАНА ВОЗМОЖНОСТЬ ПОДКЛЮЧЕНИЯ СИГНАЛЬНОЙ ЛАМПЫ К БЛОКАМ
+          УПРАВЛЕНИЯ PCB-SH */}
+          {props.url}
         </p>
         <div style={{ visibility: vis2 }}>
           <p className={s.news_desc}>
@@ -25,6 +26,7 @@ const NewsItem = () => {
             лампы к блокам управления PCB-SH. Желтая клемма стандартизирована
             для всей автоматики DoorHan и отвечает за подключение сигнальной
             лампы.
+            
           </p>
           <button className={s.btn}>УЗНАТЬ БОЛЬШЕ</button>
         </div>

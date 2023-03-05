@@ -5,12 +5,15 @@
   margin: 0 auto;
   position: relative;
   background-color: white;
+  transition: all .3s ease;
 }
+
 
 .user_icon_rectangle {
   position: absolute;
   left: -15px;
   top: -15px;
+  border-radius: 50%;
 }
 
 .pos_r {
@@ -21,6 +24,8 @@
   position: absolute;
   left: 19px;
   top: -11px;
+  width: 90px;
+  max-height: 90px;
 }
 
 .info_customer {
@@ -69,3 +74,17 @@
   line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+
+.test_fix{
+  height: 300px;
+  display: flex;    
+  justify-content: center;
+  align-items: center;
+}
+
+/* @media (max-width:1200px) {
+  .review_card {
+    width: 300px;
+  }
+} */
