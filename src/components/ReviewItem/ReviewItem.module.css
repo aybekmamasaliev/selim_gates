@@ -5,7 +5,9 @@
   margin: 0 auto;
   position: relative;
   background-color: white;
+  transition: all .3s ease;
 }
+
 
 .user_icon_rectangle {
   position: absolute;

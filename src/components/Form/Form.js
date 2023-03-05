@@ -52,7 +52,7 @@ const Form = () => {
           <div>
             <textarea placeholder="СООБЩЕНИЕ" className={s.textarea}></textarea>
           </div>
-          <Button className={s.btn} style={{ display: "none" }}>
+          <Button onClick={changeVis}  className={s.btn_second}>
             Оставить заявку
           </Button>
         </form>

@@ -1,15 +1,11 @@
-.services {
-  /* background-image: url("../../media/service_page__top.svg"); */
-  background-repeat: no-repeat;
-}
 
 .bg_top {
   position: absolute;
-  /* background-color: red; */
   width: 100%;
   height: 1135px;
   z-index: -1;
   background-image: url('../../media/service_page__top.svg');
+  /* background-color: red; */
   background-repeat: no-repeat;
   background-size: cover;
   top: -300px;
@@ -34,8 +30,8 @@
   background-image: url('../../media//services_page_bg_center.png');
   background-repeat: no-repeat;
   background-size: cover;
-  width: 1446px;
-  height: 1256px;
+  width: 70vw;
+  height: 60vw;
   position: absolute;
   top: 1100px;
   left: 100px;
@@ -49,13 +45,13 @@
   height: 1130px;
   position: absolute;
   z-index: -1;
-  /* background-color: red; */
   background-image: url('../../media/service_page__top.svg');
   background-repeat: no-repeat;
+  background-color: red;
   background-size: cover;
   filter: blur(2px);
-  top: 2000px;
-  bottom: 0px;
+  top: 140vw;
+  bottom: 0;
 }
 
 .services > header {
@@ -69,6 +65,7 @@
 
 .center_x {
   padding-inline: 40px;
+  border: 1px solid black;
 }
 
 .disg {
@@ -83,18 +80,16 @@
   display: flex;
   align-items: center;
   font-size: 70px;
-  /* border: 1px solid black; */
 }
+
 .disg > p {
   font-weight: 300;
   font-size: 19px;
   text-align: justify;
-  /* border: 1px solid black; */
 }
 
 .imgs_section {
   width: 100%;
-  /* height: 50vh; */
   background-color: blueviolet;
   grid-column: 1/3;
   display: grid;
@@ -117,4 +112,34 @@
   /* background-color: red; */
   text-align: center;
   margin-top: 105px;
+}
+
+@media (max-width:750px) {
+  .disg {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+
+  .disg > h1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    justify-content: center;
+    font-size: 50px;
+  }
+  .disg > p {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+@media (max-width:550px) {
+  .disg > h1 {
+    font-size: 16px;
+  }
+  .disg > p {
+    font-size: 14px;
+  }
 }

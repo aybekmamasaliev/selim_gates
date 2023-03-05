@@ -1,16 +1,16 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
-import s from './Services.module.css';
+import s from './ServicesPage.module.css';
 import SectionImg from '../../components/Services_img/ServicesImg';
 import Form from '../../components/Form/Form';
 import Footer from '../../components/Footer/Footer';
 
-const Services = () => {
+const ServicesPage = () => {
   return (
     <div className={s.services}>
-      <div className={s.bg_top}></div>
+      {/* <div className={s.bg_top}></div>
       <div className={s.center_bg}></div>
-      <div className={s.bottom_bg}></div>
+      <div className={s.bottom_bg}></div> */}
       <Header />
       <div className={s.center_x}>
         <section className={s.disg} aria-labelledby="hero__title">
@@ -37,4 +37,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ServicesPage;

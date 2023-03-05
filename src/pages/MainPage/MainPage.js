@@ -1,3 +1,4 @@
+
 import HomeSvg from './HomeSvg.svg';
 import Button from '../../components/Button/Button';
 import Header from '../../components/Header/Header';
@@ -13,6 +14,7 @@ import OurWorks from '../../components/OurWorks/OurWorks';
 import ServicesImg from '../../components/Services_img/ServicesImg';
 import GoTopBtn from '../../components/GoTopBtn/GoTopBtn';
 import { NavLink } from 'react-router-dom';
+import SliderCentered from "../../components/SliderCentered/SliderCentered"
 
 function MainPage() {
   return (
@@ -78,7 +80,7 @@ function MainPage() {
         <h2 id="works__title" className="works__title title--secondary">
           Наши работы
         </h2>
-        <OurWorks />
+        <SliderCentered url="https://sms-h9zb.onrender.com/user"/>
       </section>
 
       <section aria-labelledby="services__title" className="services">

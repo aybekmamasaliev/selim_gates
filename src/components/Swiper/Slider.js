@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import s from "./Slider.module.css";
 import SwiperButtonNext from "../NextBtn/NextBtn";
@@ -39,8 +38,6 @@ const Slider = (props) => {
     };
   }, []);
 
-  // console.log(num);
-
   return (
     <div className={s.slider_cover}>
       <p>{windowwidth}</p>
@@ -50,23 +47,26 @@ const Slider = (props) => {
         <Swiper
           spaceBetween={10}
           slidesPerView={1}
-          className={s.swiper}
+          loop={true}
           breakpoints={{
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 10,
+            330: {
+              centeredSlides:true,
+              slidesPerView: "auto",  
             },
-            768: {
+            680: {
+              centeredSlides:false,
               slidesPerView: 2,
-              spaceBetween: 10,
+            },
+            780: {
+              centeredSlides:true,
+              slidesPerView: "auto",
             },
             1024: {
+              centeredSlides:false,
               slidesPerView: 3,
-              spaceBetween: 10,
             },
-            1260: {
+            1360: {
               slidesPerView: 4,
-              spaceBetween: 10,
             },
           }}
         >
