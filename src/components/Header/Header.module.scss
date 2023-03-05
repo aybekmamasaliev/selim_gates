@@ -20,6 +20,10 @@
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 
+  &__mobile {
+    display: none;
+  }
+
   ul {
     list-style: none;
     display: flex;
@@ -64,7 +68,93 @@
 }
 
 @media (max-width: 56.25rem) {
-  .header {
+  .header__desktop {
     display: none;
+  }
+
+  .header__mobile {
+    --menu-btn-size: calc(30rem / 16);
+
+    position: absolute;
+    top: 28px;
+
+    display: flex;
+    padding-block: 0;
+    padding-inline: 16px;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    & > button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: var(--menu-btn-size);
+      height: var(--menu-btn-size);
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: calc(20rem / 16);
+
+    padding: 13px;
+    position: absolute;
+    background-color: hsla(0, 0%, 98%, 1);
+    top: calc(var(--menu-btn-size) + 11.5px);
+    right: calc(var(--menu-btn-size) + 16px);
+    min-width: calc(230rem / 16);
+
+    &__logo {
+      width: calc(36rem / 16);
+      position: absolute;
+      right: 16px;
+    }
+
+    ul {
+      flex-direction: column;
+      gap: calc(15rem / 16);
+      font-size: calc(14rem / 16);
+      align-items: start;
+      text-transform: capitalize;
+    }
+
+    &__link {
+      &:link,
+      &:visited {
+        color: hsla(221, 100%, 14%, 1);
+        font-weight: 600;
+        text-decoration: none;
+      }
+    }
+
+    &__contacts {
+      display: flex;
+      flex-direction: column;
+
+      font-size: calc(14rem / 16);
+      font-weight: 600;
+      color: hsla(221, 100%, 14%, 1);
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        span {
+          width: 15px;
+          height: 15px;
+          overflow: hidden;
+        }
+      }
+    }
   }
 }
