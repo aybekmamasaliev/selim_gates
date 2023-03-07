@@ -4,7 +4,6 @@ import s from "./PrevBtn.module.css";
 
 const SwiperButtonPrev = ({ children }) => {
   const swiper = useSwiper();
-
   return (
     <div>
       <button className={s.btn} onClick={() => swiper.slidePrev()}>{children}</button>

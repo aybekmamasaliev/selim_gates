@@ -10,3 +10,9 @@
     padding: 5px;
     border-radius: 20px;
   }
+
+  @media (max-width: 900px) {
+    .door_name{
+      font-size: 25px;
+    }
+  }

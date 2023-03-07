@@ -1,0 +1,44 @@
+.margin100{
+    margin: 0 auto;
+    display: none;
+}
+
+.per_slide{
+    position: relative;
+    transition: 0.5s;
+    display: block;
+}
+
+.margin100 .per_slide{
+    width: auto;
+}
+
+.img{
+    display: block;
+    border-radius: 10%;
+}
+
+.per_slide>div{
+    transition: all 0.3s ease;
+}
+
+.margin100 .sliders_cover{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+}
+
+@media (max-width:786px) {
+    .margin100{
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+

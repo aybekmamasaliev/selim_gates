@@ -5,6 +5,7 @@
   cursor: pointer;
 }
 
+
 .news_item:hover {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
 }
@@ -91,6 +92,12 @@
     margin: 0 auto;
     width: 200px;
     padding: 1px 3px;
+  }
+}
+
+@media (max-width:786px) {
+  .news_item {
+    width: 250px;
   }
 }
 
