@@ -29,7 +29,7 @@ const DefaultSlider = (props) => {
           className={s.sliders_cover}
           spaceBetween={10}
           slidesPerView={"auto"}
-          centeredSlides={true}
+          centeredSlides={false}
           initialSlide={1}
         >
           <SwiperSlide className={s.per_slide}>

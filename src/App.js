@@ -7,6 +7,7 @@ import GatesPage from './pages/GatesPage/GatesPage';
 import AllNewsPage from './pages/AllNewsPage/AllNewsPage';
 import GalleryPage from './pages/GalleryPage/GalleryPage.js';
 import SingleNewsPage from './pages/SingleNewsPage/SingleNewsPage';
+import TestNews from './pages/TestNews/TestNews';
 // import Slider from './components/Slider/Slider';
 
 function App() {
@@ -17,11 +18,10 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/home" element={<MainPage />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/news" element={<AllNewsPage />} />
+          <Route path="/news" element={<TestNews />} />
           <Route path="/news/1" element={<SingleNewsPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/services/1" element={<GatesPage />} />
-          {/* <Route path='/swiper' element={<Slider />} /> */}
         </Routes>
       </BrowserRouter>
     </>

@@ -79,7 +79,6 @@
 
 .imgs_section {
   width: 100%;
-  background-color: blueviolet;
   grid-column: 1/3;
   display: grid;
   grid-template-columns: auto auto;
@@ -122,6 +121,10 @@
     font-size: 18px;
     text-align: center;
   }
+
+  .disg{
+    padding-top: 97px;
+  }
 }
 
 @media (max-width: 550px) {
@@ -130,5 +133,8 @@
   }
   .disg > p {
     font-size: 14px;
+  }
+  .center_x {
+    padding-inline: 16px;
   }
 }

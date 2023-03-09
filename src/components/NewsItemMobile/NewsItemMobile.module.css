@@ -95,16 +95,9 @@
   }
 }
 
-@media (max-width:786px) {
+/* @media (max-width:786px) {
   .news_item {
-    max-width: 250px;
-    margin: 0 auto;
-  }
-}
-
-/* @media (max-width:600px) {
-  .news_item {
-    max-width: 258px;
+    max-width: 440px;
     margin: 0 auto;
   }
 } */

@@ -17,7 +17,7 @@ const WeProvideSlider = () => {
         slidesPerView={"auto"}
         className={s.slider_cover}
         spaceBetween={20}
-        centeredSlides={true}
+        centeredSlides={false}
         initialSlide={1}
       >
         <div>
