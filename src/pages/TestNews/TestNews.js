@@ -21,7 +21,7 @@ const TestNews = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{outline:"1px solid green", }}>
       <Header isDark/>
       <div className={s.center_x}>
         <section className={s.disg} aria-labelledby="hero__title">

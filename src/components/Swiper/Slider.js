@@ -49,7 +49,7 @@ const Slider = (props) => {
           slidesPerView={1}
           loop={true}
           breakpoints={{
-            330: {
+            300: {
               initialSlide: 2,
               centeredSlides: false,
               slidesPerView: "auto",
