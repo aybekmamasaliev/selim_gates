@@ -16,6 +16,7 @@ import GoTopBtn from '../../components/GoTopBtn/GoTopBtn';
 import { NavLink } from 'react-router-dom';
 import SliderCentered from "../../components/SliderCentered/SliderCentered"
 import DefaultSlider from '../../components/BaseSlider/DefaultSlider';
+import Hand from '../../components/Hand/Hand';
 
 function MainPage() {
   return (
@@ -31,6 +32,7 @@ function MainPage() {
           </p>
         </div>
         <Button icon={HomeSvg}>заказать ворота</Button>
+        <Hand/>
       </section>
 
       <section aria-labelledby="about__title" className="about">

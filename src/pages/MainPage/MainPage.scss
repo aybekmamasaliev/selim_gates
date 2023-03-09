@@ -203,6 +203,7 @@
     padding-block-end: 82.5px;
     min-height: revert;
     padding-inline: 16px;
+    position: relative;
 
     &__description {
       margin-block-end: calc(25rem / 16);

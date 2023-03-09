@@ -8,7 +8,7 @@ import AllNewsPage from './pages/AllNewsPage/AllNewsPage';
 import GalleryPage from './pages/GalleryPage/GalleryPage.js';
 import SingleNewsPage from './pages/SingleNewsPage/SingleNewsPage';
 import TestNews from './pages/TestNews/TestNews';
-// import Slider from './components/Slider/Slider';
+import Hand from './components/Hand/Hand';
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
           <Route path="/news/1" element={<SingleNewsPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/services/1" element={<GatesPage />} />
+          <Route path='/test' element={<Hand />} />
         </Routes>
       </BrowserRouter>
     </>
