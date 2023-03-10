@@ -1,18 +1,17 @@
 .door_name {
-    font-weight: 800;
-    font-size: 31.6467px;
-    color: #F1F6FF;
-    backdrop-filter: blur(1.80838px);
-    position: absolute;
-    bottom:9px;
-    left:9px;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 5px;
-    border-radius: 20px;
-  }
-
-  @media (max-width: 900px) {
-    .door_name{
-      font-size: 25px;
-    }
-  }
+  font-weight: 800;
+  color: #f1f6ff;
+  backdrop-filter: blur(1.80838px);
+  position: absolute;
+  bottom: 9px;
+  left: 9px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-size: clamp(
+    1rem,
+    0.6859893922018349rem + 1.4354770642201835vw,
+    1.97791875rem
+  );
+}

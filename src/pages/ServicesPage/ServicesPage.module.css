@@ -3,8 +3,7 @@
   width: 100%;
   height: 1135px;
   z-index: -1;
-  background-image: url('../../media/service_page__top.svg');
-  /* background-color: red; */
+  background-image: url("../../media/service_page__top.svg");
   background-repeat: no-repeat;
   background-size: cover;
   top: -300px;
@@ -12,8 +11,8 @@
 }
 
 .bg_top::after {
-  content: '';
-  background-image: url('../../media/service_page_leaves_top.png');
+  content: "";
+  background-image: url("../../media/service_page_leaves_top.png");
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -26,7 +25,7 @@
 }
 
 .center_bg {
-  background-image: url('../../media//services_page_bg_center.png');
+  background-image: url("../../media//services_page_bg_center.png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 70vw;
@@ -44,7 +43,7 @@
   height: 1130px;
   position: absolute;
   z-index: -1;
-  background-image: url('../../media/service_page__top.svg');
+  background-image: url("../../media/service_page__top.svg");
   background-repeat: no-repeat;
   background-color: red;
   background-size: cover;
@@ -68,13 +67,23 @@
 .disg > h1 {
   display: flex;
   align-items: center;
-  font-size: 70px;
+  font-size: 1rem;
+  font-size: clamp(
+    1rem,
+    -0.08371559633027537rem + 4.954128440366973vw,
+    4.375rem
+  );
 }
 
 .disg > p {
   font-weight: 300;
-  font-size: 19px;
   text-align: justify;
+  font-size: 0.875rem;
+  font-size: clamp(
+    0.875rem,
+    0.7746559633027523rem + 0.45871559633027525vw,
+    1.1875rem
+  );
 }
 
 .imgs_section {
@@ -92,14 +101,14 @@
 
 .form__title {
   font-weight: 700;
-  font-size: 40px;
   line-height: 150%;
   text-transform: uppercase;
   color: #414141;
   margin-bottom: 20px;
-  /* background-color: red; */
   text-align: center;
   margin-top: 105px;
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.518348623853211rem + 2.2018348623853212vw, 2.5rem);
 }
 
 @media (max-width: 750px) {
@@ -112,28 +121,26 @@
     grid-column: 1/2;
     grid-row: 1/2;
     justify-content: center;
-    font-size: 50px;
   }
   .disg > p {
     grid-column: 1/2;
     grid-row: 2/3;
     margin: 0 auto;
-    font-size: 18px;
     text-align: center;
+    font-size: 0.875rem;
+    font-size: clamp(
+      0.875rem,
+      0.7746559633027523rem + 0.45871559633027525vw,
+      1.1875rem
+    );
   }
 
-  .disg{
+  .disg {
     padding-top: 97px;
   }
 }
 
 @media (max-width: 550px) {
-  .disg > h1 {
-    font-size: 16px;
-  }
-  .disg > p {
-    font-size: 14px;
-  }
   .center_x {
     padding-inline: 16px;
   }
