@@ -98,6 +98,11 @@ h6 {
     0.5rem + 2.22vw,
     2.5rem
   ); // heading size: from 40px to 16px;
+  --font-size-heading-750: clamp(
+    1rem,
+    0.29rem + 3.148vw,
+    3.125rem
+  ); // heading size: from 50px to 16px;
   --font-size-heading-700: clamp(
     1rem,
     0.6rem + 1.7592vw,
