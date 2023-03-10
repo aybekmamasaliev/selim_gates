@@ -22,14 +22,14 @@ const AllNewsPage = () => {
   return (
     <div className={s.newspage}>
       <Header isDark />
-      <div>
-        <section className={s.disg} aria-labelledby="hero__title">
+      <div className={s.center_x}>
+        <section className={s.disg} aria-labelledby="hero__title" >
           <h1 id="disg">Новости компании</h1>
           <p>
             К вашему вниманию Здесь мы собрали все актуальные новости нашей
             компании
           </p>
-          <div className={s.section__img}>
+          <div className={s.section__img} style={{background:"blue"}}>
             {isloading ? (
               <p>loading...</p>
             ) : (

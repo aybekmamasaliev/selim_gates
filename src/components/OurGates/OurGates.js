@@ -8,6 +8,7 @@ import item4 from "../../media/item4.svg";
 import item5 from "../../media/item5.svg";
 import DoorName from "../DoorName/DoorName";
 import { NavLink } from "react-router-dom";
+import WeProvideSlider from "../WeProvideSlider/WeProvideSlider";
 
 const OurGates = () => {
   return (
@@ -36,8 +37,9 @@ const OurGates = () => {
               <DoorName>Секционные</DoorName>
             </div>
           </div>
+          <WeProvideSlider/>
           <NavLink to={"/services"} >
-            <Button isSecondary>смотреть все</Button>
+            <Button isSecondary className={s.to_hide}>смотреть все</Button>
           </NavLink>
         </div>
       </div>

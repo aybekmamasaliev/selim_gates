@@ -30,25 +30,40 @@ const SliderCentered = (props) => {
         <p>loading</p>
       ) : (
         <Swiper
-          spaceBetween={"8%"}
-          slidesPerView={3}
+          spaceBetween={22}
+          slidesPerView={"auto"}
           loop={true}
           centeredSlides={true}
           className={s.swiper_cover}
+          breakpoints={{
+            0: {
+              spaceBetween: 22,
+              slidesPerView: "auto",
+              loop: true,
+              centeredSlides: true,
+            },
+            780: {
+              spaceBetween: "8%",
+              slidesPerView: 3,
+              loop: true,
+              centeredSlides: true,
+            },
+          }}
         >
           {a.map((item) => {
             return (
-              <SwiperSlide
-                key={item._id}
-                className={s.per_slide}
-              >
+              <SwiperSlide key={item._id} className={s.per_slide} >
                 {({ isActive }) => (
-                  <div className={s.next_test}>
+                  <div className={s.div_upper_img}>
                     {isActive ? (
                       <div className={s.secondary}>
-                        <div className={s.div_for_btn} style={{zIndex:"100"}}>
-                          <BtnPrev className={s.btn_prev}><img src={left} alt="" /></BtnPrev>
-                          <BtnNext className={s.btn_next}><img src={right} alt=""  /></BtnNext>
+                        <div className={s.div_for_btn}>
+                          <BtnPrev className={s.btn_prev}>
+                            <img src={left} alt="" />
+                          </BtnPrev>
+                          <BtnNext className={s.btn_next}>
+                            <img src={right} alt="" />
+                          </BtnNext>
                         </div>
                         <img
                           src={item.img}

@@ -8,3 +8,9 @@
   .pos_ab{
     position: absolute;
   }
+
+  @media  (max-width:600px) {
+    .btn_top {
+      display: none;
+    }
+  }
