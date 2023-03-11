@@ -88,6 +88,32 @@ h6 {
   --secondary-font: 'Inter', sans-serif;
   --color-white: hsla(219, 100, 97, 1);
   --color-black: hsla(0, 0, 25, 1);
+  --font-size-heading-900: clamp(
+    1.5625rem,
+    0.42rem + 5.09vw,
+    5rem
+  ); // main heading size: from 80px to 25px;
+  --font-size-heading-800: clamp(
+    1rem,
+    0.5rem + 2.22vw,
+    2.5rem
+  ); // heading size: from 40px to 16px;
+  --font-size-heading-750: clamp(
+    1rem,
+    0.29rem + 3.148vw,
+    3.125rem
+  ); // heading size: from 50px to 16px;
+  --font-size-heading-700: clamp(
+    1rem,
+    0.6rem + 1.7592vw,
+    2.1875rem
+  ); //heading size: from 35px to 16px;
+
+  --font-size-text: clamp(
+    0.875rem,
+    0.75rem + 0.5vw,
+    1.25rem
+  ); //text size: from 20px to 14px;
 }
 
 body {
