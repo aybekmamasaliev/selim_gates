@@ -1,19 +1,21 @@
-import HomeSvg from "./HomeSvg.svg";
-import Button from "../../components/Button/Button";
-import Header from "../../components/Header/Header";
-import Advantages from "../../components/Advantages/Advantages";
-import OurGates from "../../components/OurGates/OurGates";
-import NewsList from "../../components/News/NewsList";
-import Services from "../../components/Services/Services";
-import ReviewList from "../../components/ReviewList/ReviewList";
-import Form from "../../components/Form/Form";
-import Footer from "../../components/Footer/Footer";
-import "./MainPage.scss";
-import OurWorks from "../../components/OurWorks/OurWorks";
-import ServicesImg from "../../components/Services_img/ServicesImg";
-import GoTopBtn from "../../components/GoTopBtn/GoTopBtn";
-import { NavLink } from "react-router-dom";
-import NextSlide from "../../components/nextSlide/NextSlide";
+import HomeSvg from './HomeSvg.svg';
+import Button from '../../components/Button/Button';
+import Header from '../../components/Header/Header';
+import Advantages from '../../components/Advantages/Advantages';
+import OurGates from '../../components/OurGates/OurGates';
+import NewsList from '../../components/News/NewsList';
+import Services from '../../components/Services/Services';
+import ReviewList from '../../components/ReviewList/ReviewList';
+import Form from '../../components/Form/Form';
+import Footer from '../../components/Footer/Footer';
+import './MainPage.scss';
+import OurWorks from '../../components/OurWorks/OurWorks';
+import ServicesImg from '../../components/Services_img/ServicesImg';
+import GoTopBtn from '../../components/GoTopBtn/GoTopBtn';
+import { NavLink } from 'react-router-dom';
+import SliderCentered from '../../components/SliderCentered/SliderCentered';
+import DefaultSlider from '../../components/BaseSlider/DefaultSlider';
+import Hand from '../../components/Hand/Hand';
 
 function MainPage() {
   return (
@@ -29,6 +31,7 @@ function MainPage() {
           </p>
         </div>
         <Button icon={HomeSvg}>заказать ворота</Button>
+        <Hand />
       </section>
 
       <section aria-labelledby="about__title" className="about">
@@ -70,7 +73,8 @@ function MainPage() {
           Последние новости
         </h2>
         <NewsList />
-        <NavLink to={"/news"}>
+        <DefaultSlider />
+        <NavLink to={'/news'}>
           <Button isSecondary>все новости</Button>
         </NavLink>
       </section>
@@ -79,8 +83,7 @@ function MainPage() {
         <h2 id="works__title" className="works__title title--secondary">
           Наши работы
         </h2>
-        {/* <OurWorks /> */}
-        <NextSlide url="https://sms-h9zb.onrender.com/user"/>
+        <SliderCentered url="https://sms-h9zb.onrender.com/user" />
       </section>
 
       <section aria-labelledby="services__title" className="services">

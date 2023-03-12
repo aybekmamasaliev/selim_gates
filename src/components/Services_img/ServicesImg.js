@@ -10,79 +10,80 @@ import img7 from "../../media/service_page/wlagbaumi.svg";
 import img8 from "../../media/service_page/skladniye.svg";
 import img9 from "../../media/service_page/kalitki.svg";
 import { NavLink } from "react-router-dom";
+import DoorName from "../DoorName/DoorName";
 
 const ServicesImg = () => {
   return (
     <div className={s.imgs_section}>
       <NavLink to="/services/1">
         <div>
-          <p className={s.left_b}>Промышленные секционные ворота</p>
+          <DoorName>Промышленные секционные ворота</DoorName>
           <img src={img1} alt="" />
         </div>
       </NavLink>
 
       <NavLink to="/services/1">
         <div>
-          <p className={s.left_b}>Ролл ворота</p>
+          <DoorName>Ролл ворота</DoorName>
           <img src={img2} alt="" />
         </div>
       </NavLink>
 
       <NavLink to="/services/1">
         <div>
-          <p className={s.left_b}>Секционные ворота</p>
+          <DoorName>Секционные ворота</DoorName>
           <img src={img3} alt="" />
         </div>
       </NavLink>
 
       <NavLink to="/services/1">
         <div>
-          <p className={s.left_b}>Промышленные секционные ворота</p>
+          <DoorName>Промышленные секционные ворота</DoorName>
           <img src={img4} alt="" />
         </div>
       </NavLink>
 
       <NavLink to="/services/1">
         <div>
-          <p className={s.left_b}>
+          <DoorName>
             {" "}
             Автоматика и механизмы для откатных и распашных ворот
-          </p>
+          </DoorName>
           <img src={img5} alt="" />
         </div>
       </NavLink>
 
       <NavLink to="/services/1">
         <div>
-          <p className={s.left_b}>Промышленные секционные ворота</p>
+          <DoorName>Промышленные секционные ворота</DoorName>
           <img src={img6} alt="" />
         </div>
       </NavLink>
 
       <NavLink to="/services/1">
         <div>
-          <p className={s.left_b}>Промышленные секционные ворота</p>
+          <DoorName>Промышленные секционные ворота</DoorName>
           <img src={img7} alt="" />
         </div>
       </NavLink>
 
       <NavLink to="/services/1">
         <div>
-          <p className={s.left_b}>Промышленные секционные ворота</p>
+          <DoorName>Промышленные секционные ворота</DoorName>
           <img src={img8} alt="" />
         </div>
       </NavLink>
 
       <NavLink to="/services/1">
         <div>
-          <p className={s.left_b}>Промышленные секционные ворота</p>
+          <DoorName>Промышленные секционные ворота</DoorName>
           <img src={img9} alt="" />
         </div>
       </NavLink>
 
       <NavLink to="/services/1">
         <div>
-          <p className={s.left_b}>Промышленные секционные ворота</p>
+          <DoorName>Промышленные секционные ворота</DoorName>
           <img src={img9} alt="" />
         </div>
       </NavLink>

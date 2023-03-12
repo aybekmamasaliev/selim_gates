@@ -11,7 +11,7 @@ const ServicesPage = () => {
       {/* <div className={s.bg_top}></div>
       <div className={s.center_bg}></div>
       <div className={s.bottom_bg}></div> */}
-      <Header />
+      <Header isDark />
       <div className={s.center_x}>
         <section className={s.disg} aria-labelledby="hero__title">
           <h1 id="disg">Наши услуги</h1>

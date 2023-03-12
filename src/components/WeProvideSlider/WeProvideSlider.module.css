@@ -1,0 +1,71 @@
+.to_hide{
+    width:97vw;
+    margin: 0 auto;
+}
+
+.btn_cover {
+  width: 280px;
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.circle_btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(65, 65, 65, 0.15);
+  border: 5px solid #f1f6ff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.slider_cover{
+    position: relative;
+}
+
+.div_cover_btns {
+  position: relative;
+  z-index: 90;
+}
+.div_cover_btns a{
+    text-decoration: none;
+}
+
+.upper_btn_div {
+  width: 280px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-left: 50%;
+  transform: translate(-50%);
+  /* background-color: aqua; */
+}
+
+.slider_cover .per_slide {
+  width: auto;
+}
+
+.gates_item {
+  width: 250px;
+  height: 180px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.img {
+  width: 100%;
+  border-radius: 10%;
+}
+
+@media (min-width: 626px) {
+  .to_hide {
+    display: none;
+  }
+}

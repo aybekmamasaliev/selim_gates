@@ -16,7 +16,7 @@ import img10 from './gallery-image 10.png';
 function GalleryPage() {
   return (
     <>
-      <Header />
+      <Header isDark />
       <main className="main">
         <div className="main__info">
           <h1 className="main__title">Наши работы</h1>

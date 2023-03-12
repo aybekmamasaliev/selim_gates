@@ -1,14 +1,17 @@
-
-
 .form_block {
   position: relative;
   margin-bottom: 50px;
+  font-size: 0.875rem;
+  font-size: clamp(
+    0.875rem,
+    0.7545871559633027rem + 0.5504587155963303vw,
+    1.25rem
+  );
 }
 
-.btn_second{
+.btn_second {
   display: none;
 }
-
 
 @media (max-width: 1300px) {
   .btn {
@@ -20,8 +23,6 @@
   }
 }
 
-
-
 .form_border {
   width: max-content;
   margin: 0 auto;
@@ -30,7 +31,7 @@
 .form {
   display: flex;
   justify-content: space-between;
-  width:80vw;
+  width: 80vw;
 }
 
 .name_input {
@@ -39,12 +40,17 @@
   padding: 15px 15px 15px 10px;
   border: 0.5px solid #414141;
   border-radius: 20px;
-  margin-right: 40px;
+  margin-right: 30px;
   font-weight: 500;
-  font-size: 20px;
   line-height: 120%;
   letter-spacing: 0.5px;
   text-transform: lowercase;
+  font-size: 0.875rem;
+  font-size: clamp(
+    0.875rem,
+    0.7545871559633027rem + 0.5504587155963303vw,
+    1.25rem
+  );
 }
 
 .phone_num_input {
@@ -53,12 +59,17 @@
   padding: 15px 15px 15px 10px;
   border: 0.5px solid #414141;
   border-radius: 20px;
-  margin-right: 40px;
+  margin-right: 30px;
   font-weight: 500;
-  font-size: 20px;
   line-height: 120%;
   letter-spacing: 0.5px;
   text-transform: lowercase;
+  font-size: 0.875rem;
+  font-size: clamp(
+    0.875rem,
+    0.7545871559633027rem + 0.5504587155963303vw,
+    1.25rem
+  );
 }
 
 .textarea {
@@ -73,12 +84,17 @@
   padding: 15px 15px 15px 10px;
   text-transform: lowercase;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 0.875rem;
+  font-size: clamp(
+    0.875rem,
+    0.7545871559633027rem + 0.5504587155963303vw,
+    1.25rem
+  );
 }
 
-@media (max-width:825px) {
-  .textarea{
-    width:100px;
+@media (max-width: 825px) {
+  .textarea {
+    width: 100px;
     margin-top: 15px;
   }
 
@@ -91,15 +107,15 @@
     width: 80vw;
     height: 47px;
   }
-  
+
   .phone_num_input {
     width: 80vw;
     height: 47px;
   }
 
-  .btn_second{
+  .btn_second {
     display: block;
-    width: calc(80vw*.85);
+    width: calc(80% * 0.85);
     margin-top: -8px;
     margin: 0 auto;
   }
@@ -108,9 +124,30 @@
     position: relative;
     margin-bottom: 50px;
   }
-  
 
   .btn {
     display: none;
   }
 }
+
+/* @media (max-width: 500px) {
+  .phone_num_input {
+    margin-right: 0px;
+  }
+
+  .name_input {
+    margin-right: 0px;
+  }
+
+  .form .name_input {
+    font-size: 14px;
+  }
+
+  .form .phone_num_input {
+    font-size: 14px;
+  }
+
+  .textarea {
+    font-size: 14px;
+  }
+} */

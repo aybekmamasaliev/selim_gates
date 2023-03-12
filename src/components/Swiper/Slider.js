@@ -47,39 +47,34 @@ const Slider = (props) => {
         <Swiper
           spaceBetween={10}
           slidesPerView={1}
-          // centeredSlides={true}
-          className={s.swiper}
-          // renderBullet={function(index,className){
-          //   return '<span class="' + className + '">' + (index + 1) + '</span>'
-          // }} 
+          loop={true}
           breakpoints={{
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 10,
+            300: {
+              initialSlide: 2,
+              centeredSlides: false,
+              slidesPerView: "auto",
             },
-            768: {
+            680: {
+              centeredSlides: false,
               slidesPerView: 2,
-              spaceBetween: 10,
+            },
+            780: {
+              centeredSlides: true,
+              slidesPerView: "auto",
             },
             1024: {
+              centeredSlides: false,
               slidesPerView: 3,
-              spaceBetween: 10,
             },
-            1260: {
+            1360: {
               slidesPerView: 4,
-              spaceBetween: 10,
             },
           }}
         >
           {a.map((item) => {
             return (
               <SwiperSlide key={item._id} className={s.slide}>
-                {/* {(isActive) => (
-                  <div>
-                     {isActive ? "ACTIVE" : "NOT ACTIVE"}
-                  </div>
-                )} */}
-               <ReviewItem key={item._id} img={item.img} />
+                <ReviewItem key={item._id} img={item.img} />
               </SwiperSlide>
             );
           })}
