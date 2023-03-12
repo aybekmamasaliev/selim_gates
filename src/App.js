@@ -9,6 +9,7 @@ import GalleryPage from './pages/GalleryPage/GalleryPage.js';
 import SingleNewsPage from './pages/SingleNewsPage/SingleNewsPage';
 import TestNews from './pages/TestNews/TestNews';
 import Hand from './components/Hand/Hand';
+import SwiperAuto from './components/SwiperAuto/SwiperAuto';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/services/1" element={<GatesPage />} />
           <Route path='/test' element={<Hand />} />
+          <Route path="/1" element={<SwiperAuto/>}/>
         </Routes>
       </BrowserRouter>
     </>

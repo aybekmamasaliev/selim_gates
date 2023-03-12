@@ -1,0 +1,38 @@
+.per_slide {
+  width: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0.889959px 8.89959px rgba(0, 0, 0, 0.13);
+}
+
+.card {
+  width: 200px;
+  height: 133px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dis_n{
+    display: none;
+    padding-block: 5px;
+}
+
+.card>img{
+    width:50px;
+}
+
+.card>p{
+    text-align: center;
+    font-size: 14px;
+    width: 150px;
+}
+
+@media (max-width:750px) {
+    .dis_n{
+        display: block;
+        width:100%;
+    }
+}

@@ -16,6 +16,7 @@ import { NavLink } from 'react-router-dom';
 import SliderCentered from '../../components/SliderCentered/SliderCentered';
 import DefaultSlider from '../../components/BaseSlider/DefaultSlider';
 import Hand from '../../components/Hand/Hand';
+import SwiperAuto from '../../components/SwiperAuto/SwiperAuto';
 
 function MainPage() {
   return (
@@ -66,6 +67,7 @@ function MainPage() {
           Наши преимущества
         </h2>
         <Advantages />
+        <SwiperAuto/>
       </section>
 
       <section aria-labelledby="news__title" className="news">
@@ -91,6 +93,7 @@ function MainPage() {
           Сервис
         </h2>
         <Services />
+        <SwiperAuto/>
       </section>
       <section aria-labelledby="reviews__title" className="reviews">
         <h2 id="reviews__title" className="reviews__title title--secondary">

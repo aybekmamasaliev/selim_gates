@@ -259,3 +259,9 @@
     background: none;
   }
 }
+
+@media (max-width:750px) {
+  .advantages {
+    padding-inline: 3px;
+  }
+}

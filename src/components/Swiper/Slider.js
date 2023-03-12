@@ -54,10 +54,10 @@ const Slider = (props) => {
               centeredSlides: false,
               slidesPerView: "auto",
             },
-            680: {
-              centeredSlides: false,
-              slidesPerView: 2,
-            },
+            // 680: {
+            //   centeredSlides: false,
+            //   slidesPerView: 2,
+            // },
             780: {
               centeredSlides: true,
               slidesPerView: "auto",

@@ -3,3 +3,9 @@
   display: flex;
   gap: calc(20rem / 16);
 }
+
+@media (max-width:750px) {
+  .advantages{
+    display: none;
+  }
+}

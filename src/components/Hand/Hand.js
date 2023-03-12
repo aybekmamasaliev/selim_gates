@@ -15,11 +15,11 @@ const Hand = () => {
           cy={80}
           rx={60}
           ry={60}
-          textProps={{ style: { fontSize: 14 } }}
+          textProps={{ style: { fontSize: 9, letterSpacing: "3px" } }}
           reversed={true}
           textPathProps={{"fill": "#fff"}}
           startOffset={20}
-          text="скролл . скролл . скролл . скролл . скролл . скролл ."
+          text="скролл. скролл. скролл. скролл. скролл. скролл."
         />
         <img src={hand} alt="" />
       </div>
