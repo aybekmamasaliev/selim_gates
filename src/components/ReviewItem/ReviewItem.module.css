@@ -87,13 +87,7 @@
   align-items: center;
 }
 
-/* @media (max-width:1200px) {
-  .review_card {
-    width: 300px;
-  }
-} */
-
-@media (max-width: 500px) {
+@media (max-width: 794px) {
   .review_card {
     height: 151px;
     width: 242px;
