@@ -63,3 +63,29 @@
   color: #414141;
   text-align: center;
 }
+
+@media (max-width: 720px) {
+  .div_modal {
+    width: 400px;
+    height: 350px;
+  }
+  .text_success {
+    font-weight: 700;
+    font-size: 20px;
+    top: 160px;
+  }
+  .vasha_zayavka {
+    position: absolute;
+    top: 235px;
+    left: 50%;
+    width: 342px;
+    background-color: red;
+  }
+  .galka {
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100px;
+  }
+}
