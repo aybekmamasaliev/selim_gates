@@ -21,6 +21,19 @@
   bottom: 0;
 }
 
+.pointing{
+  width:14px;
+  height: 14px;
+  border-radius: 50%;
+  background-image: url(../../media/Tap.svg);
+  position: relative;
+  background-size: cover;
+  margin-left: 69.5px;
+  margin-top: -53px;
+  z-index: 43;
+  animation: example_point linear 2s infinite;
+}
+
 @keyframes example {
   0% {
     left: 0px;
@@ -33,6 +46,39 @@
   75% {
     left: 0px;
     top: -25px;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+@keyframes example_point {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  50% {
+    left: 0px;
+    top: -50px;
+    width: 14px;
+    height: 14px;
+  }
+  51% {
+    left: 0px;
+    top: -50px;
+    width: 0px;
+    height: 0px;
+  }
+  75% {
+    left: 0px;
+    top: -25px;
+  }
+  99% {
+    left: 0px;
+    top: -25px;
+    width: 0;
+    height: 0;
   }
   100% {
     left: 0px;

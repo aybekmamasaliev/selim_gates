@@ -2,6 +2,7 @@ import React from "react";
 import ReactCurvedText from "react-curved-text";
 import s from "./Hand.module.css";
 import hand from "../../media/Hand.svg";
+import tap from "../../media/Tap.svg";
 
 const Hand = () => {
   return (
@@ -22,6 +23,10 @@ const Hand = () => {
           text="скролл. скролл. скролл. скролл. скролл. скролл."
         />
         <img src={hand} alt="" />
+        <div className={s.pointing}>
+         
+          </div>
+          {/* <img className={s.pointing} src={tap} alt=""/> */}
       </div>
     </div>
   );
