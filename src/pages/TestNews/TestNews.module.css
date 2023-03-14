@@ -71,8 +71,15 @@
   }
 
   .center_x {
-    padding-inline: 10px;
+    padding-inline: 15px;
   }
+  .disg {
+    padding-top: 140px;
+    gap: 50px 20px;
+  }
+}
+
+@media (max-width:900px) {
 }
 
 @media (max-width: 750px) {

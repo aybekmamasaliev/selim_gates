@@ -24,7 +24,6 @@ function App() {
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/services/1" element={<GatesPage />} />
           <Route path='/test' element={<Hand />} />
-          <Route path="/1" element={<SwiperAuto/>}/>
         </Routes>
       </BrowserRouter>
     </>

@@ -55,8 +55,8 @@ const TestNews = () => {
           </h2>
           <Form/>
         </section>
-        <Footer/>
       </div>
+      <Footer/>
     </div>
   );
 };
