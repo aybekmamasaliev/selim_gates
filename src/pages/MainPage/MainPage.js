@@ -17,6 +17,7 @@ import SliderCentered from '../../components/SliderCentered/SliderCentered';
 import DefaultSlider from '../../components/BaseSlider/DefaultSlider';
 import Hand from '../../components/Hand/Hand';
 import SwiperAuto from '../../components/SwiperAuto/SwiperAuto';
+import SwiperAutoTwo from "../../components/SwiperAutoTwo/SwiperAutoTwo";
 
 function MainPage() {
   return (
@@ -67,7 +68,7 @@ function MainPage() {
           Наши преимущества
         </h2>
         <Advantages />
-        <SwiperAuto/>
+        <SwiperAutoTwo/>
       </section>
 
       <section aria-labelledby="news__title" className="news">
