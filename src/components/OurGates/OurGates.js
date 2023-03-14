@@ -34,7 +34,7 @@ const OurGates = () => {
             </div>
             <div className={s.item5}>
               <img src={item1} alt="" className={s.img} />
-              <DoorName>Секционные</DoorName>
+              <DoorName>Роль ворота</DoorName>
             </div>
           </div>
           <WeProvideSlider/>
