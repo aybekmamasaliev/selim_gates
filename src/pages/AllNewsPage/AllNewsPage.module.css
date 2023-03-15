@@ -53,6 +53,12 @@
   row-gap: 40px;
 }
 
+.preloader{
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+}
+
 /* .img__div{
   background-color: red;
 } */

@@ -6,8 +6,10 @@ import Form from '../../components/Form/Form';
 import NewsItem from '../../components/NewsItem/NewsItem';
 import Button from '../../components/Button/Button';
 import { NavLink } from 'react-router-dom';
+import { useGetGoodsQuery } from '../../redux';
 
 const AllNewsPage = () => {
+  const {data=[], isLoading}=useGetGoodsQuery();
   const [a, setA] = useState([]);
   const [isloading, setIsloading] = useState(true);
   useEffect(() => {
@@ -29,11 +31,11 @@ const AllNewsPage = () => {
             К вашему вниманию Здесь мы собрали все актуальные новости нашей
             компании
           </p>
-          <div className={s.section__img} style={{background:"blue"}}>
-            {isloading ? (
-              <p>loading...</p>
+          <div className={s.section__img}>
+            {isLoading ? (
+              <p className={s.preloader}>Идет загрузка...</p>
             ) : (
-              a.map((item) => {
+              data.map((item) => {
                 return (
                   <NavLink to="/news/1">
                     <NewsItem key={item._id} url={item.description} />

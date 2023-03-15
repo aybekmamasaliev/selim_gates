@@ -6,19 +6,10 @@ import Button from "../../components/Button/Button";
 import Form from "../../components/Form/Form";
 import Footer from "../../components/Footer/Footer";
 import NewsItemMobile from "../../components/NewsItemMobile/NewsItemMobile";
+import { useGetGoodsQuery } from "../../redux";
 
 const TestNews = () => {
-  const [a, setA] = useState([]);
-  const [isloading, setIsloading] = useState(true);
-  useEffect(() => {
-    fetch("https://sms-h9zb.onrender.com/user")
-      .then((res) => {
-        setIsloading(true);
-        return res.json();
-      })
-      .then((data) => setA(data))
-      .finally(() => setIsloading(false));
-  }, []);
+  const {data=[], isLoading}=useGetGoodsQuery();
 
   return (
     <div style={{outline:"1px solid green", }}>
@@ -31,10 +22,10 @@ const TestNews = () => {
             компании
           </p>
           <div className={s.news_list}>
-            {isloading ? (
-              <p>loading ... </p>
+            {isLoading ? (
+              <p className={s.preloader}>Идет загрузка ...</p>
             ) : (
-              a.map((item) => {
+              data.map((item) => {
                 return (
                   <NavLink to="/news/1">
                     <NewsItemMobile key={item._id} url={item.description} />
