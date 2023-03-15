@@ -27,7 +27,7 @@ const SliderCentered = (props) => {
   return (
     <div className={s.margin100}>
       {isloading ? (
-        <p>loading</p>
+        <p>Идет загрузка ...</p>
       ) : (
         <Swiper
           spaceBetween={22}
