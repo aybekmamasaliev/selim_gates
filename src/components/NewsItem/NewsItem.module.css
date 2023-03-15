@@ -71,9 +71,9 @@
   text-transform: lowercase;
   font-family: var(--secondary-font);
   font-weight: 400;
-  /* font-size: 20px; */
-  line-height: 120%;
+  line-height: 160%;
   cursor: pointer;
+  /* height: 50px; */
   font-size: 0.6875rem;
   font-size: clamp(
     0.6875rem,

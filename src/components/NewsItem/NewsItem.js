@@ -16,8 +16,6 @@ const NewsItem = (props) => {
       <div className={s.news_item} onMouseEnter={changeText} onMouseLeave={changeText}>
         <img src={bg_img1} alt="" />
         <p className={s.news_item_title} style={{ visibility: vis }}>
-          {/* РЕАЛИЗОВАНА ВОЗМОЖНОСТЬ ПОДКЛЮЧЕНИЯ СИГНАЛЬНОЙ ЛАМПЫ К БЛОКАМ
-          УПРАВЛЕНИЯ PCB-SH */}
           {props.url}
         </p>
         <div style={{ visibility: vis2 }}>

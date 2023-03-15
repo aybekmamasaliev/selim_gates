@@ -8,26 +8,16 @@ import BtnPrev from "./BtnPrfrev";
 import s from "./SliderCentered.module.css";
 import left from "../../media/left_circle.svg";
 import right from "../../media/right_circle.svg";
+import { useGetGoodsQuery } from "../../redux/goodsApi";
 
-const SliderCentered = (props) => {
+const SliderCentered = () => {
+  const {data=[], isLoading} = useGetGoodsQuery();
   const swiper = useSwiper();
-
-  const [a, setA] = useState([]);
-  const [isloading, setIsloading] = useState(true);
-  useEffect(() => {
-    fetch(props.url)
-      .then((res) => {
-        setIsloading(true);
-        return res.json();
-      })
-      .then((data) => setA(data))
-      .finally(() => setIsloading(false));
-  }, []);
 
   return (
     <div className={s.margin100}>
-      {isloading ? (
-        <p>loading</p>
+      {isLoading ? (
+        <p>Идет загрузка ...</p>
       ) : (
         <Swiper
           spaceBetween={22}
@@ -50,7 +40,7 @@ const SliderCentered = (props) => {
             },
           }}
         >
-          {a.map((item) => {
+          {data.map((item) => {
             return (
               <SwiperSlide key={item._id} className={s.per_slide} >
                 {({ isActive }) => (

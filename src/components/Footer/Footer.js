@@ -1,8 +1,9 @@
-import Logo from '../Logo/Logo';
-import './Footer.scss';
-import InstagramSvg from './InstagramSvg.svg';
-import WhatsAppSvg from './WhatsAppSvg.svg';
-import Map from '../Map/Map';
+import Logo from "../Logo/Logo";
+import "./Footer.scss";
+import InstagramSvg from "./InstagramSvg.svg";
+import WhatsAppSvg from "./WhatsAppSvg.svg";
+import Map from "../Map/Map";
+import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
@@ -16,7 +17,8 @@ function Footer() {
             <span>Пн-Пт</span> <time>8:30</time>–<time>18:30</time>
           </p>
           <p>
-            <span>Суббота</span> <time>8:30</time>–<time>14:00</time>
+            <span>Суббота</span>
+            <time>8:30</time>–<time>14:00</time>
           </p>
         </div>
 
@@ -54,15 +56,26 @@ function Footer() {
             </li>
           </ul>
         </div>
-
         <nav className="footer__nav">
           <ul>
-            <li>Главная</li>
-            <li>О нас</li>
-            <li>Услуги</li>
-            <li>Работы</li>
-            <li>Отзывы</li>
-            <li>Новости</li>
+            <NavLink to="/home">
+              <li>Главная</li>
+            </NavLink>
+            <NavLink to="/">
+              <li>О нас</li>
+            </NavLink>
+            <NavLink to="/services">
+              <li>Услуги</li>
+            </NavLink>
+            <NavLink to="/">
+              <li>Работы</li>
+            </NavLink>
+            <NavLink to="/">
+              <li>Отзывы</li>
+            </NavLink>
+            <NavLink to="/news">
+              <li>Новости</li>
+            </NavLink>
           </ul>
         </nav>
       </div>

@@ -9,8 +9,6 @@ import ReviewList from '../../components/ReviewList/ReviewList';
 import Form from '../../components/Form/Form';
 import Footer from '../../components/Footer/Footer';
 import './MainPage.scss';
-import OurWorks from '../../components/OurWorks/OurWorks';
-import ServicesImg from '../../components/Services_img/ServicesImg';
 import GoTopBtn from '../../components/GoTopBtn/GoTopBtn';
 import { NavLink } from 'react-router-dom';
 import SliderCentered from '../../components/SliderCentered/SliderCentered';
@@ -18,6 +16,7 @@ import DefaultSlider from '../../components/BaseSlider/DefaultSlider';
 import Hand from '../../components/Hand/Hand';
 import SwiperAuto from '../../components/SwiperAuto/SwiperAuto';
 import SwiperAutoTwo from "../../components/SwiperAutoTwo/SwiperAutoTwo";
+
 
 function MainPage() {
   return (
@@ -86,7 +85,7 @@ function MainPage() {
         <h2 id="works__title" className="works__title title--secondary">
           Наши работы
         </h2>
-        <SliderCentered url="https://sms-h9zb.onrender.com/user" />
+        <SliderCentered />
       </section>
 
       <section aria-labelledby="services__title" className="services">

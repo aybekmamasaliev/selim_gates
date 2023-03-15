@@ -60,6 +60,11 @@
       display: flex;
       flex-direction: column;
       gap: calc(15rem / 16);
+
+      a{
+        color: #414141;
+        text-decoration: none;
+      }
     }
   }
 

@@ -2,6 +2,12 @@
     width:99%;
 }
 
+.margin100>p{
+  text-align: center;
+  font-weight: 600;
+  font-size: 22px;
+}
+
 .swiper_cover {
   min-height: 432px;
   display: flex;

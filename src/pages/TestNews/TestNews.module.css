@@ -34,8 +34,16 @@
 .news_list {
   grid-column: 1/3;
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(3, minmax(328px, 650px));
   gap: 40px 20px;
+}
+
+.preloader{
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  width: 100%;
 }
 
 .form > h2 {
