@@ -3,11 +3,11 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Form from '../../components/Form/Form';
 import './GatesPage.scss';
-import gateType1 from './gateType1.png';
-import gateType2 from './gateType2.png';
-import gateType3 from './gateType3.png';
-import gateType4 from './gateType4.png';
-import gateType5 from './gateType5.png';
+import gateType1 from './media/gateType1.avif';
+import gateType2 from './media/gateType2.avif';
+import gateType3 from './media/gateType3.avif';
+import gateType4 from './media/gateType4.avif';
+import gateType5 from './media/gateType5.avif';
 
 function GatesPage() {
   useEffect(() => {
