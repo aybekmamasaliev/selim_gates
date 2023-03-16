@@ -1,3 +1,7 @@
+.gatespage {
+  --form-padding-inline: 116.5px;
+}
+
 .banner {
   display: grid;
   place-content: center;
@@ -139,18 +143,6 @@
       color: hsla(0, 0%, 92%, 0.5);
     }
   }
-}
-
-.visually-hidden {
-  display: inline-block;
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1;
-  width: 1;
-  margin: -1;
-  padding: 0;
-  border: 0;
 }
 
 @media (max-width: 64.0625rem) {

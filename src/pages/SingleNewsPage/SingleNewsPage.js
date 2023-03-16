@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Form from '../../components/Form/Form';
 import Footer from '../../components/Footer/Footer';
@@ -9,10 +9,10 @@ import NewsList from '../../components/News/NewsList';
 
 function SingleNewsPage() {
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <>
+    <div className="single-newspage">
       <Header isDark />
       <section
         className="single-news__section"
@@ -48,7 +48,7 @@ function SingleNewsPage() {
       </section>
       <Form />
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -1,63 +1,58 @@
-import React, { useState } from "react";
-import s from "./Form.module.css";
-import Modal from "../Modal/Modal";
-import btn_top from "../../media/to_the_top_swipe.svg";
-import Button from "../Button/Button";
+import React, { useState } from 'react';
+import s from './Form.module.css';
+import Modal from '../Modal/Modal';
+import btn_top from '../../media/to_the_top_swipe.svg';
+import Button from '../Button/Button';
 
 const Form = () => {
-  const [name, setName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-
-  const [vis, setVis] = useState("hidden");
-
-  const changeVis = (e) => {
-    e.preventDefault();
-    vis === "hidden" ? setVis("visible") : setVis("hidden");
-  };
-
-  const fixVis = (x) => {
-    setVis(x);
-  };
-
+  const [name, setName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
 
   return (
-    <div className={s.form_block}>
-      <div className={s.form_border}>
-        <Modal vis={vis} onClick={fixVis} />
-        <form>
-          <div className={s.form}>
-            <div>
-              <input
-                className={s.name_input}
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="имя"
-              />
-            </div>
-            <div>
-              <input
-                className={s.phone_num_input}
-                type="tel"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                placeholder="телефон"
-              />
-            </div>
-            <Button onClick={changeVis} className={s.btn}>
-              Оставить заявку
-            </Button>
-          </div>
+    <section className={s.form} aria-labelledby="form__title">
+      <h2 className={s.form__title} id="form__title">
+        Остались вопросы?
+      </h2>
 
-          <div>
-            <textarea placeholder="СООБЩЕНИЕ" className={s.textarea}></textarea>
-          </div>
-          <Button onClick={changeVis}  className={s.btn_second}>
-            Оставить заявку
-          </Button>
-        </form>
-      </div>
-    </div>
+      <form className={s.form__form}>
+        <p className={s.form__name}>
+          <label htmlFor="name__input" className="visually-hidden">
+            Имя
+          </label>
+          <input
+            id="name__input"
+            className={s.form__input}
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="имя"
+          />
+        </p>
+        <p className={s.form__phone}>
+          <label htmlFor="phone__input" className="visually-hidden">
+            Телефон
+          </label>
+          <input
+            className={s.form__input}
+            type="tel"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            placeholder="телефон"
+          />
+        </p>
+        <p className={s.form__text}>
+          <label htmlFor="text__input" className="visually-hidden">
+            Сообщение
+          </label>
+          <textarea
+            id="text__input"
+            placeholder="сообщение"
+            className={s.form__textarea}
+          ></textarea>
+        </p>
+        <Button className={s.form__button}>оставить заявку</Button>
+      </form>
+    </section>
   );
 };
 

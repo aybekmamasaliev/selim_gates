@@ -1,6 +1,8 @@
 .homepage {
+  --form-padding-inline: 115.5px;
+
   footer {
-    margin-block-start: -160px;
+    margin-block-start: -220px;
   }
 }
 
@@ -17,7 +19,7 @@
       rgba(0, 0, 0, 0.475) 41.91%,
       rgba(13, 13, 13, 0.15) 77.87%
     ),
-    url('./BgImg.png');
+    url('./media/BgImg.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -44,7 +46,7 @@
   margin-block-start: -40px;
   padding-inline: 90px;
   padding-block: 240px;
-  background-image: url('./AboutBg.png');
+  background-image: url('./media/AboutBg.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -72,7 +74,7 @@
   flex-direction: column;
   align-items: center;
   gap: calc(30rem / 16);
-  background-image: url('./GatesBg.png');
+  background-image: url('./media/GatesBg.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -87,7 +89,7 @@
   flex-direction: column;
   align-items: center;
   gap: calc(35rem / 16);
-  background-image: url('./NewsBg.png');
+  background-image: url('./media/NewsBg.avif');
   background-repeat: no-repeat;
   background-size: 450px;
   background-position: right 180px;
@@ -118,7 +120,7 @@
   padding-block-start: 170px;
   padding-block-end: 120px;
   padding-inline: 70px;
-  background-image: url('./AdvantagesBg.png');
+  background-image: url('./media/AdvantagesBg.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -132,7 +134,7 @@
   padding-block-start: 340px;
   padding-block-end: 340px;
   align-items: center;
-  background-image: url('./ServiceBg.png');
+  background-image: url('./media/ServiceBg.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -183,13 +185,17 @@
   margin-block-start: -470px;
   padding-block-start: 480px;
   padding-block-end: 280px;
-  background-image: url('./BottomBg.png');
+  background-image: url('./media/BottomBg.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 @media (max-width: 56.25rem) {
+  .homepage {
+    --form-padding-inline: 16px;
+  }
+
   .homepage footer {
     margin: 0;
   }

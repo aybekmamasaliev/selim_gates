@@ -112,17 +112,8 @@ function MainPage() {
       </section>
 
       <div className="background__bottom">
-        <section
-          aria-labelledby="form__title"
-          className="form"
-          id="form__section"
-        >
-          <h2 id="form__title" className="form__title">
-            ОСТАЛИСЬ ВОПРОСЫ?
-          </h2>
-          <Form />
-          <GoTopBtn />
-        </section>
+        <Form />
+        <GoTopBtn />
       </div>
       <Footer />
     </div>

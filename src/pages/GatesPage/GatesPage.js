@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Form from '../../components/Form/Form';
@@ -11,8 +11,9 @@ import gateType5 from './gateType5.png';
 
 function GatesPage() {
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
+
   const types = [
     { name: 'Противопожарные распашные ворота', img: gateType1 },
     { name: 'Противопожарные секционные ворота', img: gateType2 },
@@ -31,7 +32,7 @@ function GatesPage() {
   ));
 
   return (
-    <div>
+    <div className="gatespage">
       <Header />
       <section aria-labelledby="banner__title" className="banner">
         <h1 id="banner__title" className="banner__title">
