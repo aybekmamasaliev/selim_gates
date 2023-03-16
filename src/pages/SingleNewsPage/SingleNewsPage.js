@@ -1,3 +1,4 @@
+import React, {useEffect} from 'react';
 import Header from '../../components/Header/Header';
 import Form from '../../components/Form/Form';
 import Footer from '../../components/Footer/Footer';
@@ -7,6 +8,9 @@ import './SingleNews.scss';
 import NewsList from '../../components/News/NewsList';
 
 function SingleNewsPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <>
       <Header isDark />

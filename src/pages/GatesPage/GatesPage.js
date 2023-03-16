@@ -1,3 +1,4 @@
+import React, {useEffect} from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Form from '../../components/Form/Form';
@@ -9,6 +10,9 @@ import gateType4 from './gateType4.png';
 import gateType5 from './gateType5.png';
 
 function GatesPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const types = [
     { name: 'Противопожарные распашные ворота', img: gateType1 },
     { name: 'Противопожарные секционные ворота', img: gateType2 },

@@ -1,3 +1,4 @@
+import React, {useEffect} from 'react';
 import Header from '../../components/Header/Header';
 import Form from '../../components/Form/Form';
 import Footer from '../../components/Footer/Footer';
@@ -14,6 +15,9 @@ import img9 from './gallery-image 9.png';
 import img10 from './gallery-image 10.png';
 
 function GalleryPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <>
       <Header isDark />
