@@ -6,17 +6,17 @@ import Advantages from '../../components/Advantages/Advantages';
 import OurGates from '../../components/OurGates/OurGates';
 import NewsList from '../../components/News/NewsList';
 import Services from '../../components/Services/Services';
-// import ReviewList from '../../components/ReviewList/ReviewList';
+import ReviewList from '../../components/ReviewList/ReviewList';
 import Form from '../../components/Form/Form';
 import Footer from '../../components/Footer/Footer';
 import './MainPage.scss';
 import GoTopBtn from '../../components/GoTopBtn/GoTopBtn';
 import { useNavigate } from 'react-router-dom';
-// import SliderCentered from '../../components/SliderCentered/SliderCentered';
-// import DefaultSlider from '../../components/BaseSlider/DefaultSlider';
+import SliderCentered from '../../components/SliderCentered/SliderCentered';
+import DefaultSlider from '../../components/BaseSlider/DefaultSlider';
 import Hand from '../../components/Hand/Hand';
-// import SwiperAuto from '../../components/SwiperAuto/SwiperAuto';
-// import SwiperAutoTwo from '../../components/SwiperAutoTwo/SwiperAutoTwo';
+import SwiperAuto from '../../components/SwiperAuto/SwiperAuto';
+import SwiperAutoTwo from '../../components/SwiperAutoTwo/SwiperAutoTwo';
 
 function MainPage() {
   useEffect(() => {
@@ -64,7 +64,7 @@ function MainPage() {
         <h2 id="gates__title" className="gates__title title--secondary">
           Мы предлагаем
         </h2>
-        {/* <OurGates /> */}
+        <OurGates />
       </section>
 
       <section aria-labelledby="advantages__title" className="advantages">
@@ -75,15 +75,15 @@ function MainPage() {
           Наши преимущества
         </h2>
         <Advantages />
-        {/* <SwiperAutoTwo /> */}
+        <SwiperAutoTwo />
       </section>
 
       <section aria-labelledby="news__title" className="news">
         <h2 id="news__title" className="news__title title--secondary">
           Последние новости
         </h2>
-        {/* <NewsList /> */}
-        {/* <DefaultSlider /> */}
+        <NewsList />
+        <DefaultSlider />
 
         <Button isSecondary onClick={() => navigate('/news')}>
           все новости
@@ -94,7 +94,7 @@ function MainPage() {
         <h2 id="works__title" className="works__title title--secondary">
           Наши работы
         </h2>
-        {/* <SliderCentered /> */}
+        <SliderCentered />
       </section>
 
       <section aria-labelledby="services__title" className="services">
@@ -102,7 +102,7 @@ function MainPage() {
           Сервис
         </h2>
         <Services />
-        {/* <SwiperAuto /> */}
+        <SwiperAuto />
       </section>
       <section
         aria-labelledby="reviews__title"
@@ -112,7 +112,7 @@ function MainPage() {
         <h2 id="reviews__title" className="reviews__title title--secondary">
           Отзывы наших клиентов
         </h2>
-        {/* <ReviewList /> */}
+        <ReviewList />
       </section>
 
       <div className="background__bottom">

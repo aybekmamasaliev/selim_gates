@@ -3,8 +3,8 @@ import './Footer.scss';
 import InstagramSvg from './InstagramSvg.svg';
 import WhatsAppSvg from './WhatsAppSvg.svg';
 import Map from '../Map/Map';
-import { NavLink } from 'react-router-dom';
-import { NavHashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 function Footer() {
   return (
@@ -61,33 +61,33 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <nav className="footer__nav">
+        <div className="footer__nav">
           <ul>
             <li>
-              <NavLink to="/home">Главная </NavLink>
+              <Link to="/home">Главная </Link>
             </li>
 
             <li>
-              <NavHashLink to="/#about">О нас </NavHashLink>
+              <HashLink to="/#about">О нас </HashLink>
             </li>
 
             <li>
-              <NavLink to="/services">Услуги</NavLink>
+              <Link to="/services">Услуги</Link>
             </li>
 
             <li>
-              <NavLink to="/gallery">Работы </NavLink>
+              <Link to="/gallery">Работы </Link>
             </li>
 
             <li>
-              <NavHashLink to="/#reviews">Отзывы </NavHashLink>
+              <HashLink to="/#reviews">Отзывы </HashLink>
             </li>
 
             <li>
-              <NavLink to="/news">Новости </NavLink>
+              <Link to="/news">Новости </Link>
             </li>
           </ul>
-        </nav>
+        </div>
       </div>
     </footer>
   );
