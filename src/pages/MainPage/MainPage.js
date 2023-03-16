@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import HomeSvg from './HomeSvg.svg';
 import Button from '../../components/Button/Button';
 import Header from '../../components/Header/Header';
@@ -16,13 +16,12 @@ import SliderCentered from '../../components/SliderCentered/SliderCentered';
 import DefaultSlider from '../../components/BaseSlider/DefaultSlider';
 import Hand from '../../components/Hand/Hand';
 import SwiperAuto from '../../components/SwiperAuto/SwiperAuto';
-import SwiperAutoTwo from "../../components/SwiperAutoTwo/SwiperAutoTwo";
-
+import SwiperAutoTwo from '../../components/SwiperAutoTwo/SwiperAutoTwo';
 
 function MainPage() {
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="homepage">
       <Header />
@@ -35,7 +34,9 @@ function MainPage() {
             Найдите идеальный вариант сами или&nbsp;предоставьте это&nbsp;нам
           </p>
         </div>
-        <Button icon={HomeSvg}>заказать ворота</Button>
+        <Button tag="a" icon={HomeSvg} href="#form__section">
+          заказать ворота
+        </Button>
         <Hand />
       </section>
 
@@ -71,7 +72,7 @@ function MainPage() {
           Наши преимущества
         </h2>
         <Advantages />
-        <SwiperAutoTwo/>
+        <SwiperAutoTwo />
       </section>
 
       <section aria-labelledby="news__title" className="news">
@@ -97,7 +98,7 @@ function MainPage() {
           Сервис
         </h2>
         <Services />
-        <SwiperAuto/>
+        <SwiperAuto />
       </section>
       <section aria-labelledby="reviews__title" className="reviews">
         <h2 id="reviews__title" className="reviews__title title--secondary">
@@ -107,7 +108,11 @@ function MainPage() {
       </section>
 
       <div className="background__bottom">
-        <section aria-labelledby="form__title" className="form">
+        <section
+          aria-labelledby="form__title"
+          className="form"
+          id="form__section"
+        >
           <h2 id="form__title" className="form__title">
             ОСТАЛИСЬ ВОПРОСЫ?
           </h2>
