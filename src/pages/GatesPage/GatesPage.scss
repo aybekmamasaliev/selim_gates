@@ -1,9 +1,13 @@
+.gatespage {
+  --form-padding-inline: 116.5px;
+}
+
 .banner {
   display: grid;
   place-content: center;
   padding-block-start: 180px;
   padding-block-end: 155px;
-  background-image: url('./GatesPageBg.png');
+  background-image: url('./media/GatesPageBg.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -139,18 +143,6 @@
       color: hsla(0, 0%, 92%, 0.5);
     }
   }
-}
-
-.visually-hidden {
-  display: inline-block;
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1;
-  width: 1;
-  margin: -1;
-  padding: 0;
-  border: 0;
 }
 
 @media (max-width: 64.0625rem) {

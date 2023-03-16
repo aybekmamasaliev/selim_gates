@@ -1,19 +1,21 @@
 import styles from './Button.module.scss';
 
-function Button({ icon, children, isSecondary, ...rest }) {
+function Button({ icon, children, isSecondary, tag, ...rest }) {
+  const Tag = tag || 'button';
+
   const classes = `${styles.button} ${rest.className || ''} ${
     isSecondary ? styles['button--secondary'] : ''
   }`.trim();
 
   return (
-    <button {...rest} className={classes}>
+    <Tag {...rest} className={classes}>
       {icon && (
         <span>
           <img src={icon} alt="" />
         </span>
       )}
       {children}
-    </button>
+    </Tag>
   );
 }
 

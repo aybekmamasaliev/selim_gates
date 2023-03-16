@@ -1,23 +1,23 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import Form from '../../components/Form/Form';
 import Footer from '../../components/Footer/Footer';
 import './GalleryPage.scss';
-import img1 from './gallery-image 1.png';
-import img2 from './gallery-image 2.png';
-import img3 from './gallery-image 3.png';
-import img4 from './gallery-image 4.png';
-import img5 from './gallery-image 5.png';
-import img6 from './gallery-image 6.png';
-import img7 from './gallery-image 7.png';
-import img8 from './gallery-image 8.png';
-import img9 from './gallery-image 9.png';
-import img10 from './gallery-image 10.png';
+import img1 from './media/gallery-image 1.avif';
+import img2 from './media/gallery-image 2.avif';
+import img3 from './media/gallery-image 3.avif';
+import img4 from './media/gallery-image 4.avif';
+import img5 from './media/gallery-image 5.avif';
+import img6 from './media/gallery-image 6.avif';
+import img7 from './media/gallery-image 7.avif';
+import img8 from './media/gallery-image 8.avif';
+import img9 from './media/gallery-image 9.avif';
+import img10 from './media/gallery-image 10.avif';
 
 function GalleryPage() {
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Header isDark />
