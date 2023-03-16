@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from "react";
-import s from "./AllNewsPage.module.css";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
-import Form from "../../components/Form/Form";
-import NewsItem from "../../components/NewsItem/NewsItem";
-import Button from "../../components/Button/Button";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import s from './AllNewsPage.module.css';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import Form from '../../components/Form/Form';
+import NewsItem from '../../components/NewsItem/NewsItem';
+import Button from '../../components/Button/Button';
+import { NavLink } from 'react-router-dom';
+import { useGetGoodsQuery } from '../../redux';
 
 const AllNewsPage = () => {
+  const {data=[], isLoading}=useGetGoodsQuery();
   const [a, setA] = useState([]);
   const [isloading, setIsloading] = useState(true);
   useEffect(() => {
-    fetch("https://sms-h9zb.onrender.com/user")
+    fetch('https://sms-h9zb.onrender.com/user')
       .then((res) => {
         setIsloading(true);
         return res.json();
@@ -21,19 +23,19 @@ const AllNewsPage = () => {
   }, []);
   return (
     <div className={s.newspage}>
-      <Header />
-      <div>
-        <section className={s.disg} aria-labelledby="hero__title">
+      <Header isDark />
+      <div className={s.center_x}>
+        <section className={s.disg} aria-labelledby="hero__title" >
           <h1 id="disg">Новости компании</h1>
           <p>
             К вашему вниманию Здесь мы собрали все актуальные новости нашей
             компании
           </p>
           <div className={s.section__img}>
-            {isloading ? (
-              <p>loading...</p>
+            {isLoading ? (
+              <p className={s.preloader}>Идет загрузка...</p>
             ) : (
-              a.map((item) => {
+              data.map((item) => {
                 return (
                   <NavLink to="/news/1">
                     <NewsItem key={item._id} url={item.description} />

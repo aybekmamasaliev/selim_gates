@@ -8,3 +8,9 @@
     max-width: 325px;
   }
 }
+
+@media (max-width:750px) {
+  .services{
+    display: none;
+  }
+}

@@ -1,3 +1,4 @@
+import React, {useEffect} from 'react';
 import Header from '../../components/Header/Header';
 import Form from '../../components/Form/Form';
 import Footer from '../../components/Footer/Footer';
@@ -7,9 +8,12 @@ import './SingleNews.scss';
 import NewsList from '../../components/News/NewsList';
 
 function SingleNewsPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <>
-      <Header />
+      <Header isDark />
       <section
         className="single-news__section"
         aria-labelledby="single-news__title"
@@ -28,10 +32,10 @@ function SingleNewsPage() {
             2016 года для заказа стали доступны ворота с дизайном панели «доска»
             в трёх цветовых решениях (RAL 9003, RAL 8014 и «золотой дуб»).
           </p>
-          <figure>
-            <img alt="" src={table} />
-          </figure>
         </div>
+        <figure className="single-news__table">
+          <img alt="" src={table} />
+        </figure>
       </section>
       <section
         className="related-news__section"

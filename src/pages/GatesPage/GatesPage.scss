@@ -11,7 +11,7 @@
 
   &__title {
     font-weight: bold;
-    font-size: 80px;
+    font-size: var(--font-size-heading-850);
     line-height: 110%;
     text-transform: uppercase;
     max-width: calc(1070rem / 16);
@@ -25,7 +25,7 @@
   padding-inline: 75px;
   padding-block-start: 50px;
   padding-block-end: 90px;
-  font-size: 20px;
+  font-size: var(--font-size-text);
   line-height: 140%;
   text-align: justify;
   color: var(--color-black);
@@ -35,37 +35,41 @@
 .types {
   padding-inline: 40px;
   padding-block-end: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 
   &__title {
-    font-size: calc(40rem / 16);
+    font-size: var(--font-size-heading-800);
     font-weight: 700;
     line-height: 120%;
     color: hsla(0, 0, 25, 1);
-    margin-block-end: calc(40rem / 16);
   }
 
   &__list {
-    --gap: calc(25rem / 16);
     list-style: none;
-    display: flex;
-    gap: var(--gap);
-    flex-wrap: wrap;
-    justify-content: start;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    gap: 20px;
   }
 
   &__item {
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    flex-basis: calc(20% - var(--gap));
-    min-width: 250px;
+    max-height: calc(315rem / 16);
+
+    & > div {
+      width: 100%;
+      height: 100%;
+    }
 
     & > p {
       position: absolute;
       left: 5px;
       bottom: 10px;
 
-      font-size: calc(20rem / 16);
+      font-size: var(--font-size-text);
       font-weight: 800;
       color: hsla(0, 0%, 100%, 1);
     }
@@ -74,47 +78,47 @@
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
 .main-advantages {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: calc(75rem / 16);
   padding-block-end: 25px;
+  padding-inline: 42px;
+  gap: 60px;
 
   &__title {
-    font-size: calc(35rem / 16);
+    font-size: var(--font-size-heading-700);
     font-weight: 700;
     text-transform: uppercase;
   }
 
   &__list {
-    --gap: calc(40rem / 16);
-    display: flex;
+    align-self: center;
     justify-content: center;
     list-style-type: none;
     counter-reset: item;
-    flex-wrap: wrap;
-    gap: var(--gap);
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 450px));
+    gap: 40px;
   }
 
   &__item {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: calc(10rem / 16);
-    align-items: center;
-    flex-basis: calc(30% - var(--gap));
-    min-width: 325px;
-
-    margin-bottom: var(--gap);
+    min-height: calc(227rem / 16);
+    display: grid;
+    place-content: center;
+    gap: 10px;
+    text-align: justify;
+    font-size: var(--font-size-text);
 
     & > h3 {
       text-align: center;
-      font-size: calc(30rem / 16);
+      font-size: clamp(1.25rem, 1.041rem + 0.92592vw, 1.875rem);
       text-transform: uppercase;
       line-height: 1.5;
     }
@@ -129,7 +133,7 @@
       content: counter(item) ' ';
       counter-increment: item;
       font-family: inherit;
-      font-size: calc(300rem / 16);
+      font-size: clamp(14.375rem, 12.91rem + 6.481vw, 18.75rem);
       line-height: 1em;
       font-weight: 900;
       color: hsla(0, 0%, 92%, 0.5);
@@ -147,4 +151,49 @@
   margin: -1;
   padding: 0;
   border: 0;
+}
+
+@media (max-width: 64.0625rem) {
+  .main-advantages {
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 56.25rem) {
+  .banner {
+    border-bottom-right-radius: 100px;
+    padding-block-start: 85px;
+    padding-block-end: 53px;
+    padding-inline: 76px;
+  }
+
+  .description {
+    padding-block-start: 22px;
+    padding-block-end: 55px;
+    padding-inline: 32px 41px;
+  }
+
+  .types {
+    padding-inline: 32px 41px;
+  }
+
+  .main-advantages {
+    padding-inline: 16px 25px;
+    padding-block-end: 50px;
+  }
+
+  .types__item > p {
+    margin-inline: 10px;
+  }
+}
+
+@media (max-width: 37.75rem) {
+  .types {
+    gap: 10px;
+    padding-block-end: 50px;
+  }
+  .types__item {
+    max-height: clamp(10.75rem, -2.29rem + 57.9591vw, 19.625rem);
+  }
 }

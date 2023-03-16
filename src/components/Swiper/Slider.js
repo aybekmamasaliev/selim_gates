@@ -6,42 +6,33 @@ import left from "../../media/left.svg";
 import right from "../../media/right.svg";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { useGetGoodsQuery } from "../../redux";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const Slider = (props) => {
+const Slider = () => {
+  const {data=[], isLoading}=useGetGoodsQuery();
   const swiper = useSwiper();
-  const [a, setA] = useState([]);
-  const [isloading, setIsloading] = useState(true);
-  useEffect(() => {
-    fetch(props.url)
-      .then((res) => {
-        setIsloading(true);
-        return res.json();
-      })
-      .then((data) => setA(data))
-      .finally(() => setIsloading(false));
-  }, []);
 
-  const [windowwidth, setWindowWidth] = useState(window.innerWidth);
+  // const [windowwidth, setWindowWidth] = useState(window.innerWidth);
 
-  const setSize = () => {
-    setWindowWidth(window.innerWidth);
-    console.log(windowwidth);
-  };
+  // const setSize = () => {
+  //   setWindowWidth(window.innerWidth);
+  //   console.log(windowwidth);
+  // };
 
-  useEffect(() => {
-    window.addEventListener("resize", setSize);
-    return () => {
-      window.removeEventListener("resize", setSize);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("resize", setSize);
+  //   return () => {
+  //     window.removeEventListener("resize", setSize);
+  //   };
+  // }, []);
 
   return (
     <div className={s.slider_cover}>
-      <p>{windowwidth}</p>
-      {isloading ? (
+      {/* <p>{windowwidth}</p> */}
+      {isLoading ? (
         <p className={s.center}>loading</p>
       ) : (
         <Swiper
@@ -49,20 +40,21 @@ const Slider = (props) => {
           slidesPerView={1}
           loop={true}
           breakpoints={{
-            330: {
-              centeredSlides:true,
-              slidesPerView: "auto",  
+            300: {
+              initialSlide: 2,
+              centeredSlides: false,
+              slidesPerView: "auto",
             },
-            680: {
-              centeredSlides:false,
-              slidesPerView: 2,
-            },
+            // 680: {
+            //   centeredSlides: false,
+            //   slidesPerView: 2,
+            // },
             780: {
-              centeredSlides:true,
+              centeredSlides: true,
               slidesPerView: "auto",
             },
             1024: {
-              centeredSlides:false,
+              centeredSlides: false,
               slidesPerView: 3,
             },
             1360: {
@@ -70,7 +62,7 @@ const Slider = (props) => {
             },
           }}
         >
-          {a.map((item) => {
+          {data.map((item) => {
             return (
               <SwiperSlide key={item._id} className={s.slide}>
                 <ReviewItem key={item._id} img={item.img} />
