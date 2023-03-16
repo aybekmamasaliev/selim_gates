@@ -6,7 +6,7 @@ import Form from '../../components/Form/Form';
 import Footer from '../../components/Footer/Footer';
 
 const ServicesPage = () => {
-  useEffect(() => {
+  useEffect(()=>{
     window.scrollTo(0, 0)
   }, [])
   return (

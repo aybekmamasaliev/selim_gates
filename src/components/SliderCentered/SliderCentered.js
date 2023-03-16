@@ -8,11 +8,10 @@ import BtnPrev from "./BtnPrfrev";
 import s from "./SliderCentered.module.css";
 import left from "../../media/left_circle.svg";
 import right from "../../media/right_circle.svg";
-import { useGetGoodsQuery } from "../../redux/goodsApi";
+import {useGetProductsQuery } from "../../redux/goodsApi";
 
 const SliderCentered = () => {
-  const {data=[], isLoading} = useGetGoodsQuery();
-  const swiper = useSwiper();
+  const {data=[], isLoading} = useGetProductsQuery();
 
   return (
     <div className={s.margin100}>
@@ -56,7 +55,7 @@ const SliderCentered = () => {
                           </BtnNext>
                         </div>
                         <img
-                          src={item.img}
+                          src={item.image}
                           alt=""
                           className={s.img}
                           style={{
@@ -67,7 +66,7 @@ const SliderCentered = () => {
                       </div>
                     ) : (
                       <div className={s.secondary}>
-                        <img src={item.img} alt="" className={s.img} />
+                        <img src={item.image} alt="" className={s.img} />
                       </div>
                     )}
                   </div>

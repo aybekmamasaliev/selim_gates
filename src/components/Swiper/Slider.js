@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import s from "./Slider.module.css";
 import SwiperButtonNext from "../NextBtn/NextBtn";
 import SwiperButtonPrev from "../PrevBtn/PrevBtn";
 import left from "../../media/left.svg";
 import right from "../../media/right.svg";
 import ReviewItem from "../ReviewItem/ReviewItem";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { useGetGoodsQuery } from "../../redux";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -13,7 +13,6 @@ import "swiper/css/pagination";
 
 const Slider = () => {
   const {data=[], isLoading}=useGetGoodsQuery();
-  const swiper = useSwiper();
 
   // const [windowwidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -45,10 +44,6 @@ const Slider = () => {
               centeredSlides: false,
               slidesPerView: "auto",
             },
-            // 680: {
-            //   centeredSlides: false,
-            //   slidesPerView: 2,
-            // },
             780: {
               centeredSlides: true,
               slidesPerView: "auto",
@@ -65,7 +60,9 @@ const Slider = () => {
           {data.map((item) => {
             return (
               <SwiperSlide key={item._id} className={s.slide}>
-                <ReviewItem key={item._id} img={item.img} />
+                <ReviewItem key={item._id} img={item.image} first_name={item.first_name}
+                text={item.text} category_name={item.category_name} last_name={item.last_name}
+                />
               </SwiperSlide>
             );
           })}
@@ -73,14 +70,14 @@ const Slider = () => {
           <div className={s.div_cover_btns}>
             <div className={s.upper_btn_div}>
               <SwiperButtonPrev>
-                <button className={s.circle_btn}>
+                <div className={s.circle_btn}>
                   <img src={left} alt="" />
-                </button>
+                </div>
               </SwiperButtonPrev>
               <SwiperButtonNext>
-                <button className={s.circle_btn}>
+                <div className={s.circle_btn}>
                   <img src={right} alt="" />
-                </button>
+                </div>
               </SwiperButtonNext>
             </div>
           </div>
