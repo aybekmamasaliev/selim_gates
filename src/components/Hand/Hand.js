@@ -1,8 +1,8 @@
-import React from "react";
-import ReactCurvedText from "react-curved-text";
-import s from "./Hand.module.css";
-import hand from "../../media/Hand.svg";
-import tap from "../../media/Tap.svg";
+import React from 'react';
+import ReactCurvedText from 'react-curved-text';
+import s from './Hand.module.css';
+import hand from '../../media/hand.svg';
+import tap from '../../media/Tap.svg';
 
 const Hand = () => {
   return (
@@ -16,17 +16,15 @@ const Hand = () => {
           cy={80}
           rx={60}
           ry={60}
-          textProps={{ style: { fontSize: 9, letterSpacing: "3px" } }}
+          textProps={{ style: { fontSize: 9, letterSpacing: '3px' } }}
           reversed={true}
-          textPathProps={{"fill": "#fff"}}
+          textPathProps={{ fill: '#fff' }}
           startOffset={20}
           text="скролл. скролл. скролл. скролл. скролл. скролл."
         />
         <img src={hand} alt="" />
-        <div className={s.pointing}>
-         
-          </div>
-          {/* <img className={s.pointing} src={tap} alt=""/> */}
+        <div className={s.pointing}></div>
+        {/* <img className={s.pointing} src={tap} alt=""/> */}
       </div>
     </div>
   );
