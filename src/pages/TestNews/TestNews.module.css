@@ -47,6 +47,9 @@
   width: 100%;
 }
 
+.form{
+  margin-top: 160px;
+}
 .form > h2 {
   text-align: center;
   margin-top: 18px;
@@ -95,6 +98,10 @@
   .disg {
     grid-template-columns: 1fr;
     row-gap: 30px;
+  }
+
+  .form{
+    margin-top: 70px;
   }
 
   .disg > h1 {

@@ -17,6 +17,7 @@
 .bg_top::after {
   content: '';
   background-image: url('./media//BgTopAdditional.avif');
+
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -55,7 +56,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   filter: blur(2px);
-
   bottom: 0px;
 }
 
@@ -191,5 +191,14 @@
 @media (max-width: 550px) {
   .center_x {
     padding-inline: 16px;
+  }
+}
+
+@media (min-width:1440px) {
+  .bottom_bg {
+    top: 1490px;
+  }
+  .center_bg {
+    height: 1440px;
   }
 }
