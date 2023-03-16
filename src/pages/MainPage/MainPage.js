@@ -43,7 +43,7 @@ function MainPage() {
         <Hand />
       </section>
 
-      <section aria-labelledby="about__title" className="about">
+      <section aria-labelledby="about__title" className="about" id="about">
         <h2 id="about__title" className="about__title title--secondary">
           Кто такие Selim trade?
         </h2>
@@ -104,7 +104,11 @@ function MainPage() {
         <Services />
         <SwiperAuto />
       </section>
-      <section aria-labelledby="reviews__title" className="reviews">
+      <section
+        aria-labelledby="reviews__title"
+        className="reviews"
+        id="reviews"
+      >
         <h2 id="reviews__title" className="reviews__title title--secondary">
           Отзывы наших клиентов
         </h2>

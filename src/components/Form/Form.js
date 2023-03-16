@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import s from './Form.module.css';
-import Modal from '../Modal/Modal';
-import btn_top from '../../media/to_the_top_swipe.svg';
 import Button from '../Button/Button';
 
 const Form = () => {
@@ -9,7 +7,7 @@ const Form = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
 
   return (
-    <section className={s.form} aria-labelledby="form__title">
+    <section className={s.form} aria-labelledby="form__title" id="form">
       <h2 className={s.form__title} id="form__title">
         Остались вопросы?
       </h2>

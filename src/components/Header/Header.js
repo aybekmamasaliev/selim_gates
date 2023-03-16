@@ -53,7 +53,7 @@ function Header({ isDark }) {
           </ul>
         </nav>
         <div className={styles.contacts}>
-          <p>г.Бишкек</p>
+          <a href="#form">г.Бишкек</a>
           <a href="tel:+996-552-570-755">+996 (552) 57 07 55</a>
         </div>
       </header>
@@ -116,7 +116,7 @@ function Header({ isDark }) {
               </ul>
             </nav>
             <div className={styles.menu__contacts}>
-              <p>г.Бишкек</p>
+              <a href="#form">г.Бишкек</a>
               <a href="tel:+996-552-570-755">
                 <span>
                   <img src={phoneSvg} alt="" />

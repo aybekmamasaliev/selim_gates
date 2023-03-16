@@ -61,7 +61,7 @@
       flex-direction: column;
       gap: calc(15rem / 16);
 
-      a{
+      a {
         color: #414141;
         text-decoration: none;
       }
@@ -98,6 +98,11 @@
     p:first-of-type {
       text-transform: uppercase;
       text-align: center;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
   }
 
