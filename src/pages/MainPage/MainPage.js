@@ -1,3 +1,4 @@
+import React, {useEffect} from 'react';
 import HomeSvg from './HomeSvg.svg';
 import Button from '../../components/Button/Button';
 import Header from '../../components/Header/Header';
@@ -19,6 +20,9 @@ import SwiperAutoTwo from "../../components/SwiperAutoTwo/SwiperAutoTwo";
 
 
 function MainPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <div className="homepage">
       <Header />

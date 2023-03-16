@@ -23,7 +23,6 @@ function App() {
           <Route path="/news/1" element={<SingleNewsPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/services/1" element={<GatesPage />} />
-          <Route path='/test' element={<Hand />} />
         </Routes>
       </BrowserRouter>
     </>

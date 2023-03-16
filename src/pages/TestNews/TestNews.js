@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useEffect } from "react";
 import Header from "../../components/Header/Header";
 import s from "./TestNews.module.css";
 import { NavLink } from "react-router-dom";
@@ -10,6 +10,9 @@ import { useGetGoodsQuery } from "../../redux";
 
 const TestNews = () => {
   const {data=[], isLoading}=useGetGoodsQuery();
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div style={{outline:"1px solid green", }}>
