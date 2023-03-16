@@ -1,16 +1,11 @@
 import Logo from '../Logo/Logo';
 import styles from './Header.module.scss';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import phoneSvg from './phoneSvg.svg';
 import { useState } from 'react';
 
 function Header({ isDark }) {
-  const location = useLocation();
   const [showMenu, setShowMenu] = useState(false);
-
-  const isActive = (path) => {
-    return location.pathname === path ? styles.active : '';
-  };
 
   return (
     <>
@@ -19,36 +14,24 @@ function Header({ isDark }) {
         <nav>
           <ul>
             <li>
-              <Link
-                to="/home"
-                className={`${styles.nav__link} ${isActive('/home')}`}
-              >
+              <NavLink to="/home" className={styles.nav__link}>
                 главная
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
-                to="/services"
-                className={`${styles.nav__link} ${isActive('/services')}`}
-              >
+              <NavLink to="/services" className={styles.nav__link}>
                 услуги
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
-                to="/news"
-                className={`${styles.nav__link} ${isActive('/news')}`}
-              >
+              <NavLink to="/news" className={styles.nav__link}>
                 новости
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
-                to="/gallery"
-                className={`${styles.nav__link} ${isActive('/gallery')}`}
-              >
+              <NavLink to="/gallery" className={styles.nav__link}>
                 наши работы
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>
@@ -94,24 +77,24 @@ function Header({ isDark }) {
             <nav>
               <ul>
                 <li>
-                  <Link to="/home" className={styles.menu__link}>
+                  <NavLink to="/home" className={styles.menu__link}>
                     главная
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/services" className={styles.menu__link}>
+                  <NavLink to="/services" className={styles.menu__link}>
                     услуги
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/news" className={styles.menu__link}>
+                  <NavLink to="/news" className={styles.menu__link}>
                     новости
-                  </Link>
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/gallery" className={styles.menu__link}>
+                  <NavLink to="/gallery" className={styles.menu__link}>
                     наши работы
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </nav>
