@@ -11,7 +11,7 @@ import Form from '../../components/Form/Form';
 import Footer from '../../components/Footer/Footer';
 import './MainPage.scss';
 import GoTopBtn from '../../components/GoTopBtn/GoTopBtn';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import SliderCentered from '../../components/SliderCentered/SliderCentered';
 import DefaultSlider from '../../components/BaseSlider/DefaultSlider';
 import Hand from '../../components/Hand/Hand';
@@ -22,6 +22,9 @@ function MainPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const navigate = useNavigate();
+
   return (
     <div className="homepage">
       <Header />
@@ -81,9 +84,10 @@ function MainPage() {
         </h2>
         <NewsList />
         <DefaultSlider />
-        <NavLink to={'/news'}>
-          <Button isSecondary>все новости</Button>
-        </NavLink>
+
+        <Button isSecondary onClick={() => navigate('/news')}>
+          все новости
+        </Button>
       </section>
 
       <section aria-labelledby="works__title" className="works">
