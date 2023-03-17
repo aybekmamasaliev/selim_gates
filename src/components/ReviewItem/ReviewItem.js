@@ -1,6 +1,5 @@
 import React from "react";
 import s from "../ReviewItem/ReviewItem.module.css";
-import user from "../../media/user.svg";
 
 const ReviewItem = (props) => {
   return (

@@ -1,8 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import React, { useEffect, useState } from "react";
 import "swiper/css/navigation";
-import { useSwiper } from "swiper/react";
 import BtnNext from "./BtnNext";
 import BtnPrev from "./BtnPrfrev";
 import s from "./SliderCentered.module.css";
