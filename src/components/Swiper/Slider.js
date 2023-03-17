@@ -1,3 +1,4 @@
+
 import React from "react";
 import s from "./Slider.module.css";
 import SwiperButtonNext from "../NextBtn/NextBtn";
@@ -81,8 +82,8 @@ const Slider = () => {
               </SwiperButtonNext>
             </div>
           </div>
-        </Swiper>
-      )}
+        </div>
+      </Swiper>
     </div>
   );
 };

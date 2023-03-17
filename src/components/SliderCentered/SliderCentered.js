@@ -1,3 +1,4 @@
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -66,14 +67,28 @@ const SliderCentered = () => {
                       <div className={s.secondary}>
                         <img src={item.image} alt="" className={s.img} />
                       </div>
-                    )}
-                  </div>
-                )}
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      )}
+                      <img
+                        src={item.img}
+                        alt=""
+                        className={s.img}
+                        style={{
+                          transition: 'all 0.4s ease',
+                          transform: 'scale(1.3)',
+                        }}
+                      />
+                    </div>
+                  ) : (
+                    <div className={s.secondary}>
+                      <img src={item.img} alt="" className={s.img} />
+                    </div>
+                  )}
+                </div>
+              )}
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+      )
     </div>
   );
 };

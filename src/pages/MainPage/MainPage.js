@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import HomeSvg from './HomeSvg.svg';
 import Button from '../../components/Button/Button';
 import Header from '../../components/Header/Header';
@@ -11,18 +11,20 @@ import Form from '../../components/Form/Form';
 import Footer from '../../components/Footer/Footer';
 import './MainPage.scss';
 import GoTopBtn from '../../components/GoTopBtn/GoTopBtn';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import SliderCentered from '../../components/SliderCentered/SliderCentered';
 import DefaultSlider from '../../components/BaseSlider/DefaultSlider';
 import Hand from '../../components/Hand/Hand';
 import SwiperAuto from '../../components/SwiperAuto/SwiperAuto';
-import SwiperAutoTwo from "../../components/SwiperAutoTwo/SwiperAutoTwo";
-
+import SwiperAutoTwo from '../../components/SwiperAutoTwo/SwiperAutoTwo';
 
 function MainPage() {
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
+
+  const navigate = useNavigate();
+
   return (
     <div className="homepage">
       <Header />
@@ -35,11 +37,13 @@ function MainPage() {
             Найдите идеальный вариант сами или&nbsp;предоставьте это&nbsp;нам
           </p>
         </div>
-        <Button icon={HomeSvg}>заказать ворота</Button>
+        <Button tag="a" icon={HomeSvg} href="#form__section">
+          заказать ворота
+        </Button>
         <Hand />
       </section>
 
-      <section aria-labelledby="about__title" className="about">
+      <section aria-labelledby="about__title" className="about" id="about">
         <h2 id="about__title" className="about__title title--secondary">
           Кто такие Selim trade?
         </h2>
@@ -71,7 +75,7 @@ function MainPage() {
           Наши преимущества
         </h2>
         <Advantages />
-        <SwiperAutoTwo/>
+        <SwiperAutoTwo />
       </section>
 
       <section aria-labelledby="news__title" className="news">
@@ -80,9 +84,10 @@ function MainPage() {
         </h2>
         <NewsList />
         <DefaultSlider />
-        <NavLink to={'/news'}>
-          <Button isSecondary>все новости</Button>
-        </NavLink>
+
+        <Button isSecondary onClick={() => navigate('/news')}>
+          все новости
+        </Button>
       </section>
 
       <section aria-labelledby="works__title" className="works">
@@ -97,9 +102,13 @@ function MainPage() {
           Сервис
         </h2>
         <Services />
-        <SwiperAuto/>
+        <SwiperAuto />
       </section>
-      <section aria-labelledby="reviews__title" className="reviews">
+      <section
+        aria-labelledby="reviews__title"
+        className="reviews"
+        id="reviews"
+      >
         <h2 id="reviews__title" className="reviews__title title--secondary">
           Отзывы наших клиентов
         </h2>
@@ -107,13 +116,8 @@ function MainPage() {
       </section>
 
       <div className="background__bottom">
-        <section aria-labelledby="form__title" className="form">
-          <h2 id="form__title" className="form__title">
-            ОСТАЛИСЬ ВОПРОСЫ?
-          </h2>
-          <Form />
-          <GoTopBtn />
-        </section>
+        <Form />
+        <GoTopBtn />
       </div>
       <Footer />
     </div>

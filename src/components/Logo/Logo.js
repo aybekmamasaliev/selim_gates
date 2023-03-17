@@ -1,7 +1,7 @@
-import SelimLogoColored from './SelimLogo_colored.png';
-import SelimLogoWhite from './SelimLogo_white.png';
-import SelimLogoGrey from './SelimLogo_grey.png';
-import SelimLogoBlack from './SelimLogo_black.png';
+import SelimLogoColored from './media/SelimLogo_colored.avif';
+import SelimLogoWhite from './media/SelimLogo_white.avif';
+import SelimLogoGrey from './media/SelimLogo_grey.avif';
+import SelimLogoBlack from './media/SelimLogo_black.avif';
 import classes from './Logo.module.scss';
 import { Link } from 'react-router-dom';
 

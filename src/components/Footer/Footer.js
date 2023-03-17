@@ -1,9 +1,10 @@
-import Logo from "../Logo/Logo";
-import "./Footer.scss";
-import InstagramSvg from "./InstagramSvg.svg";
-import WhatsAppSvg from "./WhatsAppSvg.svg";
-import Map from "../Map/Map";
-import { NavLink } from "react-router-dom";
+import Logo from '../Logo/Logo';
+import './Footer.scss';
+import InstagramSvg from './InstagramSvg.svg';
+import WhatsAppSvg from './WhatsAppSvg.svg';
+import Map from '../Map/Map';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 function Footer() {
   return (
@@ -45,39 +46,48 @@ function Footer() {
           <p>социальные сети</p>
           <ul>
             <li>
-              <button>
+              <a href="https://www.instagram.com/selimtrade/">
+                <span className="visually-hidden">
+                  Напишите нам в инстаграме
+                </span>
                 <img src={InstagramSvg} alt="Instagram Logo" />
-              </button>
+              </a>
             </li>
             <li>
-              <button>
+              <a href="https://wa.me/+996552570755">
+                <span className="visually-hidden">Напишите нам в вотсаппе</span>
                 <img src={WhatsAppSvg} alt="WhatsApp Logo" />
-              </button>
+              </a>
             </li>
           </ul>
         </div>
-        <nav className="footer__nav">
+        <div className="footer__nav">
           <ul>
-            <NavLink to="/home">
-              <li>Главная</li>
-            </NavLink>
-            <NavLink to="/">
-              <li>О нас</li>
-            </NavLink>
-            <NavLink to="/services">
-              <li>Услуги</li>
-            </NavLink>
-            <NavLink to="/">
-              <li>Работы</li>
-            </NavLink>
-            <NavLink to="/">
-              <li>Отзывы</li>
-            </NavLink>
-            <NavLink to="/news">
-              <li>Новости</li>
-            </NavLink>
+            <li>
+              <Link to="/home">Главная </Link>
+            </li>
+
+            <li>
+              <HashLink to="/#about">О нас </HashLink>
+            </li>
+
+            <li>
+              <Link to="/services">Услуги</Link>
+            </li>
+
+            <li>
+              <Link to="/gallery">Работы </Link>
+            </li>
+
+            <li>
+              <HashLink to="/#reviews">Отзывы </HashLink>
+            </li>
+
+            <li>
+              <Link to="/news">Новости </Link>
+            </li>
           </ul>
-        </nav>
+        </div>
       </div>
     </footer>
   );
