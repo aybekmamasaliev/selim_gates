@@ -13,7 +13,6 @@ import "swiper/css/pagination";
 
 const Slider = () => {
   const {data=[], isLoading}=useGetGoodsQuery();
-  const swiper = useSwiper();
 
   return (
     <div className={s.slider_cover}>
@@ -45,8 +44,10 @@ const Slider = () => {
         >
           {data.map((item) => {
             return (
-              <SwiperSlide key={item._id} className={s.slide}>
-                <ReviewItem key={item._id} img={item.img} />
+              <SwiperSlide key={item.id} className={s.slide}>
+                <ReviewItem key={item._id} img={item.image} first_name={item.first_name}
+                text={item.text} category_name={item.category_name} last_name={item.last_name}
+                />
               </SwiperSlide>
             );
           })}

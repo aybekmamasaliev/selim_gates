@@ -81,7 +81,7 @@ function Footer() {
             </li>
 
             <li>
-              <HashLink to="/#reviews">Отзывы </HashLink>
+              <HashLink to="/#reviews">Отзывы</HashLink>
             </li>
 
             <li>
