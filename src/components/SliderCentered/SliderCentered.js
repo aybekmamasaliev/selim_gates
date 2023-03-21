@@ -1,16 +1,18 @@
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import React, { useEffect, useState } from "react";
 import "swiper/css/navigation";
+import { useSwiper } from "swiper/react";
 import BtnNext from "./BtnNext";
 import BtnPrev from "./BtnPrfrev";
 import s from "./SliderCentered.module.css";
 import left from "../../media/left_circle.svg";
 import right from "../../media/right_circle.svg";
-import {useGetProductsQuery } from "../../redux/goodsApi";
+import { useGetGoodsQuery } from "../../redux/goodsApi";
 
 const SliderCentered = () => {
-  const {data=[], isLoading} = useGetProductsQuery();
+  const {data=[], isLoading} = useGetGoodsQuery();
+  const swiper = useSwiper();
 
   return (
     <div className={s.margin100}>
@@ -40,7 +42,7 @@ const SliderCentered = () => {
         >
           {data.map((item) => {
             return (
-              <SwiperSlide key={item.id} className={s.per_slide} >
+              <SwiperSlide key={item._id} className={s.per_slide} >
                 {({ isActive }) => (
                   <div className={s.div_upper_img}>
                     {isActive ? (
@@ -54,7 +56,7 @@ const SliderCentered = () => {
                           </BtnNext>
                         </div>
                         <img
-                          src={item.image}
+                          src={item.img}
                           alt=""
                           className={s.img}
                           style={{
@@ -65,30 +67,16 @@ const SliderCentered = () => {
                       </div>
                     ) : (
                       <div className={s.secondary}>
-                        <img src={item.image} alt="" className={s.img} />
+                        <img src={item.img} alt="" className={s.img} />
                       </div>
-                      <img
-                        src={item.img}
-                        alt=""
-                        className={s.img}
-                        style={{
-                          transition: 'all 0.4s ease',
-                          transform: 'scale(1.3)',
-                        }}
-                      />
-                    </div>
-                  ) : (
-                    <div className={s.secondary}>
-                      <img src={item.img} alt="" className={s.img} />
-                    </div>
-                  )}
-                </div>
-              )}
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-      )
+                    )}
+                  </div>
+                )}
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      )}
     </div>
   );
 };

@@ -1,12 +1,11 @@
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 import s from "./Slider.module.css";
 import SwiperButtonNext from "../NextBtn/NextBtn";
 import SwiperButtonPrev from "../PrevBtn/PrevBtn";
 import left from "../../media/left.svg";
 import right from "../../media/right.svg";
 import ReviewItem from "../ReviewItem/ReviewItem";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { useGetGoodsQuery } from "../../redux";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -14,6 +13,7 @@ import "swiper/css/pagination";
 
 const Slider = () => {
   const {data=[], isLoading}=useGetGoodsQuery();
+  const swiper = useSwiper();
 
   return (
     <div className={s.slider_cover}>
@@ -45,10 +45,8 @@ const Slider = () => {
         >
           {data.map((item) => {
             return (
-              <SwiperSlide className={s.slide} key={item.id}>
-                <ReviewItem key={item.id} img={item.image} first_name={item.first_name}
-                text={item.text} category_name={item.category_name} last_name={item.last_name}
-                />
+              <SwiperSlide key={item._id} className={s.slide}>
+                <ReviewItem key={item._id} img={item.img} />
               </SwiperSlide>
             );
           })}
@@ -67,8 +65,8 @@ const Slider = () => {
               </SwiperButtonNext>
             </div>
           </div>
-        </div>
-      </Swiper>
+        </Swiper>
+      )}
     </div>
   );
 };
