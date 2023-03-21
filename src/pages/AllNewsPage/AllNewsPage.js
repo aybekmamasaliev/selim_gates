@@ -10,17 +10,6 @@ import { useGetGoodsQuery } from '../../redux';
 
 const AllNewsPage = () => {
   const {data=[], isLoading}=useGetGoodsQuery();
-  const [a, setA] = useState([]);
-  const [isloading, setIsloading] = useState(true);
-  useEffect(() => {
-    fetch('https://sms-h9zb.onrender.com/user')
-      .then((res) => {
-        setIsloading(true);
-        return res.json();
-      })
-      .then((data) => setA(data))
-      .finally(() => setIsloading(false));
-  }, []);
   return (
     <div className={s.newspage}>
       <Header isDark />
@@ -46,7 +35,7 @@ const AllNewsPage = () => {
           </div>
         </section>
         <Button isSecondary className={s.isSecondary_btn}>
-          загрузить ещё
+          загрузить ещёcdsacdsa
         </Button>
       </div>
       <section aria-labelledby="form__title" className={s.form}>

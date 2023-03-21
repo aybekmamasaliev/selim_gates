@@ -18,7 +18,6 @@ function App() {
         <Suspense fallback={<h1>Загрузка...</h1>}>
           <Routes>
             <Route path="*" element={<Navigate to="/home" replace />} />
-            {/* <Route path="/" element={<MainPage />} /> */}
             <Route path="/home" element={<MainPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/news" element={<TestNews />} />

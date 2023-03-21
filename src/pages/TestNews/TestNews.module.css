@@ -58,7 +58,7 @@
   font-size: clamp(1rem, 0.518348623853211rem + 2.2018348623853212vw, 2.5rem);
 }
 
-.centr {
+.center_x > .centr {
   margin: 0 auto;
   margin-top: 30px;
 }

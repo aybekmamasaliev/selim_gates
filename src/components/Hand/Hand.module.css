@@ -30,7 +30,7 @@
   background-image: url(../../media/Tap.svg);
   position: relative;
   background-size: cover;
-  margin-left: 69px;
+  margin-left: 71px;
   margin-top: -53px;
   z-index: 43;
   animation: example_point linear 2s infinite;
@@ -96,17 +96,3 @@
     display: none;
   }
 }
-
-/* @media (max-width: 700px) {
-  .p_abs {
-    position: absolute;
-    right: 10px;
-    bottom: 50px;
-  }
-}
-
-@media (max-width: 600px) {
-  .p_abs {
-    display: none;
-  }
-} */
