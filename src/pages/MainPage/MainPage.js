@@ -1,31 +1,49 @@
-import React, {useEffect} from 'react';
-import HomeSvg from './HomeSvg.svg';
-import Button from '../../components/Button/Button';
-import Header from '../../components/Header/Header';
-import Advantages from '../../components/Advantages/Advantages';
-import OurGates from '../../components/OurGates/OurGates';
-import NewsList from '../../components/News/NewsList';
-import Services from '../../components/Services/Services';
-import ReviewList from '../../components/ReviewList/ReviewList';
-import Form from '../../components/Form/Form';
-import Footer from '../../components/Footer/Footer';
-import './MainPage.scss';
-import GoTopBtn from '../../components/GoTopBtn/GoTopBtn';
-import { NavLink } from 'react-router-dom';
-import SliderCentered from '../../components/SliderCentered/SliderCentered';
-import DefaultSlider from '../../components/BaseSlider/DefaultSlider';
-import Hand from '../../components/Hand/Hand';
-import SwiperAuto from '../../components/SwiperAuto/SwiperAuto';
-import SwiperAutoTwo from "../../components/SwiperAutoTwo/SwiperAutoTwo";
 
+import React, { useEffect } from "react";
+import HomeSvg from "./HomeSvg.svg";
+import Button from "../../components/Button/Button";
+import Header from "../../components/Header/Header";
+import Advantages from "../../components/Advantages/Advantages";
+import OurGates from "../../components/OurGates/OurGates";
+import NewsList from "../../components/News/NewsList";
+import Services from "../../components/Services/Services";
+import ReviewList from "../../components/ReviewList/ReviewList";
+import Form from "../../components/Form/Form";
+import Footer from "../../components/Footer/Footer";
+import "./MainPage.scss";
+import GoTopBtn from "../../components/GoTopBtn/GoTopBtn";
+import { NavLink, useNavigate } from "react-router-dom";
+import SliderCentered from "../../components/SliderCentered/SliderCentered";
+import DefaultSlider from "../../components/BaseSlider/DefaultSlider";
+import Hand from "../../components/Hand/Hand";
+import SwiperAuto from "../../components/SwiperAuto/SwiperAuto";
+import SwiperAutoTwo from "../../components/SwiperAutoTwo/SwiperAutoTwo";
+import { useGetAboutUsQuery, useGetMainInfoQuery } from "../../redux";
 
 function MainPage() {
+  const { data: main_info = [] } = useGetMainInfoQuery();
+  const { data: about_us = [] } = useGetAboutUsQuery();
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
+
+  const navigate = useNavigate();
+
   return (
     <div className="homepage">
       <Header />
+      {main_info.map((item) => (
+        <section className="hero" aria-labelledby="hero__title">
+          <h1 id="hero__title" className="hero__title">
+            {item.title}
+          </h1>
+          <div className="hero__description">
+            <p>{item.subtitle}</p>
+          </div>
+          <Button icon={HomeSvg}>заказать ворота</Button>
+          <Hand />
+        </section>
+      ))}
       <section className="hero" aria-labelledby="hero__title">
         <h1 id="hero__title" className="hero__title">
           Современная и&nbsp;надёжная&nbsp;защита
@@ -35,9 +53,22 @@ function MainPage() {
             Найдите идеальный вариант сами или&nbsp;предоставьте это&nbsp;нам
           </p>
         </div>
-        <Button icon={HomeSvg}>заказать ворота</Button>
+        <Button tag="a" icon={HomeSvg} href="#form__section">
+          заказать ворота
+        </Button>
         <Hand />
       </section>
+
+      {about_us.map((item) => (
+        <section aria-labelledby="about__title" className="about" key={item.id}>
+          <h2 id="about__title" className="about__title title--secondary">
+            {item.title}
+          </h2>
+          <div className="about__description">
+            <p>{item.text}</p>
+          </div>
+        </section>
+      ))}
 
       <section aria-labelledby="about__title" className="about">
         <h2 id="about__title" className="about__title title--secondary">
@@ -55,7 +86,7 @@ function MainPage() {
           </p>
         </div>
       </section>
-
+      
       <section aria-labelledby="gates__title" className="gates">
         <h2 id="gates__title" className="gates__title title--secondary">
           Мы предлагаем
@@ -71,7 +102,7 @@ function MainPage() {
           Наши преимущества
         </h2>
         <Advantages />
-        <SwiperAutoTwo/>
+        <SwiperAutoTwo />
       </section>
 
       <section aria-labelledby="news__title" className="news">
@@ -80,9 +111,9 @@ function MainPage() {
         </h2>
         <NewsList />
         <DefaultSlider />
-        <NavLink to={'/news'}>
-          <Button isSecondary>все новости</Button>
-        </NavLink>
+        <Button isSecondary onClick={() => navigate('/news')}>
+          все новости
+        </Button>
       </section>
 
       <section aria-labelledby="works__title" className="works">
@@ -97,9 +128,13 @@ function MainPage() {
           Сервис
         </h2>
         <Services />
-        <SwiperAuto/>
+        <SwiperAuto />
       </section>
-      <section aria-labelledby="reviews__title" className="reviews">
+      <section
+        aria-labelledby="reviews__title"
+        className="reviews"
+        id="reviews"
+      >
         <h2 id="reviews__title" className="reviews__title title--secondary">
           Отзывы наших клиентов
         </h2>
@@ -107,13 +142,8 @@ function MainPage() {
       </section>
 
       <div className="background__bottom">
-        <section aria-labelledby="form__title" className="form">
-          <h2 id="form__title" className="form__title">
-            ОСТАЛИСЬ ВОПРОСЫ?
-          </h2>
-          <Form />
-          <GoTopBtn />
-        </section>
+        <Form />
+        <GoTopBtn />
       </div>
       <Footer />
     </div>

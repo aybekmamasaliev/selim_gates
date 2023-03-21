@@ -93,6 +93,11 @@ h6 {
     0.42rem + 5.09vw,
     5rem
   ); // main heading size: from 80px to 25px;
+  --font-size-heading-850: clamp(
+    1rem,
+    -1.4rem + 8.53vw,
+    5rem
+  ); // main heading size: from 80px to 16px;
   --font-size-heading-800: clamp(
     1rem,
     0.5rem + 2.22vw,
@@ -118,4 +123,22 @@ h6 {
 
 body {
   font-family: var(--primary-font);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+// Utility classes
+
+.visually-hidden {
+  display: inline-block;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1;
+  width: 1;
+  margin: -1;
+  padding: 0;
+  border: 0;
 }

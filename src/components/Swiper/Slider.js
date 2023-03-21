@@ -15,23 +15,8 @@ const Slider = () => {
   const {data=[], isLoading}=useGetGoodsQuery();
   const swiper = useSwiper();
 
-  // const [windowwidth, setWindowWidth] = useState(window.innerWidth);
-
-  // const setSize = () => {
-  //   setWindowWidth(window.innerWidth);
-  //   console.log(windowwidth);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("resize", setSize);
-  //   return () => {
-  //     window.removeEventListener("resize", setSize);
-  //   };
-  // }, []);
-
   return (
     <div className={s.slider_cover}>
-      {/* <p>{windowwidth}</p> */}
       {isLoading ? (
         <p className={s.center}>loading</p>
       ) : (
@@ -45,10 +30,6 @@ const Slider = () => {
               centeredSlides: false,
               slidesPerView: "auto",
             },
-            // 680: {
-            //   centeredSlides: false,
-            //   slidesPerView: 2,
-            // },
             780: {
               centeredSlides: true,
               slidesPerView: "auto",
@@ -73,14 +54,14 @@ const Slider = () => {
           <div className={s.div_cover_btns}>
             <div className={s.upper_btn_div}>
               <SwiperButtonPrev>
-                <button className={s.circle_btn}>
+                <div className={s.circle_btn}>
                   <img src={left} alt="" />
-                </button>
+                </div>
               </SwiperButtonPrev>
               <SwiperButtonNext>
-                <button className={s.circle_btn}>
+                <div className={s.circle_btn}>
                   <img src={right} alt="" />
-                </button>
+                </div>
               </SwiperButtonNext>
             </div>
           </div>

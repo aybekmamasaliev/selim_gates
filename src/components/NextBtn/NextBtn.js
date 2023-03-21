@@ -6,7 +6,7 @@ const SwiperButtonNext = ({ children }) => {
   const swiper = useSwiper();
 
   return (
-    <div>
+    <div className={s.circle}>
       <button className={s.btn} onClick={() => swiper.slideNext()}>{children}</button>
     </div>
   );

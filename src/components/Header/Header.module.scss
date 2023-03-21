@@ -43,7 +43,7 @@
       text-decoration: underline;
     }
 
-    &.active {
+    &:global(.active) {
       text-decoration: underline;
     }
   }

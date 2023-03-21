@@ -1,4 +1,5 @@
 .center_x {
+  --form-padding-inline: 76.5px;
   padding-inline: 40px;
 }
 
@@ -39,13 +40,16 @@
   gap: 40px 20px;
 }
 
-.preloader{
+.preloader {
   text-align: center;
   font-weight: 500;
   font-size: 20px;
   width: 100%;
 }
 
+.form{
+  margin-top: 160px;
+}
 .form > h2 {
   text-align: center;
   margin-top: 18px;
@@ -87,13 +91,17 @@
   }
 }
 
-@media (max-width:900px) {
+@media (max-width: 900px) {
 }
 
 @media (max-width: 750px) {
   .disg {
     grid-template-columns: 1fr;
     row-gap: 30px;
+  }
+
+  .form{
+    margin-top: 70px;
   }
 
   .disg > h1 {

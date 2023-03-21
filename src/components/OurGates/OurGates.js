@@ -1,14 +1,14 @@
-import React from "react";
-import s from "./OurGates.module.css";
-import Button from "../Button/Button";
-import item1 from "../../media/item1.svg";
-import item2 from "../../media/item2.svg";
-import item3 from "../../media/item3.svg";
-import item4 from "../../media/item4.svg";
-import item5 from "../../media/item5.svg";
-import DoorName from "../DoorName/DoorName";
-import { NavLink } from "react-router-dom";
-import WeProvideSlider from "../WeProvideSlider/WeProvideSlider";
+import React from 'react';
+import s from './OurGates.module.css';
+import Button from '../Button/Button';
+import item1 from '../../media/item1.svg';
+import item2 from '../../media/item2.svg';
+import item3 from '../../media/item3.svg';
+import item4 from '../../media/item4.svg';
+import item5 from '../../media/item5.svg';
+import DoorName from '../DoorName/DoorName';
+import { Link } from 'react-router-dom';
+import WeProvideSlider from '../WeProvideSlider/WeProvideSlider';
 
 const OurGates = () => {
   return (
@@ -16,31 +16,33 @@ const OurGates = () => {
       <div className={s.outer_service}>
         <div className={s.services}>
           <div className={s.grid}>
-            <div className={s.item}>
+            <Link to={'/services/1'} className={s.item}>
               <img src={item2} alt="" className={s.img} />
               <DoorName>Секционные</DoorName>
-            </div>
-            <div className={s.item}>
+            </Link>
+            <Link className={s.item} to={'/services/1'}>
               <img src={item4} alt="" className={s.img} />
               <DoorName>Автоматика</DoorName>
-            </div>
-            <div className={s.item}>
+            </Link>
+            <Link className={s.item} to={'/services/1'}>
               <img src={item3} alt="" className={s.img} />
               <DoorName>Распашные</DoorName>
-            </div>
-            <div className={s.item}>
+            </Link>
+            <Link className={s.item} to={'/services/1'}>
               <img src={item5} alt="" className={s.img} />
               <DoorName>Складные</DoorName>
-            </div>
-            <div className={s.item5}>
+            </Link>
+            <Link className={s.item5} to={'/services/1'}>
               <img src={item1} alt="" className={s.img} />
               <DoorName>Роль ворота</DoorName>
-            </div>
+            </Link>
           </div>
-          <WeProvideSlider/>
-          <NavLink to={"/services"} >
-            <Button isSecondary className={s.to_hide}>смотреть все</Button>
-          </NavLink>
+          <WeProvideSlider />
+          <Link to={'/services'}>
+            <Button isSecondary className={s.to_hide}>
+              смотреть все
+            </Button>
+          </Link>
         </div>
       </div>
     </>

@@ -1,9 +1,13 @@
+.gatespage {
+  --form-padding-inline: 116.5px;
+}
+
 .banner {
   display: grid;
   place-content: center;
   padding-block-start: 180px;
   padding-block-end: 155px;
-  background-image: url('./GatesPageBg.png');
+  background-image: url('./media/GatesPageBg.avif');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -11,7 +15,7 @@
 
   &__title {
     font-weight: bold;
-    font-size: var(--font-size-heading-900);
+    font-size: var(--font-size-heading-850);
     line-height: 110%;
     text-transform: uppercase;
     max-width: calc(1070rem / 16);
@@ -141,18 +145,6 @@
   }
 }
 
-.visually-hidden {
-  display: inline-block;
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1;
-  width: 1;
-  margin: -1;
-  padding: 0;
-  border: 0;
-}
-
 @media (max-width: 64.0625rem) {
   .main-advantages {
     align-items: center;
@@ -163,10 +155,13 @@
 @media (max-width: 56.25rem) {
   .banner {
     border-bottom-right-radius: 100px;
+    padding-block-start: 85px;
+    padding-block-end: 53px;
+    padding-inline: 76px;
   }
 
   .description {
-    padding-block-start: 85px;
+    padding-block-start: 22px;
     padding-block-end: 55px;
     padding-inline: 32px 41px;
   }
@@ -178,16 +173,6 @@
   .main-advantages {
     padding-inline: 16px 25px;
     padding-block-end: 50px;
-  }
-
-  .banner {
-    border-bottom-right-radius: 100px;
-  }
-
-  .description {
-    padding-block-start: 85px;
-    padding-block-end: 53px;
-    padding-inline: 32px 41px;
   }
 
   .types__item > p {

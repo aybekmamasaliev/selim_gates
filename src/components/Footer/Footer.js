@@ -1,11 +1,15 @@
+
 import Logo from "../Logo/Logo";
 import "./Footer.scss";
 import InstagramSvg from "./InstagramSvg.svg";
 import WhatsAppSvg from "./WhatsAppSvg.svg";
 import Map from "../Map/Map";
-import { NavLink } from "react-router-dom";
+import { NavLink , Link} from "react-router-dom";
+import { useGetNumbersQuery } from "../../redux";
+import { HashLink } from 'react-router-hash-link';
 
 function Footer() {
+  const {data=[]}=useGetNumbersQuery();
   return (
     <footer className="footer">
       <div className="footer__wrapper">
@@ -25,15 +29,13 @@ function Footer() {
         <div className="footer__phones">
           <p>телефон</p>
           <ul>
-            <li>
-              <a href="tel:+996-552-570-755">+996 (552) 57 07 55</a>
-            </li>
-            <li>
-              <a href="tel:+996-500-888-051">+996 (500) 88 80 51</a>
-            </li>
-            <li>
-              <a href="tel:+996-772-327-676">+996 (772) 32 76 76</a>
-            </li>
+            {
+              data.map(item=>(
+                <li key={item.id}>
+                  <a href={"tel:" + item.number}>{item.number}</a>
+                </li>
+              ))
+            }
           </ul>
         </div>
 
@@ -45,39 +47,48 @@ function Footer() {
           <p>социальные сети</p>
           <ul>
             <li>
-              <button>
+              <a href="https://www.instagram.com/selimtrade/">
+                <span className="visually-hidden">
+                  Напишите нам в инстаграме
+                </span>
                 <img src={InstagramSvg} alt="Instagram Logo" />
-              </button>
+              </a>
             </li>
             <li>
-              <button>
+              <a href="https://wa.me/+996552570755">
+                <span className="visually-hidden">Напишите нам в вотсаппе</span>
                 <img src={WhatsAppSvg} alt="WhatsApp Logo" />
-              </button>
+              </a>
             </li>
           </ul>
         </div>
-        <nav className="footer__nav">
+        <div className="footer__nav">
           <ul>
-            <NavLink to="/home">
-              <li>Главная</li>
-            </NavLink>
-            <NavLink to="/">
-              <li>О нас</li>
-            </NavLink>
-            <NavLink to="/services">
-              <li>Услуги</li>
-            </NavLink>
-            <NavLink to="/">
-              <li>Работы</li>
-            </NavLink>
-            <NavLink to="/">
-              <li>Отзывы</li>
-            </NavLink>
-            <NavLink to="/news">
-              <li>Новости</li>
-            </NavLink>
+            <li>
+              <Link to="/home">Главная </Link>
+            </li>
+
+            <li>
+              <HashLink to="/#about">О нас </HashLink>
+            </li>
+
+            <li>
+              <Link to="/services">Услуги</Link>
+            </li>
+
+            <li>
+              <Link to="/gallery">Работы </Link>
+            </li>
+
+            <li>
+              <HashLink to="/#reviews">Отзывы </HashLink>
+            </li>
+
+            <li>
+              <Link to="/news">Новости </Link>
+            </li>
           </ul>
-        </nav>
+        </div>
       </div>
     </footer>
   );

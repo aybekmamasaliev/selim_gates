@@ -1,38 +1,47 @@
+.services {
+  position: relative;
+}
+
 .bg_top {
   position: absolute;
   width: 100%;
-  height: 1135px;
+  height: 644px;
   z-index: -1;
-  background-image: url("../../media/service_page__top.svg");
+  background-image: url('./media//BgTopMain.avif');
   background-repeat: no-repeat;
-  background-size: cover;
-  top: -300px;
+  background-size: contain;
+  top: 0;
   filter: blur(2px);
 }
 
 .bg_top::after {
-  content: "";
-  background-image: url("../../media/service_page_leaves_top.png");
+  content: '';
+  background-image: url('./media//BgTopAdditional.avif');
+
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
-  width: 752px;
-  height: 654px;
-  top: 280px;
+  width: 100%;
+  max-width: 752px;
+  height: 100%;
+
+  top: 0;
   z-index: -2;
   filter: blur(2px);
   opacity: 40%;
 }
 
 .center_bg {
-  background-image: url("../../media//services_page_bg_center.png");
+  background-image: url('./media//CenterBg.avif');
   background-repeat: no-repeat;
-  background-size: cover;
-  width: 70vw;
-  height: 60vw;
+  background-size: contain;
+  width: 100%;
+  height: 1256px;
   position: absolute;
-  top: 1100px;
-  left: 100px;
+  top: 644px;
+  left: 0;
+  right: 0;
+
   transform: rotate(140deg);
   opacity: 80%;
   filter: blur(2px);
@@ -40,19 +49,23 @@
 
 .bottom_bg {
   width: 100%;
-  height: 1130px;
+  height: 879px;
   position: absolute;
   z-index: -1;
-  background-image: url("../../media/service_page__top.svg");
+  background-image: url('./media//BtmBg.avif');
   background-repeat: no-repeat;
   background-size: cover;
   filter: blur(2px);
-  top: 140vw;
-  bottom: 0;
+  bottom: 0px;
 }
 
 .center_x {
+  --form-padding-inline: 78.5px;
+
   padding-inline: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 105px;
 }
 
 .disg {
@@ -110,13 +123,13 @@
   font-size: clamp(1rem, 0.518348623853211rem + 2.2018348623853212vw, 2.5rem);
 }
 
-@media (max-width:1000px) {
+@media (max-width: 1000px) {
   .bottom_bg {
     width: 100%;
     height: 1130px;
     position: absolute;
     z-index: -1;
-    background-image: url("../../media/service_page__top.svg");
+    background-image: url('./media//BtmBg.avif');
     background-repeat: no-repeat;
     background-size: cover;
     filter: blur(2px);
@@ -130,7 +143,6 @@
     justify-content: center;
     gap: 40px 20px;
   }
-
 }
 
 @media (max-width: 770px) {
@@ -161,22 +173,32 @@
     padding-top: 97px;
   }
 
-  .bg_top{
+  .bg_top {
     display: none;
   }
-  .center_bg{
+  .center_bg {
     display: none;
   }
-  .bottom_bg{
+  .bottom_bg {
     display: none;
   }
   .center_x {
     padding-inline: 20px;
+    gap: 40px;
   }
 }
 
 @media (max-width: 550px) {
   .center_x {
     padding-inline: 16px;
+  }
+}
+
+@media (min-width:1490px) {
+  .bottom_bg {
+    top: 1490px;
+  }
+  .center_bg {
+    height: 1440px;
   }
 }

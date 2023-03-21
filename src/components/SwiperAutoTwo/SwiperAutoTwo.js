@@ -1,54 +1,25 @@
 import React from "react";
-import { Swiper, SwiperSlide} from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import s from "./SwiperAuto.module.css";
-import worker from "../../media/worker.svg";
-import setting from "../../media/settings.svg";
-import clock from "../../media/clock.svg";
-import man from "../../media/man.svg";
-import hand from "../../media/hand.svg";
+import { useGetAdvantagesQuery } from "../../redux";
 
-
-
-const SwiperAutoTwo=()=>{
-    return<>
-    <Swiper
-       spaceBetween={20}
-       slidesPerView={"auto"}
-       className={s.dis_n}
-       >
-        <SwiperSlide className={s.per_slide}>
+const SwiperAutoTwo = () => {
+  const { data = [] } = useGetAdvantagesQuery();
+  return (
+    <>
+      <Swiper spaceBetween={20} slidesPerView={"auto"} className={s.dis_n}>
+        {data.map((item) => (
+          <SwiperSlide className={s.per_slide} key={item.id}>
             <div className={s.card}>
-                <img src={worker} alt=""/>
-                <p>Бесплатный выезд специалиста для замеров</p>
+              <img src={item.image} alt="" />
+              <p>{item.text}</p>
             </div>
-        </SwiperSlide>
-        <SwiperSlide className={s.per_slide}>
-            <div className={s.card}>
-                <img src={setting} alt=""/>
-                <p>Многолетный опыт работы</p>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide className={s.per_slide}>
-            <div className={s.card}>
-                <img src={clock} alt=""/>
-                <p>Минимальные сроки производства</p>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide className={s.per_slide}>
-            <div className={s.card}>
-                <img src={man} alt=""/>
-                <p>Высокая квалификация сотрудников</p>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide className={s.per_slide}>
-            <div className={s.card}>
-                <img src={hand} alt=""/>
-                <p>Постгарантийное обслуживание и ремонт</p>
-            </div>
-        </SwiperSlide>
-    </Swiper>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </>
-}
+  );
+};
 
-export default SwiperAutoTwo
+export default SwiperAutoTwo;

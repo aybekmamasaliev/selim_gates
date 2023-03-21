@@ -1,45 +1,25 @@
 import React from "react";
-import { Swiper, SwiperSlide} from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import s from "./SwiperAuto.module.css";
-import operator from "../../media/operator.svg"
-import wifi from "../../media/wifi.svg";
-import tools from "../../media/tools.svg";
-import usingtool from "../../media/usingtool.svg";
+import { useGetServicesQuery } from "../../redux";
 
-const SwiperAuto=()=>{
-    return<>
-    <Swiper
-       spaceBetween={20}
-       slidesPerView={"auto"}
-       className={s.dis_n}
-       >
-        <SwiperSlide className={s.per_slide}>
+const SwiperAuto = () => {
+  const { data = [], isLoading } = useGetServicesQuery();
+  return (
+    <>
+      <Swiper spaceBetween={20} slidesPerView={"auto"} className={s.dis_n}>
+        {data.map((item) => (
+          <SwiperSlide className={s.per_slide} key={item.id}>
             <div className={s.card}>
-                <img src={operator} alt=""/>
-                <p>Консультация и техническая поддержка</p>
+              <img src={item.image} alt="" />
+              <p>{item.text}</p>
             </div>
-        </SwiperSlide>
-        <SwiperSlide className={s.per_slide}>
-            <div className={s.card}>
-                <img src={wifi} alt=""/>
-                <p>Настройка пультов управления</p>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide className={s.per_slide}>
-            <div className={s.card}>
-                <img src={tools} alt=""/>
-                <p>Монтаж</p>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide className={s.per_slide}>
-            <div className={s.card}>
-                <img src={usingtool} alt=""/>
-                <p>Послегарантийное обслуживание</p>
-            </div>
-        </SwiperSlide>
-    </Swiper>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </>
-}
+  );
+};
 
-export default SwiperAuto
+export default SwiperAuto;

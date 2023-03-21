@@ -1,37 +1,12 @@
 import Card from '../Card/Card';
-import HeadphonesSvg from './HeadphonesSvg.svg';
-import RemoteSvg from './RemoteSvg.svg';
-import RepairSvg from './RepairSvg.svg';
-import WarrantySvg from './WarrantySvg.svg';
 import styles from './Services.module.scss';
-
-const data = [
-  {
-    id: 1,
-    icon: HeadphonesSvg,
-    text: 'Консультация и техническая поддержка',
-  },
-  {
-    id: 2,
-    icon: RemoteSvg,
-    text: 'Настройка пультов управления',
-  },
-  {
-    id: 3,
-    icon: RepairSvg,
-    text: 'Монтаж ',
-  },
-  {
-    id: 4,
-    icon: WarrantySvg,
-    text: 'Послегарантийное обслуживание',
-  },
-];
+import { useGetServicesQuery } from '../../redux';
 
 function Services() {
+  const {data=[], isLoading} = useGetServicesQuery();
   const renderedCards = data.map((serv) => (
     <li key={serv.id} className={styles.services__item}>
-      <Card icon={serv.icon} text={serv.text} />
+      <Card icon={serv.image} text={serv.text} />
     </li>
   ));
 
