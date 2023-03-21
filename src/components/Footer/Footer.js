@@ -1,12 +1,15 @@
-import Logo from '../Logo/Logo';
-import './Footer.scss';
-import InstagramSvg from './InstagramSvg.svg';
-import WhatsAppSvg from './WhatsAppSvg.svg';
-import Map from '../Map/Map';
-import { Link } from 'react-router-dom';
+
+import Logo from "../Logo/Logo";
+import "./Footer.scss";
+import InstagramSvg from "./InstagramSvg.svg";
+import WhatsAppSvg from "./WhatsAppSvg.svg";
+import Map from "../Map/Map";
+import { NavLink , Link} from "react-router-dom";
+import { useGetNumbersQuery } from "../../redux";
 import { HashLink } from 'react-router-hash-link';
 
 function Footer() {
+  const {data=[]}=useGetNumbersQuery();
   return (
     <footer className="footer">
       <div className="footer__wrapper">
@@ -26,15 +29,13 @@ function Footer() {
         <div className="footer__phones">
           <p>телефон</p>
           <ul>
-            <li>
-              <a href="tel:+996-552-570-755">+996 (552) 57 07 55</a>
-            </li>
-            <li>
-              <a href="tel:+996-500-888-051">+996 (500) 88 80 51</a>
-            </li>
-            <li>
-              <a href="tel:+996-772-327-676">+996 (772) 32 76 76</a>
-            </li>
+            {
+              data.map(item=>(
+                <li key={item.id}>
+                  <a href={"tel:" + item.number}>{item.number}</a>
+                </li>
+              ))
+            }
           </ul>
         </div>
 

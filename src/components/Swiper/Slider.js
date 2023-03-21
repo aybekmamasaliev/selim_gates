@@ -15,23 +15,8 @@ import "swiper/css/pagination";
 const Slider = () => {
   const {data=[], isLoading}=useGetGoodsQuery();
 
-  // const [windowwidth, setWindowWidth] = useState(window.innerWidth);
-
-  // const setSize = () => {
-  //   setWindowWidth(window.innerWidth);
-  //   console.log(windowwidth);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("resize", setSize);
-  //   return () => {
-  //     window.removeEventListener("resize", setSize);
-  //   };
-  // }, []);
-
   return (
     <div className={s.slider_cover}>
-      {/* <p>{windowwidth}</p> */}
       {isLoading ? (
         <p className={s.center}>loading</p>
       ) : (
@@ -60,8 +45,8 @@ const Slider = () => {
         >
           {data.map((item) => {
             return (
-              <SwiperSlide key={item._id} className={s.slide}>
-                <ReviewItem key={item._id} img={item.image} first_name={item.first_name}
+              <SwiperSlide className={s.slide} key={item.id}>
+                <ReviewItem key={item.id} img={item.image} first_name={item.first_name}
                 text={item.text} category_name={item.category_name} last_name={item.last_name}
                 />
               </SwiperSlide>

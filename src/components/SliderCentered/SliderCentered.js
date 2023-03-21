@@ -40,7 +40,7 @@ const SliderCentered = () => {
         >
           {data.map((item) => {
             return (
-              <SwiperSlide key={item._id} className={s.per_slide} >
+              <SwiperSlide key={item.id} className={s.per_slide} >
                 {({ isActive }) => (
                   <div className={s.div_upper_img}>
                     {isActive ? (

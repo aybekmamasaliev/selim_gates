@@ -10,7 +10,7 @@ const SwiperAuto = () => {
     <>
       <Swiper spaceBetween={20} slidesPerView={"auto"} className={s.dis_n}>
         {data.map((item) => (
-          <SwiperSlide className={s.per_slide}>
+          <SwiperSlide className={s.per_slide} key={item.id}>
             <div className={s.card}>
               <img src={item.image} alt="" />
               <p>{item.text}</p>
