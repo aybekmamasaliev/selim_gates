@@ -86,7 +86,26 @@ export const goodsApi = createApi({
             ]
           : [{ type: "Phone_numbers", id: "LIST" }],
     }),
-
+    getSchedule: build.query({
+      query: () => `/main_info/schedule/`,
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "Schedule", id })),
+              { type: "Schedule", id: "LIST" },
+            ]
+          : [{ type: "Schedule", id: "LIST" }],
+    }),
+    getSocialMedia: build.query({
+      query: () => `/main_info/social_media/`,
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "Social_media", id })),
+              { type: "Social_media", id: "LIST" },
+            ]
+          : [{ type: "Social_media", id: "LIST" }],
+    }),
     addProducts: build.mutation({
       query: (body) => ({
         url: "review",
@@ -117,4 +136,6 @@ export const {
   useGetAboutUsQuery,
   useGetMainInfoQuery,
   useGetNumbersQuery,
+  useGetScheduleQuery,
+  useGetSocialMediaQuery,
 } = goodsApi;

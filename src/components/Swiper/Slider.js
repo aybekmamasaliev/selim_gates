@@ -39,6 +39,7 @@ const Slider = () => {
             },
             1360: {
               slidesPerView: 4,
+              loop:false
             },
           }}
         >
