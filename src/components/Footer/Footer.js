@@ -3,7 +3,7 @@ import "./Footer.scss";
 import InstagramSvg from "./InstagramSvg.svg";
 import WhatsAppSvg from "./WhatsAppSvg.svg";
 import Map from "../Map/Map";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   useGetNumbersQuery,
   useGetScheduleQuery,
@@ -23,7 +23,7 @@ function Footer() {
         <div className="footer__schedule">
           <p>режим работы</p>
           {schedule.map((item) => (
-            <p>
+            <p key={item.id}>
               <span> {item.day} </span>
               <time> {item.start_time} </time>-<time>{item.end_time}</time>
             </p>
@@ -52,7 +52,7 @@ function Footer() {
         <div className="footer__socials">
           <p>социальные сети</p>
           {social_m.map((item) => (
-            <ul>
+            <ul key={item.id}>
               <li>
                 <a href={item.instagram}>
                   <span className="visually-hidden">

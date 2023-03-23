@@ -106,6 +106,24 @@ export const goodsApi = createApi({
             ]
           : [{ type: "Social_media", id: "LIST" }],
     }),
+    getFeedBacks: build.query({
+      query: () => `feedback`,
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "FeedBack", id })),
+              { type: "FeedBack", id: "LIST" },
+            ]
+          : [{ type: "FeedBack", id: "LIST" }],
+    }),
+    addFeedBacks: build.mutation({
+      query: (body) => ({
+        url: "/feedback/",
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: [{ type: "FeedBack", id: "LIST" }],
+    }),
     addProducts: build.mutation({
       query: (body) => ({
         url: "review",
@@ -138,4 +156,6 @@ export const {
   useGetNumbersQuery,
   useGetScheduleQuery,
   useGetSocialMediaQuery,
+  useGetFeedBacksQuery,
+  useAddFeedBacksMutation,
 } = goodsApi;

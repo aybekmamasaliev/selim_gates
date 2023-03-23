@@ -1,11 +1,11 @@
 import React from 'react';
-import Slider from "../Swiper/Slider";
+import SliderRew from "../Swiper/SliderRew";
 
 const ReviewList = () => {
   return (
     <>
       <div>
-        <Slider />
+        <SliderRew />
       </div>
       
     </>

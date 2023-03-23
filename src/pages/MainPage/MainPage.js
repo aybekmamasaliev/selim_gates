@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import HomeSvg from "./HomeSvg.svg";
 import Button from "../../components/Button/Button";
@@ -12,7 +11,7 @@ import Form from "../../components/Form/Form";
 import Footer from "../../components/Footer/Footer";
 import "./MainPage.scss";
 import GoTopBtn from "../../components/GoTopBtn/GoTopBtn";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SliderCentered from "../../components/SliderCentered/SliderCentered";
 import DefaultSlider from "../../components/BaseSlider/DefaultSlider";
 import Hand from "../../components/Hand/Hand";
@@ -23,7 +22,7 @@ import { useGetAboutUsQuery, useGetMainInfoQuery } from "../../redux";
 function MainPage() {
   const { data: main_info = [] } = useGetMainInfoQuery();
   const { data: about_us = [] } = useGetAboutUsQuery();
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -37,9 +36,9 @@ function MainPage() {
         <section className="hero" aria-labelledby="hero__title" key={item.id}>
           <h1 id="hero__title" className="hero__title">
             {item.title.split(" ").slice(0, 1)}
-            <br/>
-            {item.title.split(" ").slice(1,2)}&nbsp;
-            {item.title.split(" ").slice(2,5)}
+            <br />
+            {item.title.split(" ").slice(1, 2)}&nbsp;
+            {item.title.split(" ").slice(2, 5)}
           </h1>
           <div className="hero__description">
             <p>{item.subtitle}</p>
@@ -85,7 +84,7 @@ function MainPage() {
         </h2>
         <NewsList />
         <DefaultSlider />
-        <Button isSecondary onClick={() => navigate('/news')}>
+        <Button isSecondary onClick={() => navigate("/news")}>
           все новости
         </Button>
       </section>
@@ -116,8 +115,10 @@ function MainPage() {
       </section>
 
       <div className="background__bottom">
-        <Form />
-        <GoTopBtn />
+        <div>
+          <Form />
+          <GoTopBtn />
+        </div>
       </div>
       <Footer />
     </div>
