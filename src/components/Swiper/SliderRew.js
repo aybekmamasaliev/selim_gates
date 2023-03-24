@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import s from "./Slider.module.css";
 import SwiperButtonNext from "../NextBtn/NextBtn";
 import SwiperButtonPrev from "../PrevBtn/PrevBtn";
 import left from "../../media/left.svg";
 import right from "../../media/right.svg";
 import ReviewItem from "../ReviewItem/ReviewItem";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { useGetGoodsQuery } from "../../redux";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const Slider = () => {
+const SliderRew = () => {
   const {data=[], isLoading}=useGetGoodsQuery();
 
   return (
@@ -20,28 +20,30 @@ const Slider = () => {
         <p className={s.center}>loading</p>
       ) : (
         <Swiper
-          spaceBetween={10}
-          slidesPerView={1}
-          loop={true}
-          breakpoints={{
-            300: {
-              initialSlide: 2,
-              centeredSlides: false,
-              slidesPerView: "auto",
-            },
-            780: {
-              centeredSlides: true,
-              slidesPerView: "auto",
-            },
-            1024: {
-              centeredSlides: false,
-              slidesPerView: 3,
-            },
-            1360: {
-              slidesPerView: 4,
-            },
-          }}
-        >
+        spaceBetween={10}
+        slidesPerView={1}
+        loop={true}
+        breakpoints={{
+          300: {
+            initialSlide: 2,
+            centeredSlides: false,
+            slidesPerView: "auto",
+          },
+          780: {
+            centeredSlides: true,
+            slidesPerView: "auto",
+          },
+          1024: {
+            centeredSlides: false,
+            slidesPerView: 3,
+          },
+          1360: {
+            initialSlide: 0,
+            loop:false,
+            slidesPerView: 4,
+          },
+        }}
+      >
           {data.map((item) => {
             return (
               <SwiperSlide key={item.id} className={s.slide}>
@@ -72,4 +74,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default SliderRew;

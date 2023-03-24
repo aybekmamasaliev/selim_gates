@@ -189,6 +189,11 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+  div{
+    // background-color: red;
+    position: relative;
+  }
 }
 
 @media (max-width: 56.25rem) {

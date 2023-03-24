@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import HomeSvg from "./HomeSvg.svg";
 import Button from "../../components/Button/Button";
@@ -12,7 +11,7 @@ import Form from "../../components/Form/Form";
 import Footer from "../../components/Footer/Footer";
 import "./MainPage.scss";
 import GoTopBtn from "../../components/GoTopBtn/GoTopBtn";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SliderCentered from "../../components/SliderCentered/SliderCentered";
 import DefaultSlider from "../../components/BaseSlider/DefaultSlider";
 import Hand from "../../components/Hand/Hand";
@@ -23,6 +22,7 @@ import { useGetAboutUsQuery, useGetMainInfoQuery } from "../../redux";
 function MainPage() {
   const { data: main_info = [] } = useGetMainInfoQuery();
   const { data: about_us = [] } = useGetAboutUsQuery();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -33,9 +33,12 @@ function MainPage() {
     <div className="homepage">
       <Header />
       {main_info.map((item) => (
-        <section className="hero" aria-labelledby="hero__title">
+        <section className="hero" aria-labelledby="hero__title" key={item.id}>
           <h1 id="hero__title" className="hero__title">
-            {item.title}
+            {item.title.split(" ").slice(0, 1)}
+            <br />
+            {item.title.split(" ").slice(1, 2)}&nbsp;
+            {item.title.split(" ").slice(2, 5)}
           </h1>
           <div className="hero__description">
             <p>{item.subtitle}</p>
@@ -44,49 +47,19 @@ function MainPage() {
           <Hand />
         </section>
       ))}
-      <section className="hero" aria-labelledby="hero__title">
-        <h1 id="hero__title" className="hero__title">
-          Современная и&nbsp;надёжная&nbsp;защита
-        </h1>
-        <div className="hero__description">
-          <p>
-            Найдите идеальный вариант сами или&nbsp;предоставьте это&nbsp;нам
-          </p>
-        </div>
-        <Button tag="a" icon={HomeSvg} href="#form__section">
-          заказать ворота
-        </Button>
-        <Hand />
-      </section>
-
       {about_us.map((item) => (
         <section aria-labelledby="about__title" className="about" key={item.id}>
           <h2 id="about__title" className="about__title title--secondary">
             {item.title}
           </h2>
           <div className="about__description">
-            <p>{item.text}</p>
+            <p>{item.text.split(/\s+/).slice(0, 5).join(" ")}</p>
+            <p>{item.text.split(/\s+/).slice(5, 15).join(" ")}</p>
+            <p>{item.text.split(/\s+/).slice(15, 100).join(" ")}</p>
           </div>
         </section>
       ))}
 
-      <section aria-labelledby="about__title" className="about">
-        <h2 id="about__title" className="about__title title--secondary">
-          Кто такие Selim trade?
-        </h2>
-        <div className="about__description">
-          <p>Мы являемся официальным представителем DOORHAN.</p>
-          <p>
-            Производственно-монтажная компания Selim&nbsp;trade основана в 2003
-            году.
-          </p>
-          <p>
-            Основа нашей деятельности - это продажа и монтаж ворот, рольставней,
-            шлагбаумов, рольштор, жалюзи и многое другое.
-          </p>
-        </div>
-      </section>
-      
       <section aria-labelledby="gates__title" className="gates">
         <h2 id="gates__title" className="gates__title title--secondary">
           Мы предлагаем
@@ -111,7 +84,7 @@ function MainPage() {
         </h2>
         <NewsList />
         <DefaultSlider />
-        <Button isSecondary onClick={() => navigate('/news')}>
+        <Button isSecondary onClick={() => navigate("/news")}>
           все новости
         </Button>
       </section>
@@ -142,8 +115,10 @@ function MainPage() {
       </section>
 
       <div className="background__bottom">
-        <Form />
-        <GoTopBtn />
+        <div>
+          <Form />
+          <GoTopBtn />
+        </div>
       </div>
       <Footer />
     </div>

@@ -86,7 +86,44 @@ export const goodsApi = createApi({
             ]
           : [{ type: "Phone_numbers", id: "LIST" }],
     }),
-
+    getSchedule: build.query({
+      query: () => `/main_info/schedule/`,
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "Schedule", id })),
+              { type: "Schedule", id: "LIST" },
+            ]
+          : [{ type: "Schedule", id: "LIST" }],
+    }),
+    getSocialMedia: build.query({
+      query: () => `/main_info/social_media/`,
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "Social_media", id })),
+              { type: "Social_media", id: "LIST" },
+            ]
+          : [{ type: "Social_media", id: "LIST" }],
+    }),
+    getFeedBacks: build.query({
+      query: () => `feedback`,
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "FeedBack", id })),
+              { type: "FeedBack", id: "LIST" },
+            ]
+          : [{ type: "FeedBack", id: "LIST" }],
+    }),
+    addFeedBacks: build.mutation({
+      query: (body) => ({
+        url: "/feedback/",
+        method: "POST",
+        body,
+      }),
+      invalidatesTags: [{ type: "FeedBack", id: "LIST" }],
+    }),
     addProducts: build.mutation({
       query: (body) => ({
         url: "review",
@@ -117,4 +154,8 @@ export const {
   useGetAboutUsQuery,
   useGetMainInfoQuery,
   useGetNumbersQuery,
+  useGetScheduleQuery,
+  useGetSocialMediaQuery,
+  useGetFeedBacksQuery,
+  useAddFeedBacksMutation,
 } = goodsApi;

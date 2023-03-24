@@ -1,10 +1,42 @@
-import React, { useState } from 'react';
-import s from './Form.module.css';
-import Button from '../Button/Button';
+import React, { useState } from "react";
+import s from "./Form.module.css";
+import Button from "../Button/Button";
+import { useAddFeedBacksMutation } from "../../redux";
 
 const Form = () => {
-  const [name, setName] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [feedback, setFeedback] = useState("");
+  const [addFeedBack , {isError, error }] = useAddFeedBacksMutation();
+
+  let dataNew = {
+    name: name,
+    number: phoneNumber,
+    message: feedback,
+  };
+
+  const handleFeedBack = async (e) => {
+    e.preventDefault();
+    console.log(dataNew);
+    // if(isError){
+    //   console.log("no")
+    //   alert("no")
+    //   return
+    // }
+    await addFeedBack({ name: name, number: phoneNumber, message: feedback })
+      .unwrap()
+      .then(() => {
+        setName("");
+        setPhoneNumber("");
+        setFeedback("");
+      });
+      if (isError) {
+        // return <div>Error: {error.status}</div>;
+        alert(error.status)
+      }
+  };
+
+ 
 
   return (
     <section className={s.form} aria-labelledby="form__title" id="form">
@@ -44,11 +76,15 @@ const Form = () => {
           </label>
           <textarea
             id="text__input"
+            value={feedback}
+            onChange={(e) => setFeedback(e.target.value)}
             placeholder="сообщение"
             className={s.form__textarea}
           ></textarea>
         </p>
-        <Button className={s.form__button}>оставить заявку</Button>
+        <Button className={s.form__button} onClick={handleFeedBack}>
+          оставить заявку
+        </Button>
       </form>
     </section>
   );
