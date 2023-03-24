@@ -2,12 +2,22 @@ import React, { useState } from "react";
 import s from "./Form.module.css";
 import Button from "../Button/Button";
 import { useAddFeedBacksMutation } from "../../redux";
+import Modal from "../Modal/Modal";
 
 const Form = () => {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [feedback, setFeedback] = useState("");
-  const [addFeedBack , {isError, error }] = useAddFeedBacksMutation();
+  const [addFeedBack, { isError, error, data }] = useAddFeedBacksMutation();
+  const [modal_vis, setModal_vis]=useState("hidden");
+  const [valname, setValname] = useState("none");
+  const [valphone, setValphone] = useState("none");
+  const [valfeedback, setValfeedback] = useState("none");
+  const [bordername, setBordername] = useState("0.5px solid hsl(0, 0%, 25%)");
+  const [borderphone, setBorderphone] = useState("0.5px solid hsl(0, 0%, 25%)");
+  const [borderfeedback, setBorderfeedback] = useState(
+    "0.5px solid hsl(0, 0%, 25%)"
+  );
 
   let dataNew = {
     name: name,
@@ -15,37 +25,75 @@ const Form = () => {
     message: feedback,
   };
 
-  const handleFeedBack = async (e) => {
+  const handleFeedBack = (e) => {
     e.preventDefault();
+
+    if (name === "") {
+      setValname("block");
+      setBordername("0.5px solid red");
+    } else {
+      setValname("none");
+      setBordername("0.5px solid hsl(0, 0%, 25%)");
+    }
+
+    if (phoneNumber === "") {
+      setValphone("block");
+      setBorderphone("0.5px solid red");
+    } else {
+      setValphone("none");
+      setBorderphone("0.5px solid hsl(0, 0%, 25%)");
+    }
+
+    if (feedback === "") {
+      setValfeedback("block");
+      setBorderfeedback("0.5px solid red");
+    } else {
+      setValfeedback("none");
+      setBorderfeedback("0.5px solid hsl(0, 0%, 25%)");
+    }
+
+    if (phoneNumber === "" || feedback === "" || name === "") {
+      return;
+    }
+
     console.log(dataNew);
-    // if(isError){
-    //   console.log("no")
-    //   alert("no")
-    //   return
-    // }
-    await addFeedBack({ name: name, number: phoneNumber, message: feedback })
+
+    addFeedBack({ name: name, number: phoneNumber, message: feedback })
       .unwrap()
-      .then(() => {
+      .then((payload) => {
         setName("");
         setPhoneNumber("");
         setFeedback("");
+        console.log("fullfilled", payload);
+      })
+      .catch((error) => {
+        if (error.data.message) {
+          setValfeedback("block");
+          setBorderfeedback("0.5px solid red");
+          console.log("MESSAGE");
+        } else if (error.data.name) {
+          setValname("block");
+          setBordername("0.5px solid red");
+          console.log("name");
+        } else if (error.data.number) {
+          setValphone("block");
+          setBorderphone("0.5px solid red");
+          console.log("number");
+        }
+        return;
       });
-      if (isError) {
-        // return <div>Error: {error.status}</div>;
-        alert(error.status)
-      }
   };
-
- 
 
   return (
     <section className={s.form} aria-labelledby="form__title" id="form">
       <h2 className={s.form__title} id="form__title">
         Остались вопросы?
       </h2>
-
       <form className={s.form__form}>
-        <p className={s.form__name}>
+        <div className={s.form__name}>
+          <p className={s.valid} style={{ display: valname }}>
+            это поле не может быть пустым
+          </p>
           <label htmlFor="name__input" className="visually-hidden">
             Имя
           </label>
@@ -56,9 +104,13 @@ const Form = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="имя"
+            style={{ border: bordername }}
           />
-        </p>
-        <p className={s.form__phone}>
+        </div>
+        <div className={s.form__phone}>
+          <p className={s.valid} style={{ display: valphone }}>
+            не корректный номер телефона
+          </p>
           <label htmlFor="phone__input" className="visually-hidden">
             Телефон
           </label>
@@ -68,9 +120,13 @@ const Form = () => {
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
             placeholder="телефон"
+            style={{ border: borderphone }}
           />
-        </p>
-        <p className={s.form__text}>
+        </div>
+        <div className={s.form__text}>
+          <p className={s.valid} style={{ display: valfeedback }}>
+            это поле не может быть пустым
+          </p>
           <label htmlFor="text__input" className="visually-hidden">
             Сообщение
           </label>
@@ -80,12 +136,14 @@ const Form = () => {
             onChange={(e) => setFeedback(e.target.value)}
             placeholder="сообщение"
             className={s.form__textarea}
+            style={{ border: borderfeedback }}
           ></textarea>
-        </p>
+        </div>
         <Button className={s.form__button} onClick={handleFeedBack}>
           оставить заявку
         </Button>
       </form>
+    
     </section>
   );
 };
