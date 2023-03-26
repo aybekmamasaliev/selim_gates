@@ -47,7 +47,7 @@ export const goodsApi = createApi({
           : [{ type: "Products", id: "LIST" }],
     }),
     getNews: build.query({
-      query: () => `news`,
+      query: (count, reload) => `news?limit=${count}&offset=${reload}`,
       // providesTags: (result) =>
       //   result
       //     ? [

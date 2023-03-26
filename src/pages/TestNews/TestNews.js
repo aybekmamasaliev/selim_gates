@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/Header/Header";
 import s from "./TestNews.module.css";
 import { NavLink } from "react-router-dom";
@@ -77,10 +77,19 @@ import Modal from "../../components/Modal/Modal";
 // ];
 
 const TestNews = () => {
-  const { data = [], isLoading } = useGetNewsQuery();
+  const [reload, setReload] = useState(6)
+  const [limit , setLimit] = useState(3)
+  const { data = [], isLoading } = useGetNewsQuery(limit, reload);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const reLoad=()=>{
+    setReload(reload +4)
+    setLimit(limit +3)
+  }
+  console.log(reload)
+  console.log(reload)
 
   return (
     <div style={{ outline: "1px solid green" }}>
@@ -99,7 +108,7 @@ const TestNews = () => {
             <div className={s.news_list}>
               {data.results?.map((item) => {
                 return (
-                  <NavLink to="/news/1">
+                  <NavLink to={`/news/${item.id}`} key={item.id}>
                     <NewsItemMobile
                       img={item.image}
                       url={item.title}
@@ -119,9 +128,10 @@ const TestNews = () => {
             marginTop: "40px",
           }}
         >
-          <Button isSecondary className={s.centr}>
+          <Button isSecondary className={s.centr} >
             загрузить ещё
           </Button>
+          <p onClick={reLoad}>cnjfdncjfedncje</p>
         </div>
         <div style={{ marginTop: "150px" }}>
           <Form />

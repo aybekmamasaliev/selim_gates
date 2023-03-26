@@ -4,7 +4,7 @@ import NewsItem from "../NewsItem/NewsItem";
 import { useGetNewsQuery } from "../../redux";
 
 const NewsList = () => {
-  const { data = {}, isLoading } = useGetNewsQuery();
+  const { data = {}, isLoading } = useGetNewsQuery(3);
   console.log(data.next)
   return (
       <div className={s.news_block}>
