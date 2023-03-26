@@ -14,7 +14,7 @@ const NewsItem = (props) => {
   return (
     <>
       <div className={s.news_item} onMouseEnter={changeText} onMouseLeave={changeText}>
-        <img src={bg_img1} alt="" />
+        <img src={props.img} alt="" />
         <p className={s.news_item_title} style={{ visibility: vis }}>
           {props.url}
         </p>

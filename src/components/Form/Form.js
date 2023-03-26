@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import s from "./Form.module.css";
 import Button from "../Button/Button";
 import { useAddFeedBacksMutation } from "../../redux";
-import Modal from "../Modal/Modal";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement } from "../../redux";
 
 const Form = () => {
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [feedback, setFeedback] = useState("");
   const [addFeedBack, { isError, error, data }] = useAddFeedBacksMutation();
-  const [modal_vis, setModal_vis]=useState("hidden");
   const [valname, setValname] = useState("none");
   const [valphone, setValphone] = useState("none");
   const [valfeedback, setValfeedback] = useState("none");
@@ -64,23 +66,27 @@ const Form = () => {
         setName("");
         setPhoneNumber("");
         setFeedback("");
+        dispatch(increment());
         console.log("fullfilled", payload);
       })
       .catch((error) => {
-        if (error.data.message) {
-          setValfeedback("block");
-          setBorderfeedback("0.5px solid red");
-          console.log("MESSAGE");
-        } else if (error.data.name) {
+        if (error.data.name) {
           setValname("block");
           setBordername("0.5px solid red");
           console.log("name");
+        } else if (error.data.non_field_errors) {
+          setValphone("block");
+          setBorderphone("0.5px solid red");
+          console.log("number");
         } else if (error.data.number) {
           setValphone("block");
           setBorderphone("0.5px solid red");
           console.log("number");
+        } else if (error.data.message) {
+          setValfeedback("block");
+          setBorderfeedback("0.5px solid red");
+          console.log("MESSAGE");
         }
-        return;
       });
   };
 
@@ -143,7 +149,6 @@ const Form = () => {
           оставить заявку
         </Button>
       </form>
-    
     </section>
   );
 };

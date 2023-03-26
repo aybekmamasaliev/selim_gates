@@ -13,6 +13,7 @@ import img7 from './media/gallery-image 7.avif';
 import img8 from './media/gallery-image 8.avif';
 import img9 from './media/gallery-image 9.avif';
 import img10 from './media/gallery-image 10.avif';
+import Modal from '../../components/Modal/Modal';
 
 function GalleryPage() {
   useEffect(() => {
@@ -21,6 +22,7 @@ function GalleryPage() {
   return (
     <>
       <Header isDark />
+      <Modal/>
       <main className="main">
         <div className="main__info">
           <h1 className="main__title">Наши работы</h1>

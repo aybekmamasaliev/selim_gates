@@ -6,13 +6,16 @@ import Form from '../../components/Form/Form';
 import NewsItem from '../../components/NewsItem/NewsItem';
 import Button from '../../components/Button/Button';
 import { NavLink } from 'react-router-dom';
-import { useGetGoodsQuery } from '../../redux';
+import { useGetGoodsQuery, useGetNewsQuery } from '../../redux';
+import Modal from '../../components/Modal/Modal';
 
 const AllNewsPage = () => {
-  const {data=[], isLoading}=useGetGoodsQuery();
+
+  const {data=[], isLoading}=useGetNewsQuery
   return (
     <div className={s.newspage}>
       <Header isDark />
+      <Modal/>
       <div className={s.center_x}>
         <section className={s.disg} aria-labelledby="hero__title" >
           <h1 id="disg">Новости компании</h1>
@@ -24,10 +27,10 @@ const AllNewsPage = () => {
             {isLoading ? (
               <p className={s.preloader}>Идет загрузка...</p>
             ) : (
-              data.map((item) => {
+              data.results?.map((item) => {
                 return (
                   <NavLink to="/news/1">
-                    <NewsItem key={item._id} url={item.description} />
+                    <NewsItem img={item.image} url={item.title} desc={item.text} />
                   </NavLink>
                 );
               })

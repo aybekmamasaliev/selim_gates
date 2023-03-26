@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const goodsApi = createApi({
   reducerPath: "goodsApi",
@@ -47,13 +48,13 @@ export const goodsApi = createApi({
     }),
     getNews: build.query({
       query: () => `news`,
-      providesTags: (result) =>
-        result
-          ? [
-              ...result.map(({ id }) => ({ type: "News", id })),
-              { type: "News", id: "LIST" },
-            ]
-          : [{ type: "News", id: "LIST" }],
+      // providesTags: (result) =>
+      //   result
+      //     ? [
+      //         ...result.map(({ id }) => ({ type: "News", id })),
+      //         { type: "News", id: "LIST" },
+      //       ]
+      //     : [{ type: "News", id: "LIST" }],
     }),
     getAboutUs: build.query({
       query: () => `/main_info/about_us/`,
@@ -142,6 +143,23 @@ export const goodsApi = createApi({
     }),
   }),
 });
+
+export const counterSlice = createSlice({
+  name: 'counter',
+  initialState: {
+    value: "hidden",
+  },
+  reducers: {
+    increment: (state) => {
+      state.value = "visible";
+    },
+    decrement: (state) => {
+      state.value = "hidden";
+    },
+  },
+});
+
+export const { increment, decrement } = counterSlice.actions;
 
 export const {
   useGetAdvantagesQuery,

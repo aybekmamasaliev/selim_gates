@@ -4,6 +4,7 @@ import s from './ServicesPage.module.css';
 import SectionImg from '../../components/Services_img/ServicesImg';
 import Form from '../../components/Form/Form';
 import Footer from '../../components/Footer/Footer';
+import Modal from '../../components/Modal/Modal';
 
 const ServicesPage = () => {
 
@@ -16,6 +17,7 @@ const ServicesPage = () => {
       <div className={s.center_bg}></div>
       <div className={s.bottom_bg}></div>
       <Header isDark />
+      <Modal/>
       <div className={s.center_x}>
         <section className={s.disg} aria-labelledby="hero__title">
           <h1 id="disg">Наши услуги</h1>

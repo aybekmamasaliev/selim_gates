@@ -52,14 +52,17 @@
 
 .form__name {
   grid-area: name;
+  position: relative;
 }
 
 .form__phone {
   grid-area: phone;
+  position: relative;
 }
 
 .form__text {
   grid-area: text;
+  position: relative;
 }
 
 .form__form > button {

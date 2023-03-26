@@ -6,6 +6,7 @@ import table from './SingleNewsTable.png';
 import img from './SingleNewsImg.png';
 import './SingleNews.scss';
 import NewsList from '../../components/News/NewsList';
+import Modal from '../../components/Modal/Modal';
 
 function SingleNewsPage() {
   useEffect(() => {
@@ -14,6 +15,7 @@ function SingleNewsPage() {
   return (
     <div className="single-newspage">
       <Header isDark />
+      <Modal/>
       <section
         className="single-news__section"
         aria-labelledby="single-news__title"

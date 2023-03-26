@@ -6,7 +6,8 @@ import Button from "../../components/Button/Button";
 import Form from "../../components/Form/Form";
 import Footer from "../../components/Footer/Footer";
 import NewsItemMobile from "../../components/NewsItemMobile/NewsItemMobile";
-import { useGetGoodsQuery } from "../../redux";
+import { useGetGoodsQuery, useGetNewsQuery } from "../../redux";
+import Modal from "../../components/Modal/Modal";
 
 // const data = [
 //   {
@@ -76,7 +77,7 @@ import { useGetGoodsQuery } from "../../redux";
 // ];
 
 const TestNews = () => {
-  const { data = [], isLoading } = useGetGoodsQuery();
+  const { data = [], isLoading } = useGetNewsQuery();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -84,6 +85,7 @@ const TestNews = () => {
   return (
     <div style={{ outline: "1px solid green" }}>
       <Header isDark />
+      <Modal/>
       <div className={s.center_x}>
         <section className={s.disg} aria-labelledby="hero__title">
           <h1 id="disg">Новости компании</h1>
@@ -91,15 +93,23 @@ const TestNews = () => {
             К вашему вниманию Здесь мы собрали все актуальные новости нашей
             компании
           </p>
-          <div className={s.news_list}>
-            {data.map((item) => {
-              return (
-                <NavLink to="/news/1">
-                  <NewsItemMobile key={item._id} url={item.description} />
-                </NavLink>
-              );
-            })}
-          </div>
+          {isLoading ? (
+            <p>loading...</p>
+          ) : (
+            <div className={s.news_list}>
+              {data.results?.map((item) => {
+                return (
+                  <NavLink to="/news/1">
+                    <NewsItemMobile
+                      img={item.image}
+                      url={item.title}
+                      desc={item.text}
+                    />
+                  </NavLink>
+                );
+              })}
+            </div>
+          )}
         </section>
         <div
           style={{
@@ -113,10 +123,9 @@ const TestNews = () => {
             загрузить ещё
           </Button>
         </div>
-          <div style={{marginTop:"150px"}}>
+        <div style={{ marginTop: "150px" }}>
           <Form />
-          </div>
-       
+        </div>
       </div>
       <Footer />
     </div>
