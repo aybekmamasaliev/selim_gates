@@ -73,6 +73,7 @@
   font-size: 20px;
   line-height: 120%;
   cursor: pointer;
+  padding-block: 5px;
 }
 
 @media (max-width: 1448px) {

@@ -54,7 +54,7 @@ const SliderRew = () => {
             );
           })}
 
-          <div className={s.div_cover_btns}>
+          <div className={s.div_cover_btns} id="section-1">
             <div className={s.upper_btn_div}>
               <SwiperButtonPrev>
                 <div className={s.circle_btn}>
