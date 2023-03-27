@@ -8,6 +8,7 @@ import gateType2 from './media/gateType2.avif';
 import gateType3 from './media/gateType3.avif';
 import gateType4 from './media/gateType4.avif';
 import gateType5 from './media/gateType5.avif';
+import Modal from '../../components/Modal/Modal';
 
 function GatesPage() {
   useEffect(() => {
@@ -34,6 +35,7 @@ function GatesPage() {
   return (
     <div className="gatespage">
       <Header />
+      <Modal/>
       <section aria-labelledby="banner__title" className="banner">
         <h1 id="banner__title" className="banner__title">
           Промышленные секционные ворота

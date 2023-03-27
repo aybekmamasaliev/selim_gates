@@ -17,11 +17,18 @@ import DefaultSlider from "../../components/BaseSlider/DefaultSlider";
 import Hand from "../../components/Hand/Hand";
 import SwiperAuto from "../../components/SwiperAuto/SwiperAuto";
 import SwiperAutoTwo from "../../components/SwiperAutoTwo/SwiperAutoTwo";
+import Modal from "../../components/Modal/Modal";
 import { useGetAboutUsQuery, useGetMainInfoQuery } from "../../redux";
-
 function MainPage() {
   const { data: main_info = [] } = useGetMainInfoQuery();
   const { data: about_us = [] } = useGetAboutUsQuery();
+
+  const handleClickScroll = () => {
+    const element = document.getElementById("section-1");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -32,33 +39,41 @@ function MainPage() {
   return (
     <div className="homepage">
       <Header />
-      {main_info.map((item) => (
-        <section className="hero" aria-labelledby="hero__title" key={item.id}>
-          <h1 id="hero__title" className="hero__title">
-            {item.title.split(" ").slice(0, 1)}
-            <br />
-            {item.title.split(" ").slice(1, 2)}&nbsp;
-            {item.title.split(" ").slice(2, 5)}
-          </h1>
-          <div className="hero__description">
-            <p>{item.subtitle}</p>
-          </div>
-          <Button icon={HomeSvg}>заказать ворота</Button>
-          <Hand />
-        </section>
-      ))}
-      {about_us.map((item) => (
-        <section aria-labelledby="about__title" className="about" key={item.id}>
-          <h2 id="about__title" className="about__title title--secondary">
-            {item.title}
-          </h2>
-          <div className="about__description">
-            <p>{item.text.split(/\s+/).slice(0, 5).join(" ")}</p>
-            <p>{item.text.split(/\s+/).slice(5, 15).join(" ")}</p>
-            <p>{item.text.split(/\s+/).slice(15, 100).join(" ")}</p>
-          </div>
-        </section>
-      ))}
+      <Modal />
+      <section
+        className="hero"
+        aria-labelledby="hero__title"
+        key={main_info[0]?.id}
+      >
+        <h1 id="hero__title" className="hero__title">
+          {main_info[0]?.title.split(" ").slice(0, 1)}
+          <br />
+          {main_info[0]?.title.split(" ").slice(1, 2)}&nbsp;
+          {main_info[0]?.title.split(" ").slice(2, 5)}
+        </h1>
+        <div className="hero__description">
+          <p>{main_info[0]?.subtitle}</p>
+        </div>
+        <Button icon={HomeSvg} onClick={handleClickScroll}>
+          заказать ворота
+        </Button>
+        <Hand />
+      </section>
+
+      <section
+        aria-labelledby="about__title"
+        className="about"
+        key={about_us[0]?.id}
+      >
+        <h2 id="about__title" className="about__title title--secondary">
+          {about_us[0]?.title}
+        </h2>
+        <div className="about__description">
+          <p>{about_us[0]?.text.split(/\s+/).slice(0, 5).join(" ")}</p>
+          <p>{about_us[0]?.text.split(/\s+/).slice(5, 15).join(" ")}</p>
+          <p>{about_us[0]?.text.split(/\s+/).slice(15, 100).join(" ")}</p>
+        </div>
+      </section>
 
       <section aria-labelledby="gates__title" className="gates">
         <h2 id="gates__title" className="gates__title title--secondary">
