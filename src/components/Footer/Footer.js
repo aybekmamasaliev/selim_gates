@@ -25,16 +25,9 @@ function Footer() {
           {schedule.map((item) => (
             <p key={item.id}>
               <span> {item.day} </span>
-              <time> {item.start_time} </time>-<time>{item.end_time}</time>
+              <time> {item.start_time.slice(0 ,-3)} </time>-<time>{item.end_time.slice(0 ,-3)}</time>
             </p>
           ))}
-          {/* <p>
-            <span>Пн-Пт</span> <time>8:30</time>–<time>18:30</time>
-          </p> */}
-          {/* <p>
-            <span>Суббота </span>
-            <time> 8:30</time>–<time>14:00</time>
-          </p> */}
         </div>
         <div className="footer__phones">
           <p>телефон</p>

@@ -30,7 +30,6 @@ const ServicesPage = () => {
           </p>
           <SectionImg />
         </section>
-
         <Form />
       </div>
       <Footer />

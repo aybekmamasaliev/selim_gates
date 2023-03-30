@@ -40,6 +40,11 @@
   gap: 40px 20px;
 }
 
+.news_list>div{
+  display: flex;
+  justify-content: center;
+}
+
 .preloader {
   text-align: center;
   font-weight: 500;
@@ -59,7 +64,7 @@
 }
 
 .center_x > .centr {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   margin-top: 30px;
 }
 

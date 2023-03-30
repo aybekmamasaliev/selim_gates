@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "../../redux";
 
 const Form = () => {
-  const count = useSelector((state) => state.counter.value);
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -26,6 +25,8 @@ const Form = () => {
     number: phoneNumber,
     message: feedback,
   };
+
+
 
   const handleFeedBack = (e) => {
     e.preventDefault();
@@ -58,7 +59,6 @@ const Form = () => {
       return;
     }
 
-    console.log(dataNew);
 
     addFeedBack({ name: name, number: phoneNumber, message: feedback })
       .unwrap()
@@ -67,7 +67,6 @@ const Form = () => {
         setPhoneNumber("");
         setFeedback("");
         dispatch(increment());
-        console.log("fullfilled", payload);
       })
       .catch((error) => {
         if (error.data.name) {
@@ -115,7 +114,7 @@ const Form = () => {
         </div>
         <div className={s.form__phone}>
           <p className={s.valid} style={{ display: valphone }}>
-            не корректный номер телефона
+          Формат номера: +99XXXXXXXXXX
           </p>
           <label htmlFor="phone__input" className="visually-hidden">
             Телефон

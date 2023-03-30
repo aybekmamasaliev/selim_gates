@@ -4,10 +4,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import s from "./DefaultSlider.module.css";
 import NewsItem from "../NewsItem/NewsItem";
-import { useGetServicesQuery } from "../../redux";
+import { useGetNewsQuery } from "../../redux";
 
 const DefaultSlider = () => {
-  const {data=[], isLoading}=useGetServicesQuery()
+  const { data = [], isLoading } = useGetNewsQuery(3);
 
   return (
     <div className={s.margin100}>
@@ -21,7 +21,18 @@ const DefaultSlider = () => {
           centeredSlides={false}
           initialSlide={1}
         >
-          <SwiperSlide className={s.per_slide}>
+          {data.results?.map((item) => (
+            <SwiperSlide className={s.per_slide} key={item.id}>
+              <NewsItem
+                text={item.text}
+                img={item.image}
+                url={item.title}
+                desc={item.text}
+                id={item.id}
+              />
+            </SwiperSlide>
+          ))}
+          {/* <SwiperSlide className={s.per_slide}>
             <NewsItem url="hello world" />
           </SwiperSlide>
           <SwiperSlide className={s.per_slide}>
@@ -29,8 +40,7 @@ const DefaultSlider = () => {
           </SwiperSlide>
           <SwiperSlide className={s.per_slide}>
             <NewsItem url="hello world" />
-          </SwiperSlide>
-         
+          </SwiperSlide> */}
         </Swiper>
       )}
     </div>

@@ -1,6 +1,6 @@
 .margin100{
     margin: 0 auto;
-    display: none;
+    /* display: none; */
 }
 
 .per_slide{
@@ -28,11 +28,17 @@
     padding-left: 30px;
 }
 
-@media (max-width:786px) {
+@media (min-width:786px) {
+    .margin100{
+        display: none;
+    }
+}
+
+/* @media (max-width:786px) {
     .margin100{
         display: block;
     }
-}
+} */
 
 
 

@@ -1,3 +1,4 @@
+import { useGetMapQuery } from '../../redux';
 import './Map.scss';
 
 function Map() {
