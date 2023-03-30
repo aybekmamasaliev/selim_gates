@@ -11,17 +11,35 @@ import img8 from "../../media/service_page/skladniye.svg";
 import img9 from "../../media/service_page/kalitki.svg";
 import { NavLink } from "react-router-dom";
 import DoorName from "../DoorName/DoorName";
+import { useGetCategoriesQuery } from "../../redux";
 
 const ServicesImg = () => {
+  const { data: categories = [], isLoading } = useGetCategoriesQuery();
   return (
     <div className={s.imgs_section}>
+      {isLoading ? (
+        <p>loading ...</p>
+      ) : (
+        categories.map((item) => (
+          <NavLink to={`/services/${item.id}`} key={item.id}>
+            <div>
+              <DoorName>{item.title}</DoorName>
+              <img src={item.image} alt="" />
+            </div>
+          </NavLink>
+        ))
+      )}
+
+      {/*
+      
       <NavLink to="/services/1">
         <div>
           <DoorName>Промышленные секционные ворота</DoorName>
           <img src={img1} alt="" />
         </div>
       </NavLink>
-
+      
+      
       <NavLink to="/services/1">
         <div>
           <DoorName>Ролл ворота</DoorName>
@@ -86,7 +104,7 @@ const ServicesImg = () => {
           <DoorName>Промышленные секционные ворота</DoorName>
           <img src={img9} alt="" />
         </div>
-      </NavLink>
+      </NavLink> */}
     </div>
   );
 };

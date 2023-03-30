@@ -10,8 +10,8 @@ import { useGetNewsQuery } from "../../redux";
 import Modal from "../../components/Modal/Modal";
 
 const TestNews = () => {
-  const [reload, setReload] = useState(6)
-  const [limit , setLimit] = useState(3)
+  const [reload, setReload] = useState(0)
+  const [limit , setLimit] = useState(6)
   const { data = [], isLoading } = useGetNewsQuery(limit, reload);
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -21,9 +21,6 @@ const TestNews = () => {
     setReload(reload +3)
     setLimit(limit +3)
   }
-  console.log(reload)
-  console.log(limit)
-  console.log(data.results)
 
   return (
     <div style={{ outline: "1px solid green" }}>
@@ -42,14 +39,15 @@ const TestNews = () => {
             <div className={s.news_list}>
               {data.results?.map((item) => {
                 return (
-                  <NavLink  key={item.id}>
+                  <div key={item.id}>
                     <NewsItemMobile
                       text={item.text}
                       img={item.image}
                       url={item.title}
                       desc={item.text}
+                      id={item.id}
                     />
-                  </NavLink>
+                  </div>
                 );
               })}
             </div>

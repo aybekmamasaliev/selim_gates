@@ -56,6 +56,9 @@ export const goodsApi = createApi({
       //       ]
       //     : [{ type: "News", id: "LIST" }],
     }),
+    getSingleNews: build.query({
+      query: (id) => `/news/${id}`,
+    }),
     getAboutUs: build.query({
       query: () => `/main_info/about_us/`,
       providesTags: (result) =>
@@ -117,6 +120,27 @@ export const goodsApi = createApi({
             ]
           : [{ type: "FeedBack", id: "LIST" }],
     }),
+    getCategories: build.query({
+      query: () => `categories`,
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "Categories", id })),
+              { type: "Categories", id: "LIST" },
+            ]
+          : [{ type: "Categories", id: "LIST" }],
+    }),
+    getMap: build.query({
+      query: () => `/main_info/map/`,
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "Map", id })),
+              { type: "Map", id: "LIST" },
+            ]
+          : [{ type: "Map", id: "LIST" }],
+    }),
+
     addFeedBacks: build.mutation({
       query: (body) => ({
         url: "/feedback/",
@@ -165,8 +189,6 @@ export const {
   useGetAdvantagesQuery,
   useGetServicesQuery,
   useGetGoodsQuery,
-  useDeleteProductMutation,
-  useAddProductsMutation,
   useGetProductsQuery,
   useGetNewsQuery,
   useGetAboutUsQuery,
@@ -175,5 +197,10 @@ export const {
   useGetScheduleQuery,
   useGetSocialMediaQuery,
   useGetFeedBacksQuery,
+  useGetSingleNewsQuery,
   useAddFeedBacksMutation,
+  useGetCategoriesQuery,
+  useGetMapQuery,
+  useDeleteProductMutation,
+  useAddProductsMutation,
 } = goodsApi;

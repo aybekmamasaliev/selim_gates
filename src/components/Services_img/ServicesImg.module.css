@@ -11,6 +11,9 @@
 .imgs_section > div > img {
   border: 1px solid white;
   width: 100%;
+  border-radius: 10%;
+  object-fit:none;
+  height: 100%;
 }
 
 

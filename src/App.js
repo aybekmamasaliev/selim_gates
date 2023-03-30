@@ -21,9 +21,9 @@ function App() {
             <Route path="/home" element={<MainPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/news" element={<TestNews />} />
-            <Route path="/news/1" element={<SingleNewsPage />} />
+            <Route path="/news/:id" element={<SingleNewsPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/services/1" element={<GatesPage />} />
+            <Route path="/services/:id" element={<GatesPage />} />
           </Routes>
         </Suspense>
       </BrowserRouter>
