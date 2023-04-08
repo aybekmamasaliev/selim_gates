@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -11,46 +11,57 @@ import gateType4 from "./media/gateType4.avif";
 import gateType5 from "./media/gateType5.avif";
 import Modal from "../../components/Modal/Modal";
 import x from "./media/GatesPageBg.avif";
-import { useGetCategoriesQuery } from "../../redux";
+import { useGetCategoriesQuery, useGetCategoryAdvantagesQuery, useGetSubCategoryQuery } from "../../redux";
 
 function GatesPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [banner, setBanner]=useState(x)
-
   const { data: typee = [], isLoading } = useGetCategoriesQuery();
+
+ 
 
   const params = useParams().id;
 
+  const {data: subCategory=[]}=useGetSubCategoryQuery(params);
+
+  const {data: categoryAdvantages=[]}=useGetCategoryAdvantagesQuery();
+
+
+
   const category_advantages = typee.find((item) => item.id == params);
 
-  // if(isLoading){
-  //   setBanner(x)
-  // }else{
-  //   setBanner(gateType3)
-  // }
+  let external_image;
 
+  let filteredCategoryAdvantages = categoryAdvantages.filter(item=>item.category==params)
+  
+  if (isLoading) {
+    external_image = x;
+  } else {
+    external_image = category_advantages.image;
+  }
 
+  let types_of_gates;
 
-  console.log(typee);
-  // console.log(category_advantages);
+  types_of_gates = typee.filter(
+    (item) => item.category == category_advantages.category
+  );
 
   const types = [
-    { name: "Противопожарные распашные ворота", img: gateType1 },
-    { name: "Противопожарные секционные ворота", img: gateType2 },
-    { name: "Откатные  ворота", img: gateType3 },
-    { name: "Скоростные рулонные  ворота", img: gateType4 },
-    { name: "Распашные пленочные  ворота", img: gateType5 },
+    { name: "Противопожарные распашные ворота", img: gateType1 ,id:1},
+    { name: "Противопожарные секционные ворота", img: gateType2 , id:2},
+    { name: "Откатные  ворота", img: gateType3, id:3 },
+    { name: "Скоростные рулонные  ворота", img: gateType4 , id:4},
+    { name: "Распашные пленочные  ворота", img: gateType5, id:5 },
   ];
 
-  const renderedTypes = types.map((type) => (
-    <li key={type.name} className="types__item">
+  const renderedTypes = subCategory.child_category?.map((type) => (
+    <li key={type.id} className="types__item">
       <div>
-        <img alt="" src={type.img} />
+        <img alt="" src={type.image} />
       </div>
-      <p>{type.name}</p>
+      <p>{type.title}</p>
     </li>
   ));
 
@@ -61,7 +72,7 @@ function GatesPage() {
       <section
         aria-labelledby="banner__title"
         className="banner"
-        style={{ backgroundImage: `url(${category_advantages.image})`}}
+        style={{ backgroundImage: `url(${external_image})` }}
       >
         {isLoading ? (
           <h1 id="banner__title" className="banner__title">
@@ -81,20 +92,11 @@ function GatesPage() {
           Характеристика ворот
         </h2>
         <div className="description__text">
-          <p>
-            {/* {category_advantages.description} */}
-            {/* Промышленные секционные ворота DoorHan устанавливаются в проёмы
-            производственных зданий, складских помещений, цехов, терминалов
-            и прочих промышленных объектов, где они должны отвечать гораздо
-            более жёстким требованиям, в отличие от гаражных ворот.
-            Так как промышленные ворота эксплуатируются с высокой
-            интенсивностью, для обеспечения долгосрочной работы без сбоев,
-            они обладают повышенной износостойкостью за счёт применения
-            специальных технологий. Используемая в воротах система уплотнителей
-            обеспечивает высокую термоизоляцию — сохранение требуемого
-            температурного режима является важной задачей практически для любого
-            промышленного объекта. */}
-          </p>
+          {isLoading ? (
+            <p>loading ... </p>
+          ) : (
+            <p>{category_advantages.description}</p>
+          )}
         </div>
       </section>
 
@@ -113,59 +115,14 @@ function GatesPage() {
           Основные преимущества
         </h2>
         <ol className="main-advantages__list">
-          {category_advantages?.category_advantages?.map((item) => (
+          {filteredCategoryAdvantages.map((item) => (
             <li className="main-advantages__item" key={item.id}>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
             </li>
           ))}
-
-          {/* <li className="main-advantages__item">
-            <h3>Промышленный масштаб</h3>
-            <p>
-              данная серия ворот спроектирована специально для перекрытия
-              больших проёмов на промышленных объектах.
-            </p>
-          </li>
-          <li className="main-advantages__item">
-            <h3>Высокий уровень термоизоляции</h3>
-            <p>
-              промышленные ворота isd01 применяются для термоизоляции помещений
-              с высокой интенсивностью использования.
-            </p>
-          </li>
-          <li className="main-advantages__item">
-            <h3>Оптимальное решение</h3>
-            <p>
-              благодаря высокий эксплуатационным качествам ворота doorhan
-              являются оптимальным решением для любых объектов.
-            </p>
-          </li>
-          <li className="main-advantages__item">
-            <h3>Элегантный внешний вид</h3>
-            <p>
-              несомтря на то, что серия предназначена для промышленного
-              применения, она обладает широким выбором дизайна.
-            </p>
-          </li>
-          <li className="main-advantages__item">
-            <h3>Безопасность</h3>
-            <p>
-              многоуровневая система безопасности включает: устройства защиты от
-              обрыва пружины и от разрыва троса, которые защищают полотно от
-              непреднамеренного падения.
-            </p>
-          </li>
-          <li className="main-advantages__item">
-            <h3>Надежность</h3>
-            <p>
-              использование усиленных комплекутющих обеспечивает повышенную в
-              конструкции в процессе эксплуатации.
-            </p>
-          </li> */}
         </ol>
       </section>
-
       <Form />
       <Footer />
     </div>
