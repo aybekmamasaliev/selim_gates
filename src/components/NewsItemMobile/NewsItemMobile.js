@@ -26,6 +26,7 @@ const NewsItemMobile = (props) => {
           </p>
           <button className={s.btn} onClick={()=>navigate(`/news/${props.id}`)}>УЗНАТЬ БОЛЬШЕ</button>
         </div>
+        <p>{props.id}</p>
       </div>
     </>
   );

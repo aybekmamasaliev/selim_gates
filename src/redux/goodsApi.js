@@ -140,6 +140,19 @@ export const goodsApi = createApi({
             ]
           : [{ type: "Map", id: "LIST" }],
     }),
+    getSubCategory: build.query({
+      query: (id) => `/categories/${id}/`,
+    }),
+    getCategoryAdvantages: build.query({
+      query: () => `/category-advantages/`,
+      providesTags: (result) =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: "CategoryAdvantages", id })),
+              { type: "CategoryAdvantages", id: "LIST" },
+            ]
+          : [{ type: "CategoryAdvantages", id: "LIST" }],
+    }),
 
     addFeedBacks: build.mutation({
       query: (body) => ({
@@ -203,4 +216,6 @@ export const {
   useGetMapQuery,
   useDeleteProductMutation,
   useAddProductsMutation,
+  useGetSubCategoryQuery,
+  useGetCategoryAdvantagesQuery,
 } = goodsApi;

@@ -25,7 +25,7 @@ function Footer() {
           {schedule.map((item) => (
             <p key={item.id}>
               <span> {item.day} </span>
-              <time> {item.start_time.slice(0 ,-3)} </time>-<time>{item.end_time.slice(0 ,-3)}</time>
+              <time> {item.start_time} </time>-<time>{item.end_time}</time>
             </p>
           ))}
         </div>
