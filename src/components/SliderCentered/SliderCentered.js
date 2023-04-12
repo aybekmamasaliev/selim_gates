@@ -26,12 +26,18 @@ const SliderCentered = () => {
           breakpoints={{
             0: {
               spaceBetween: 22,
-              slidesPerView: "auto",
+              slidesPerView: 2,
               loop: true,
               centeredSlides: true,
             },
             780: {
-              spaceBetween: "8%",
+              spaceBetween: 10,
+              slidesPerView: 2,
+              loop: true,
+              centeredSlides: true,
+            },
+            930: {
+              spaceBetween: 20,
               slidesPerView: 3,
               loop: true,
               centeredSlides: true,

@@ -16,6 +16,16 @@
   height: 100%;
 }
 
+.aspect_div{
+  aspect-ratio: 669/350;
+}
+
+.aspect_div > img{
+  width:100%;
+  height: 100%;
+}
+
+
 
 .imgs_section > div {
   position: relative;

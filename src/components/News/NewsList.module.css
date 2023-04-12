@@ -15,13 +15,14 @@
   justify-content: space-around;
   gap:10px;
   padding-inline: 10px;
+
 }
 
 
 @media (max-width:786px) {
   .news_block {
     display: none;
-    background-color: red;
+    /* background-color: red; */
   }
   
 }

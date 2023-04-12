@@ -130,16 +130,11 @@ export const goodsApi = createApi({
             ]
           : [{ type: "Categories", id: "LIST" }],
     }),
+    
     getMap: build.query({
       query: () => `/main_info/map/`,
-      providesTags: (result) =>
-        result
-          ? [
-              ...result.map(({ id }) => ({ type: "Map", id })),
-              { type: "Map", id: "LIST" },
-            ]
-          : [{ type: "Map", id: "LIST" }],
     }),
+
     getSubCategory: build.query({
       query: (id) => `/categories/${id}/`,
     }),

@@ -18,7 +18,6 @@ const NewsItemMobile = (props) => {
         <img src={props.img} alt="" />
         <p className={s.news_item_title} style={{ visibility: vis }}>
           {props.url}
-          {props.id}
         </p>
         <div style={{ visibility: vis2 }}>
           <p className={s.news_desc}>
@@ -26,7 +25,6 @@ const NewsItemMobile = (props) => {
           </p>
           <button className={s.btn} onClick={()=>navigate(`/news/${props.id}`)}>УЗНАТЬ БОЛЬШЕ</button>
         </div>
-        <p>{props.id}</p>
       </div>
     </>
   );
