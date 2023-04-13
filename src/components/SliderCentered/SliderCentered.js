@@ -65,7 +65,7 @@ const SliderCentered = () => {
                           className={s.img}
                           style={{
                             transition: "all 0.4s ease",
-                            transform: "scale(1.3)",
+                            transform: "scale(1.2)",
                           }}
                         />
                       </div>
