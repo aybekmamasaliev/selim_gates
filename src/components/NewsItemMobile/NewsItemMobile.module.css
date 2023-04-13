@@ -3,6 +3,13 @@
   position: relative;
   border-radius: 20px;
   cursor: pointer;
+  aspect-ratio: 440/300;
+}
+
+.news_item>img{
+  height: 100%;
+  width:100%;
+  border-radius: 5%;
 }
 
 .news_item:hover {
@@ -104,10 +111,3 @@
     padding: 1px 3px;
   }
 }
-
-/* @media (max-width:786px) {
-  .news_item {
-    max-width: 440px;
-    margin: 0 auto;
-  }
-} */

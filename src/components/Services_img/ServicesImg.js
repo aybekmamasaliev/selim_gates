@@ -22,7 +22,7 @@ const ServicesImg = () => {
       ) : (
         categories.map((item) => (
           <NavLink to={`/services/${item.id}`} key={item.id}>
-            <div>
+            <div className={s.aspect_div}>
               <DoorName>{item.title}</DoorName>
               <img src={item.image} alt="" />
             </div>

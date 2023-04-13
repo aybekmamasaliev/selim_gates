@@ -20,15 +20,11 @@ function GatesPage() {
 
   const { data: typee = [], isLoading } = useGetCategoriesQuery();
 
- 
-
   const params = useParams().id;
 
   const {data: subCategory=[]}=useGetSubCategoryQuery(params);
 
   const {data: categoryAdvantages=[]}=useGetCategoryAdvantagesQuery();
-
-
 
   const category_advantages = typee.find((item) => item.id == params);
 

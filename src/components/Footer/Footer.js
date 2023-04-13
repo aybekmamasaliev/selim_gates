@@ -3,6 +3,7 @@ import "./Footer.scss";
 import InstagramSvg from "./InstagramSvg.svg";
 import WhatsAppSvg from "./WhatsAppSvg.svg";
 import Map from "../Map/Map";
+import telegram from "../../media/telegram.png";
 import { Link } from "react-router-dom";
 import {
   useGetNumbersQuery,
@@ -15,6 +16,7 @@ function Footer() {
   const { data: numbers = [] } = useGetNumbersQuery();
   const { data: schedule = [] } = useGetScheduleQuery();
   const { data: social_m = [] } = useGetSocialMediaQuery();
+
   return (
     <footer className="footer">
       <div className="footer__wrapper">
@@ -60,6 +62,14 @@ function Footer() {
                     Напишите нам в вотсаппе
                   </span>
                   <img src={WhatsAppSvg} alt="WhatsApp Logo" />
+                </a>
+              </li>
+              <li>
+                <a href={item.telegram}>
+                  <span className="visually-hidden">
+                    Напишите нам в телеграм
+                  </span>
+                  <img src={telegram} alt="Telegram Logo" />
                 </a>
               </li>
             </ul>

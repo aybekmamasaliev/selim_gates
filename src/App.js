@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import './App.scss';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import GalleryPageSecond from './pages/GalleryPageSecond/GalleryPageSecond';
 
 const MainPage = lazy(() => import('./pages/MainPage/MainPage'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage/ServicesPage'));
@@ -23,6 +24,7 @@ function App() {
             <Route path="/news" element={<TestNews />} />
             <Route path="/news/:id" element={<SingleNewsPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/gallery2" element={<GalleryPageSecond />} />
             <Route path="/services/:id" element={<GatesPage />} />
           </Routes>
         </Suspense>
